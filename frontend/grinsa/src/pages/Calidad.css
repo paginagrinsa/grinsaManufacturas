@@ -1,0 +1,712 @@
+/* =========================================
+   PÁGINA CALIDAD
+   ========================================= */
+
+.calidad-page {
+  flex: 1;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   IMAGEN PRINCIPAL
+   ========================================= */
+
+.calidad-hero {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0b2232;
+  isolation: isolate;
+}
+
+.calidad-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.calidad-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 23, 35, 0.84),
+      rgba(5, 23, 35, 0.6),
+      rgba(5, 23, 35, 0.84)
+    );
+}
+
+.calidad-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 80px 28px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.calidad-hero-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(44px, 7vw, 78px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
+}
+
+.calidad-hero-line {
+  width: 78px;
+  height: 4px;
+  margin: 25px auto 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.calidad-hero-description {
+  max-width: 850px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.85;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   ENCABEZADOS DE SECCIÓN
+   ========================================= */
+
+.calidad-section-heading {
+  max-width: 900px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+.calidad-section-title {
+  margin: 0;
+  color: #0b2232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.calidad-section-line {
+  width: 72px;
+  height: 4px;
+  margin: 22px auto 0;
+  background-color: #0b2232;
+  border-radius: 20px;
+}
+
+/* =========================================
+   CERTIFICACIONES
+   ========================================= */
+
+.calidad-certificaciones {
+  width: 100%;
+  padding: 100px 0 105px;
+  background-color: #ffffff;
+}
+
+.calidad-certificacion-card {
+  height: 100%;
+  overflow: hidden;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 13px 32px rgba(8, 27, 40, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.calidad-certificacion-card:hover {
+  box-shadow: 0 21px 42px rgba(8, 27, 40, 0.23);
+  transform: translateY(-7px);
+}
+
+/*
+  Se aumentó la altura para mostrar una mayor
+  parte vertical de cada certificación.
+*/
+.calidad-certificacion-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+  background-color: #f1f3f4;
+}
+
+/*
+  contain permite ver el documento completo,
+  evitando que se recorte la parte superior
+  o inferior de la certificación.
+*/
+.calidad-certificacion-image {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background-color: #f1f3f4;
+  transition: transform 0.45s ease;
+}
+
+.calidad-certificacion-card:hover
+  .calidad-certificacion-image {
+  transform: scale(1.025);
+}
+
+/*
+  Capa ligera en la parte inferior.
+  No oscurece el documento completo.
+*/
+.calidad-certificacion-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 2;
+  min-height: 70px;
+  padding: 30px 22px 20px;
+  display: flex;
+  align-items: flex-end;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.88),
+      rgba(5, 23, 35, 0)
+    );
+  pointer-events: none;
+}
+
+.calidad-certificacion-name {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+.calidad-certificaciones-description {
+  max-width: 950px;
+  margin: 55px auto 0;
+  color: #52636f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  text-align: center;
+}
+
+/* =========================================
+   NUESTRO COMPROMISO
+   ========================================= */
+
+.calidad-compromiso {
+  width: 100%;
+  padding: 100px 28px 110px;
+  background-color: #f4f6f7;
+  border-top: 1px solid #e1e6e9;
+}
+
+.calidad-compromiso-container {
+  width: min(100%, 1250px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 1fr);
+  align-items: center;
+  gap: clamp(50px, 7vw, 100px);
+}
+
+.calidad-compromiso-content {
+  width: 100%;
+}
+
+.calidad-compromiso-eyebrow {
+  margin: 0 0 12px;
+  color: #0b2232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.calidad-compromiso-subtitle {
+  margin: 0;
+  color: #0b2232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(30px, 4vw, 47px);
+  font-weight: 800;
+  line-height: 1.18;
+}
+
+.calidad-compromiso-line {
+  width: 68px;
+  height: 4px;
+  margin: 22px 0 27px;
+  background-color: #0b2232;
+  border-radius: 20px;
+}
+
+.calidad-compromiso-description {
+  margin: 0 0 20px;
+  color: #52636f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.calidad-compromiso-description:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   IMAGEN SIX SIGMA
+   ========================================= */
+
+/*
+  Se aumentó la altura para que la imagen
+  de Six Sigma pueda mostrarse completa.
+*/
+.calidad-six-sigma-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 580px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #ffffff;
+  border-radius: 7px;
+  box-shadow: 0 20px 45px rgba(8, 27, 40, 0.18);
+}
+
+/*
+  La capa oscura ahora solamente aparece
+  en la parte inferior.
+*/
+.calidad-six-sigma-image-wrapper::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 32%;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.72),
+      rgba(5, 23, 35, 0)
+    );
+  content: "";
+  pointer-events: none;
+}
+
+/*
+  contain evita que el gráfico de Six Sigma
+  se recorte en la parte superior o inferior.
+*/
+.calidad-six-sigma-image {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  display: block;
+  object-fit: contain;
+  object-position: center;
+  background-color: #ffffff;
+  transition: transform 0.5s ease;
+}
+
+.calidad-six-sigma-image-wrapper:hover
+  .calidad-six-sigma-image {
+  transform: scale(1.025);
+}
+
+.calidad-six-sigma-caption {
+  position: absolute;
+  right: 34px;
+  bottom: 31px;
+  left: 34px;
+  z-index: 2;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+}
+
+.calidad-six-sigma-caption span {
+  margin-bottom: 4px;
+  display: block;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+.calidad-six-sigma-caption strong {
+  display: block;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1.1;
+}
+
+/* =========================================
+   EQUIPOS DE MEDICIÓN Y CONTROL
+   ========================================= */
+
+.calidad-equipos {
+  position: relative;
+  width: 100%;
+  min-height: 430px;
+  padding: 100px 28px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(5, 23, 35, 0.88),
+      rgba(5, 23, 35, 0.88)
+    );
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.calidad-equipos-container {
+  width: min(100%, 950px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.calidad-equipos-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-shadow: 0 3px 13px rgba(0, 0, 0, 0.38);
+}
+
+.calidad-equipos-line {
+  width: 72px;
+  height: 4px;
+  margin: 23px auto 28px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.calidad-equipos-description {
+  max-width: 900px;
+  margin: 0 auto 18px;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.4);
+}
+
+.calidad-equipos-description:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   PANTALLAS MEDIANAS
+   ========================================= */
+
+@media screen and (max-width: 1199.98px) {
+  .calidad-hero {
+    min-height: 600px;
+  }
+
+  .calidad-certificaciones {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .calidad-certificacion-image-wrapper {
+    height: 360px;
+  }
+
+  .calidad-compromiso {
+    padding-top: 90px;
+    padding-bottom: 95px;
+  }
+
+  .calidad-compromiso-container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(380px, 1fr);
+    gap: 55px;
+  }
+
+  .calidad-six-sigma-image-wrapper {
+    height: 540px;
+  }
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media screen and (max-width: 991.98px) {
+  .calidad-hero {
+    min-height: 560px;
+  }
+
+  .calidad-hero-content {
+    width: min(100%, 760px);
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .calidad-hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .calidad-certificaciones {
+    padding-top: 80px;
+    padding-bottom: 85px;
+  }
+
+  .calidad-certificacion-image-wrapper {
+    height: 420px;
+  }
+
+  .calidad-compromiso {
+    padding: 80px 30px 90px;
+  }
+
+  .calidad-compromiso-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .calidad-six-sigma-image-wrapper {
+    height: 540px;
+  }
+
+  .calidad-equipos {
+    min-height: 400px;
+    padding-top: 85px;
+    padding-bottom: 85px;
+  }
+}
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media screen and (max-width: 575.98px) {
+  .calidad-hero {
+    min-height: 520px;
+  }
+
+  .calidad-hero-overlay {
+    background: rgba(5, 23, 35, 0.76);
+  }
+
+  .calidad-hero-content {
+    padding: 65px 20px;
+  }
+
+  .calidad-hero-title {
+    font-size: clamp(40px, 14vw, 56px);
+  }
+
+  .calidad-hero-line {
+    width: 60px;
+    height: 3px;
+    margin-top: 21px;
+    margin-bottom: 24px;
+  }
+
+  .calidad-hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .calidad-section-heading {
+    margin-bottom: 35px;
+  }
+
+  .calidad-section-title {
+    font-size: 34px;
+  }
+
+  .calidad-section-line {
+    width: 58px;
+    height: 3px;
+    margin-top: 18px;
+  }
+
+  .calidad-certificaciones {
+    padding: 65px 0 70px;
+  }
+
+  .calidad-certificacion-image-wrapper {
+    height: 430px;
+  }
+
+  .calidad-certificacion-image {
+    padding: 8px;
+  }
+
+  .calidad-certificaciones-description {
+    margin-top: 40px;
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .calidad-compromiso {
+    padding: 65px 20px 75px;
+  }
+
+  .calidad-compromiso-container {
+    gap: 38px;
+  }
+
+  .calidad-compromiso-eyebrow {
+    margin-bottom: 9px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .calidad-compromiso-subtitle {
+    font-size: 31px;
+  }
+
+  .calidad-compromiso-line {
+    width: 58px;
+    height: 3px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+  }
+
+  .calidad-compromiso-description {
+    margin-bottom: 17px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .calidad-six-sigma-image-wrapper {
+    height: 430px;
+  }
+
+  .calidad-six-sigma-image {
+    padding: 8px;
+  }
+
+  .calidad-six-sigma-caption {
+    right: 22px;
+    bottom: 22px;
+    left: 22px;
+  }
+
+  .calidad-equipos {
+    min-height: 390px;
+    padding: 70px 20px;
+  }
+
+  .calidad-equipos-title {
+    font-size: 33px;
+  }
+
+  .calidad-equipos-line {
+    width: 58px;
+    height: 3px;
+    margin-top: 19px;
+    margin-bottom: 23px;
+  }
+
+  .calidad-equipos-description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 350px) {
+  .calidad-hero {
+    min-height: 500px;
+  }
+
+  .calidad-hero-content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .calidad-hero-description {
+    font-size: 14px;
+  }
+
+  .calidad-certificacion-image-wrapper {
+    height: 390px;
+  }
+
+  .calidad-compromiso {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .calidad-compromiso-subtitle {
+    font-size: 28px;
+  }
+
+  .calidad-compromiso-description {
+    font-size: 14px;
+  }
+
+  .calidad-six-sigma-image-wrapper {
+    height: 380px;
+  }
+
+  .calidad-equipos {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .calidad-equipos-title {
+    font-size: 29px;
+  }
+
+  .calidad-equipos-description {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .calidad-certificacion-card,
+  .calidad-certificacion-image,
+  .calidad-six-sigma-image {
+    transition: none;
+  }
+}

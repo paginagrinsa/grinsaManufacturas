@@ -1,0 +1,572 @@
+/* =========================================
+   PÁGINA NOSOTROS
+   ========================================= */
+
+.nosotros-page {
+  flex: 1;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   IMAGEN PRINCIPAL
+   ========================================= */
+
+.nosotros-hero {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #0b2232;
+  isolation: isolate;
+}
+
+/* =========================================
+   FOTOGRAFÍA PRINCIPAL
+   ========================================= */
+
+.nosotros-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================================
+   CAPA OSCURA
+   ========================================= */
+
+.nosotros-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 23, 35, 0.82),
+      rgba(5, 23, 35, 0.64),
+      rgba(5, 23, 35, 0.82)
+    );
+}
+
+/* =========================================
+   CONTENIDO DEL ENCABEZADO
+   ========================================= */
+
+.nosotros-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 80px 28px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.nosotros-hero-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+}
+
+.nosotros-hero-line {
+  width: 78px;
+  height: 4px;
+  margin: 25px auto 30px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
+}
+
+.nosotros-hero-description {
+  max-width: 850px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.85;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   SECCIÓN DE INFORMACIÓN
+   ========================================= */
+
+.nosotros-info {
+  width: 100%;
+  padding: 105px 28px;
+  background-color: #ffffff;
+}
+
+.nosotros-info-container {
+  width: min(100%, 1250px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(420px, 1fr);
+  align-items: center;
+  gap: clamp(50px, 7vw, 100px);
+}
+
+/* =========================================
+   TEXTO DE LA SECCIÓN
+   ========================================= */
+
+.nosotros-info-content {
+  width: 100%;
+}
+
+.nosotros-info-line {
+  width: 68px;
+  height: 4px;
+  margin: 0 0 27px;
+  background-color: #0b2232;
+  border-radius: 20px;
+}
+
+.nosotros-info-description {
+  margin: 0 0 20px;
+  color: #52636f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+.nosotros-info-description:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   IMAGEN DE MANUFACTURA
+   ========================================= */
+
+.nosotros-info-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #dce3e7;
+  border: none;
+  border-radius: 7px;
+  box-shadow: 0 20px 45px rgba(8, 27, 40, 0.17);
+}
+
+/*
+  Ya no se utiliza el pseudoelemento ::before,
+  por lo que la imagen no tendrá borde blanco interior.
+*/
+
+.nosotros-info-image-wrapper::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.22),
+      rgba(5, 23, 35, 0)
+    );
+  content: "";
+  pointer-events: none;
+}
+
+.nosotros-info-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  transition: transform 0.5s ease;
+}
+
+.nosotros-info-image-wrapper:hover
+  .nosotros-info-image {
+  transform: scale(1.04);
+}
+
+/* =========================================
+   MISIÓN, VISIÓN Y VALORES
+   ========================================= */
+
+.nosotros-principios {
+  width: 100%;
+  padding: 95px 0 105px;
+  background-color: #f4f6f7;
+  border-top: 1px solid #e0e6e9;
+}
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.nosotros-principio-card {
+  position: relative;
+  min-height: 430px;
+  overflow: hidden;
+  isolation: isolate;
+  background-color: #0b2232;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none !important;
+  border-radius: 8px;
+  box-shadow: 0 16px 35px rgba(8, 27, 40, 0.17);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Capa oscura sobre la imagen */
+.nosotros-principio-card::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.94) 0%,
+      rgba(5, 23, 35, 0.66) 48%,
+      rgba(5, 23, 35, 0.25) 100%
+    );
+  content: "";
+  pointer-events: none;
+}
+
+/*
+  Se elimina el pseudoelemento ::after que generaba
+  el marco blanco interior de las tarjetas.
+*/
+
+.nosotros-principio-card:hover {
+  box-shadow: 0 24px 48px rgba(8, 27, 40, 0.25);
+  transform: translateY(-8px);
+}
+
+/* =========================================
+   CONTENIDO DE LAS TARJETAS
+   ========================================= */
+
+.nosotros-principio-body {
+  position: relative;
+  z-index: 2;
+  min-height: 430px;
+  padding: 42px 36px;
+}
+
+.nosotros-principio-content {
+  position: relative;
+  z-index: 3;
+}
+
+.nosotros-principio-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(29px, 3vw, 40px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.48);
+}
+
+.nosotros-principio-line {
+  width: 55px;
+  height: 4px;
+  margin: 18px 0 21px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+.nosotros-principio-description {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* =========================================
+   PANTALLAS MEDIANAS
+   ========================================= */
+
+@media screen and (max-width: 1199.98px) {
+  .nosotros-hero {
+    min-height: 600px;
+  }
+
+  .nosotros-hero-content {
+    width: min(100%, 880px);
+  }
+
+  .nosotros-hero-description {
+    font-size: 17px;
+  }
+
+  .nosotros-info {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  .nosotros-info-container {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(380px, 1fr);
+    gap: 55px;
+  }
+
+  .nosotros-info-image-wrapper {
+    height: 450px;
+  }
+
+  .nosotros-principios {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  .nosotros-principio-card,
+  .nosotros-principio-body {
+    min-height: 400px;
+  }
+
+  .nosotros-principio-body {
+    padding: 35px 28px;
+  }
+
+  .nosotros-principio-title {
+    font-size: 31px;
+  }
+
+  .nosotros-principio-description {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media screen and (max-width: 991.98px) {
+  .nosotros-hero {
+    min-height: 560px;
+  }
+
+  .nosotros-hero-content {
+    width: min(100%, 760px);
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .nosotros-hero-description {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .nosotros-info {
+    padding: 80px 30px;
+  }
+
+  .nosotros-info-container {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .nosotros-info-content {
+    max-width: 760px;
+  }
+
+  .nosotros-info-image-wrapper {
+    width: 100%;
+    height: 460px;
+  }
+
+  .nosotros-principios {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+
+  .nosotros-principio-card,
+  .nosotros-principio-body {
+    min-height: 380px;
+  }
+
+  .nosotros-principio-body {
+    padding: 30px 24px;
+  }
+
+  .nosotros-principio-title {
+    font-size: 27px;
+  }
+
+  .nosotros-principio-description {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media screen and (max-width: 575.98px) {
+  .nosotros-hero {
+    min-height: 520px;
+  }
+
+  .nosotros-hero-image {
+    object-position: center;
+  }
+
+  .nosotros-hero-overlay {
+    background: rgba(5, 23, 35, 0.76);
+  }
+
+  .nosotros-hero-content {
+    padding: 65px 20px;
+  }
+
+  .nosotros-hero-title {
+    font-size: clamp(38px, 13vw, 54px);
+  }
+
+  .nosotros-hero-line {
+    width: 60px;
+    height: 3px;
+    margin-top: 21px;
+    margin-bottom: 24px;
+  }
+
+  .nosotros-hero-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .nosotros-info {
+    padding: 65px 20px;
+  }
+
+  .nosotros-info-container {
+    gap: 38px;
+  }
+
+  .nosotros-info-line {
+    width: 58px;
+    height: 3px;
+    margin-bottom: 22px;
+  }
+
+  .nosotros-info-description {
+    margin-bottom: 17px;
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .nosotros-info-image-wrapper {
+    height: 320px;
+    border-radius: 5px;
+  }
+
+  .nosotros-principios {
+    padding: 60px 0 65px;
+  }
+
+  .nosotros-principio-card,
+  .nosotros-principio-body {
+    min-height: 360px;
+  }
+
+  .nosotros-principio-body {
+    padding: 32px 27px;
+  }
+
+  .nosotros-principio-title {
+    font-size: 32px;
+  }
+
+  .nosotros-principio-line {
+    width: 48px;
+    height: 3px;
+    margin-top: 16px;
+    margin-bottom: 18px;
+  }
+
+  .nosotros-principio-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 350px) {
+  .nosotros-hero {
+    min-height: 500px;
+  }
+
+  .nosotros-hero-content {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .nosotros-hero-description {
+    font-size: 14px;
+  }
+
+  .nosotros-info {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .nosotros-info-description {
+    font-size: 14px;
+  }
+
+  .nosotros-info-image-wrapper {
+    height: 280px;
+  }
+
+  .nosotros-principio-card,
+  .nosotros-principio-body {
+    min-height: 330px;
+  }
+
+  .nosotros-principio-body {
+    padding: 28px 22px;
+  }
+
+  .nosotros-principio-title {
+    font-size: 29px;
+  }
+
+  .nosotros-principio-description {
+    font-size: 13px;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .nosotros-info-image,
+  .nosotros-principio-card {
+    transition: none;
+  }
+}

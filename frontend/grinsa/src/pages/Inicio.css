@@ -1,0 +1,925 @@
+/* =========================================
+   PÁGINA DE INICIO
+   ========================================= */
+
+.inicio-page {
+  flex: 1;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   CARRUSEL
+   ========================================= */
+
+.inicio-carousel {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 101px);
+  min-height: 650px;
+  max-height: 850px;
+  overflow: hidden;
+  background-color: #0b2232;
+  isolation: isolate;
+}
+
+.inicio-carousel-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.inicio-carousel-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(1.025);
+  transition:
+    opacity 0.8s ease,
+    transform 5s ease,
+    visibility 0.8s ease;
+}
+
+.inicio-carousel-slide-active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.inicio-carousel-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =========================================
+   FLECHAS DEL CARRUSEL
+   ========================================= */
+
+.inicio-carousel-control {
+  position: absolute;
+  top: 50%;
+  z-index: 4;
+  width: 54px;
+  height: 54px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: rgba(11, 34, 50, 0.72);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.inicio-carousel-control:hover {
+  color: #0b2232;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.inicio-carousel-control:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.inicio-carousel-control svg {
+  display: block;
+}
+
+.inicio-carousel-control-left {
+  left: 28px;
+}
+
+.inicio-carousel-control-right {
+  right: 28px;
+}
+
+/* =========================================
+   INDICADORES DEL CARRUSEL
+   ========================================= */
+
+.inicio-carousel-indicators {
+  position: absolute;
+  bottom: 27px;
+  left: 50%;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  transform: translateX(-50%);
+}
+
+.inicio-carousel-indicator {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  background-color: rgba(255, 255, 255, 0.55);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    width 0.25s ease,
+    background-color 0.25s ease,
+    border-radius 0.25s ease,
+    transform 0.25s ease;
+}
+
+.inicio-carousel-indicator:hover {
+  background-color: #ffffff;
+  transform: scale(1.15);
+}
+
+.inicio-carousel-indicator:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+}
+
+.inicio-carousel-indicator-active {
+  width: 34px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+/* =========================================
+   SECCIÓN ACERCA DE GRINSA
+   ========================================= */
+
+.inicio-about {
+  position: relative;
+  width: 100%;
+  min-height: 440px;
+  padding: 110px 24px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(5, 23, 35, 0.78),
+      rgba(5, 23, 35, 0.78)
+    ),
+    url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=85&w=2000&auto=format&fit=crop");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inicio-about-container {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inicio-about-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(34px, 5vw, 52px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.35);
+}
+
+.inicio-about-line {
+  width: 72px;
+  height: 4px;
+  margin: 22px auto 28px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.inicio-about-description {
+  max-width: 860px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.94);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  text-shadow: 0 2px 9px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================================
+   SECCIÓN DE SERVICIOS
+   ========================================= */
+
+.inicio-services {
+  width: 100%;
+  padding: 95px 0 105px;
+  background-color: #f5f7f8;
+  border-top: 1px solid #e3e8eb;
+}
+
+.inicio-services-heading {
+  max-width: 850px;
+  margin: 0 auto 52px;
+  text-align: center;
+}
+
+.inicio-services-eyebrow {
+  margin: 0 0 10px;
+  color: #0b2232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.inicio-services-title {
+  margin: 0;
+  color: #0b2232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(31px, 4.5vw, 48px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.inicio-services-line {
+  width: 72px;
+  height: 4px;
+  margin: 22px auto 25px;
+  background-color: #0b2232;
+  border-radius: 10px;
+}
+
+.inicio-services-intro {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #52636f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   TARJETAS DE SERVICIOS
+   ========================================= */
+
+.inicio-service-card {
+  overflow: hidden;
+  background-color: #ffffff;
+  border: 1px solid #dfe5e8;
+  border-radius: 7px;
+  box-shadow: 0 10px 28px rgba(8, 27, 40, 0.09);
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.inicio-service-card:hover {
+  border-color: #bdc9cf;
+  box-shadow: 0 18px 38px rgba(8, 27, 40, 0.15);
+  transform: translateY(-7px);
+}
+
+.inicio-service-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background-color: #dce3e7;
+}
+
+.inicio-service-image-wrapper::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      to top,
+      rgba(8, 27, 40, 0.18),
+      rgba(8, 27, 40, 0)
+    );
+  content: "";
+  pointer-events: none;
+}
+
+.inicio-service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.45s ease;
+}
+
+.inicio-service-card:hover .inicio-service-image {
+  transform: scale(1.06);
+}
+
+.inicio-service-body {
+  padding: 28px 24px 30px;
+  text-align: center;
+}
+
+.inicio-service-title {
+  position: relative;
+  min-height: 58px;
+  margin: 0 0 23px;
+  padding-bottom: 17px;
+  color: #0b2232;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.inicio-service-title::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 46px;
+  height: 3px;
+  margin: auto;
+  background-color: #0b2232;
+  border-radius: 10px;
+  content: "";
+}
+
+.inicio-service-list {
+  margin: 0;
+  padding: 0;
+  color: #667680;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  list-style: none;
+}
+
+.inicio-service-list li {
+  margin-bottom: 5px;
+}
+
+.inicio-service-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* =========================================
+   CONTACTO Y EQUIPOS DE MAQUINADO
+   ========================================= */
+
+.inicio-dual-cta {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  background-color: #0b2232;
+}
+
+.inicio-cta-panel {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  padding: 90px clamp(35px, 7vw, 110px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Fondo con imagen para Contacto */
+.inicio-cta-contact {
+  background:
+    linear-gradient(
+      rgba(5, 23, 35, 0.8),
+      rgba(5, 23, 35, 0.86)
+    ),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv8FeTPH9Vb2t8vtPy_i03Kk83-JOPDt2ShQ_FaPLjAF4h7EHjIgbdxU0&s=10");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Fondo con imagen para Equipos de Maquinado */
+.inicio-cta-machining {
+  background:
+    linear-gradient(
+      rgba(5, 23, 35, 0.76),
+      rgba(5, 23, 35, 0.82)
+    ),
+    url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_KOkGLwLtuPqgHlp67f-j4o5NCkl4a3qDX8IXLZHdfw&s=10");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.inicio-cta-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 610px);
+}
+
+.inicio-cta-eyebrow {
+  margin: 0 0 11px;
+  color: rgba(255, 255, 255, 0.76);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.inicio-cta-title {
+  margin: 0;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(36px, 4.5vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.inicio-cta-line {
+  width: 65px;
+  height: 4px;
+  margin: 21px 0 25px;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.inicio-cta-description {
+  max-width: 570px;
+  margin: 0 0 33px;
+  color: rgba(255, 255, 255, 0.86);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.inicio-cta-button {
+  min-height: 52px;
+  padding: 13px 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 2px solid #ffffff;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.65px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.inicio-cta-button svg {
+  flex: 0 0 auto;
+  font-size: 19px;
+  transition: transform 0.25s ease;
+}
+
+.inicio-cta-button:hover svg {
+  transform: translateX(4px);
+}
+
+.inicio-cta-button-light {
+  color: #0b2232;
+  background-color: #ffffff;
+}
+
+.inicio-cta-button-light:hover {
+  color: #ffffff;
+  background-color: transparent;
+  border-color: #ffffff;
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.22);
+  transform: translateY(-3px);
+}
+
+.inicio-cta-button-outline {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.inicio-cta-button-outline:hover {
+  color: #0b2232;
+  background-color: #ffffff;
+  border-color: #ffffff;
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.22);
+  transform: translateY(-3px);
+}
+
+.inicio-cta-button:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.65);
+  outline-offset: 5px;
+}
+
+/* =========================================
+   PANTALLAS MEDIANAS
+   ========================================= */
+
+@media (max-width: 1199.98px) {
+  .inicio-carousel {
+    height: calc(100vh - 101px);
+    min-height: 620px;
+    max-height: 800px;
+  }
+
+  .inicio-carousel-control {
+    width: 50px;
+    height: 50px;
+    font-size: 29px;
+  }
+
+  .inicio-carousel-control-left {
+    left: 22px;
+  }
+
+  .inicio-carousel-control-right {
+    right: 22px;
+  }
+
+  .inicio-about {
+    min-height: 410px;
+    padding-top: 95px;
+    padding-bottom: 95px;
+  }
+
+  .inicio-services {
+    padding-top: 85px;
+    padding-bottom: 90px;
+  }
+
+  .inicio-service-image-wrapper {
+    height: 205px;
+  }
+
+  .inicio-service-body {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .inicio-service-title {
+    font-size: 19px;
+  }
+
+  .inicio-service-list {
+    font-size: 13px;
+  }
+
+  .inicio-cta-panel {
+    min-height: 470px;
+    padding: 75px 50px;
+  }
+
+  .inicio-cta-description {
+    font-size: 15px;
+  }
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media (max-width: 991.98px) {
+  .inicio-carousel {
+    height: calc(100vh - 87px);
+    min-height: 560px;
+    max-height: 760px;
+  }
+
+  .inicio-carousel-control {
+    width: 46px;
+    height: 46px;
+    font-size: 27px;
+  }
+
+  .inicio-carousel-control-left {
+    left: 18px;
+  }
+
+  .inicio-carousel-control-right {
+    right: 18px;
+  }
+
+  .inicio-about {
+    min-height: 390px;
+    padding: 80px 28px;
+  }
+
+  .inicio-about-description {
+    max-width: 760px;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+
+  .inicio-services {
+    padding-top: 75px;
+    padding-bottom: 80px;
+  }
+
+  .inicio-services-heading {
+    margin-bottom: 42px;
+  }
+
+  .inicio-service-image-wrapper {
+    height: 235px;
+  }
+
+  .inicio-service-title {
+    min-height: auto;
+  }
+
+  .inicio-cta-panel {
+    min-height: 420px;
+    padding: 70px 55px;
+  }
+
+  .inicio-cta-content {
+    width: min(100%, 700px);
+  }
+}
+
+/* =========================================
+   TABLETS EN PANTALLA HORIZONTAL
+   ========================================= */
+
+@media (max-width: 1100px) and (max-height: 800px) and (orientation: landscape) {
+  .inicio-carousel {
+    height: calc(100vh - 87px);
+    min-height: 520px;
+    max-height: none;
+  }
+
+  .inicio-about {
+    min-height: 360px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .inicio-cta-panel {
+    min-height: 390px;
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+}
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media (max-width: 575.98px) {
+  .inicio-carousel {
+    height: calc(100svh - 87px);
+    min-height: 500px;
+    max-height: 680px;
+  }
+
+  .inicio-carousel-control {
+    width: 40px;
+    height: 40px;
+    border-width: 1px;
+    font-size: 24px;
+  }
+
+  .inicio-carousel-control-left {
+    left: 10px;
+  }
+
+  .inicio-carousel-control-right {
+    right: 10px;
+  }
+
+  .inicio-carousel-indicators {
+    bottom: 20px;
+    gap: 8px;
+  }
+
+  .inicio-carousel-indicator {
+    width: 10px;
+    height: 10px;
+  }
+
+  .inicio-carousel-indicator-active {
+    width: 28px;
+  }
+
+  .inicio-about {
+    min-height: 370px;
+    padding: 65px 20px;
+    background-position: center;
+  }
+
+  .inicio-about-line {
+    width: 58px;
+    height: 3px;
+    margin-top: 18px;
+    margin-bottom: 23px;
+  }
+
+  .inicio-about-description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  .inicio-services {
+    padding: 60px 0 65px;
+  }
+
+  .inicio-services-heading {
+    margin-bottom: 34px;
+  }
+
+  .inicio-services-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .inicio-services-title {
+    font-size: 30px;
+  }
+
+  .inicio-services-line {
+    width: 58px;
+    height: 3px;
+    margin-top: 18px;
+    margin-bottom: 20px;
+  }
+
+  .inicio-services-intro {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .inicio-service-image-wrapper {
+    height: 220px;
+  }
+
+  .inicio-service-body {
+    padding: 25px 20px 27px;
+  }
+
+  .inicio-service-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+
+  .inicio-service-list {
+    font-size: 14px;
+  }
+
+  .inicio-cta-panel {
+    min-height: 390px;
+    padding: 60px 25px;
+  }
+
+  .inicio-cta-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .inicio-cta-title {
+    font-size: 35px;
+  }
+
+  .inicio-cta-line {
+    width: 55px;
+    height: 3px;
+    margin-top: 18px;
+    margin-bottom: 22px;
+  }
+
+  .inicio-cta-description {
+    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .inicio-cta-button {
+    width: 100%;
+    padding-right: 18px;
+    padding-left: 18px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   CELULARES EN PANTALLA HORIZONTAL
+   ========================================= */
+
+@media (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
+  .inicio-carousel {
+    height: calc(100vh - 87px);
+    min-height: 390px;
+    max-height: none;
+  }
+
+  .inicio-carousel-control {
+    width: 38px;
+    height: 38px;
+    font-size: 22px;
+  }
+
+  .inicio-carousel-indicators {
+    bottom: 14px;
+  }
+
+  .inicio-about {
+    min-height: 320px;
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  .inicio-cta-panel {
+    min-height: 350px;
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================= */
+
+@media (max-width: 350px) {
+  .inicio-carousel {
+    min-height: 460px;
+  }
+
+  .inicio-carousel-control {
+    width: 36px;
+    height: 36px;
+    font-size: 21px;
+  }
+
+  .inicio-carousel-control-left {
+    left: 7px;
+  }
+
+  .inicio-carousel-control-right {
+    right: 7px;
+  }
+
+  .inicio-about {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .inicio-about-description {
+    font-size: 14px;
+  }
+
+  .inicio-services-title {
+    font-size: 27px;
+  }
+
+  .inicio-service-image-wrapper {
+    height: 195px;
+  }
+
+  .inicio-cta-panel {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .inicio-cta-title {
+    font-size: 31px;
+  }
+}
+
+/* =========================================
+   USUARIOS CON MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .inicio-carousel-slide,
+  .inicio-carousel-control,
+  .inicio-carousel-indicator,
+  .inicio-service-card,
+  .inicio-service-image,
+  .inicio-cta-button,
+  .inicio-cta-button svg {
+    transition: none;
+  }
+}

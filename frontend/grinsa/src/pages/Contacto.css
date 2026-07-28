@@ -1,0 +1,454 @@
+/* =========================================
+   COLORES PRINCIPALES
+   ========================================= */
+
+:root {
+  --contacto-azul-marino: #0b2232;
+  --contacto-azul-hover: #163f59;
+  --contacto-azul-presionado: #071824;
+}
+
+/* =========================================
+   PÁGINA DE CONTACTO
+   ========================================= */
+
+.contacto-page {
+  flex: 1;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+
+.contacto-hero {
+  position: relative;
+  padding: 70px 20px 135px;
+  overflow: hidden;
+  color: var(--contacto-azul-marino);
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.contacto-hero::before {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  width: 480px;
+  height: 480px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(11, 34, 50, 0.04) 0%,
+      rgba(11, 34, 50, 0) 70%
+    );
+  border-radius: 50%;
+  content: "";
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.contacto-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contacto-subtitulo {
+  margin: 0 0 10px;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contacto-titulo {
+  margin: 0 0 18px;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(38px, 6vw, 62px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.contacto-descripcion {
+  max-width: 680px;
+  margin: 0 auto;
+  color: #34495a;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CONTENIDO PRINCIPAL
+   ========================================= */
+
+.contacto-content-section {
+  margin-top: -75px;
+  padding: 0 20px 85px;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.contacto-card {
+  position: relative;
+  height: 100%;
+  padding: 42px;
+  background-color: #ffffff;
+  border: 1px solid #e7ebee;
+  border-top: 5px solid var(--contacto-azul-marino);
+  border-radius: 7px;
+  box-shadow:
+    0 18px 45px rgba(8, 27, 40, 0.13),
+    0 2px 8px rgba(8, 27, 40, 0.05);
+}
+
+.contacto-card-header {
+  margin-bottom: 32px;
+}
+
+.contacto-card-header h2,
+.contacto-info-header h2 {
+  margin: 0 0 9px;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.contacto-card-header p,
+.contacto-info-header p {
+  margin: 0;
+  color: #5f6f7c;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================================
+   CAMPOS DEL FORMULARIO
+   ========================================= */
+
+.contacto-label {
+  margin-bottom: 8px;
+  color: #102b3d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.contacto-input {
+  min-height: 52px;
+  padding: 12px 15px;
+  color: #1f2933;
+  background-color: #f8f9fa;
+  border: 1px solid #d6dade;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.contacto-input::placeholder {
+  color: #9299a1;
+}
+
+.contacto-input:hover {
+  border-color: #8d9ba5;
+}
+
+.contacto-input:focus {
+  color: #1f2933;
+  background-color: #ffffff;
+  border-color: var(--contacto-azul-marino);
+  box-shadow: 0 0 0 4px rgba(11, 34, 50, 0.14);
+}
+
+.contacto-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+/* =========================================
+   BOTÓN
+   ========================================= */
+
+.contacto-submit-button {
+  min-width: 170px;
+  padding: 13px 34px;
+  color: #ffffff;
+  background-color: var(--contacto-azul-marino);
+  border: 2px solid var(--contacto-azul-marino);
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contacto-submit-button:hover,
+.contacto-submit-button:focus {
+  color: #ffffff;
+  background-color: var(--contacto-azul-hover);
+  border-color: var(--contacto-azul-hover);
+  box-shadow: 0 7px 17px rgba(11, 34, 50, 0.25);
+  transform: translateY(-2px);
+}
+
+.contacto-submit-button:active {
+  color: #ffffff !important;
+  background-color: var(--contacto-azul-presionado) !important;
+  border-color: var(--contacto-azul-presionado) !important;
+  transform: translateY(0);
+}
+
+/* =========================================
+   INFORMACIÓN DE CONTACTO
+   ========================================= */
+
+.contacto-info-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-info-header {
+  margin-bottom: 28px;
+}
+
+.contacto-info-eyebrow {
+  margin-bottom: 8px !important;
+  color: var(--contacto-azul-marino) !important;
+  font-size: 12px !important;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.contacto-info-block {
+  margin-bottom: 24px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #d7dee3;
+}
+
+.contacto-info-label {
+  margin-bottom: 8px;
+  display: block;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+.contacto-phone-link {
+  display: inline-block;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.contacto-phone-link:hover {
+  color: var(--contacto-azul-hover);
+  transform: translateX(3px);
+}
+
+.contacto-address {
+  margin: 0;
+  color: #4d5e6b;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.75;
+}
+
+/* =========================================
+   MAPA
+   ========================================= */
+
+.contacto-map-wrapper {
+  width: 100%;
+  min-height: 285px;
+  margin-top: 2px;
+  overflow: hidden;
+  background-color: #e9ecef;
+  border: 1px solid #dce1e5;
+  border-radius: 5px;
+}
+
+.contacto-map {
+  width: 100%;
+  height: 285px;
+  display: block;
+  border: 0;
+}
+
+.contacto-map-link {
+  margin-top: 15px;
+  display: inline-block;
+  align-self: flex-start;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.contacto-map-link:hover {
+  color: var(--contacto-azul-hover);
+}
+
+/* =========================================
+   MENSAJE Y PRIVACIDAD
+   ========================================= */
+
+.contacto-alert {
+  margin-bottom: 28px;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.contacto-privacy-text {
+  margin: 24px 0 0;
+  color: #80868d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* =========================================
+   PANTALLAS MEDIANAS
+   ========================================= */
+
+@media (max-width: 1199.98px) {
+  .contacto-card {
+    padding: 34px;
+  }
+
+  .contacto-phone-link {
+    font-size: 21px;
+  }
+
+  .contacto-map-wrapper,
+  .contacto-map {
+    min-height: 260px;
+    height: 260px;
+  }
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media (max-width: 991.98px) {
+  .contacto-hero {
+    padding-top: 60px;
+    padding-bottom: 120px;
+  }
+
+  .contacto-card {
+    height: auto;
+    padding: 38px;
+  }
+
+  .contacto-info-card {
+    margin-top: 4px;
+  }
+
+  .contacto-map-wrapper,
+  .contacto-map {
+    min-height: 320px;
+    height: 320px;
+  }
+}
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media (max-width: 575.98px) {
+  .contacto-hero {
+    padding: 48px 18px 105px;
+  }
+
+  .contacto-subtitulo {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+  }
+
+  .contacto-titulo {
+    margin-bottom: 14px;
+  }
+
+  .contacto-descripcion {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .contacto-content-section {
+    margin-top: -58px;
+    padding-right: 12px;
+    padding-bottom: 60px;
+    padding-left: 12px;
+  }
+
+  .contacto-card {
+    padding: 28px 20px;
+  }
+
+  .contacto-card-header h2,
+  .contacto-info-header h2 {
+    font-size: 25px;
+  }
+
+  .contacto-card-header p,
+  .contacto-info-header p {
+    font-size: 14px;
+  }
+
+  .contacto-input {
+    font-size: 14px;
+  }
+
+  .contacto-submit-button {
+    width: 100%;
+  }
+
+  .contacto-phone-link {
+    font-size: 20px;
+  }
+
+  .contacto-address {
+    font-size: 14px;
+  }
+
+  .contacto-map-wrapper,
+  .contacto-map {
+    min-height: 260px;
+    height: 260px;
+  }
+}

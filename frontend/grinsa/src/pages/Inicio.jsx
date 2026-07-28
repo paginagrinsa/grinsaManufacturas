@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
 import {
   FiArrowRight,
   FiChevronLeft,
   FiChevronRight,
 } from "react-icons/fi";
+
+import {
+  FaCogs,
+  FaIndustry,
+} from "react-icons/fa";
+
+import { GiCrane } from "react-icons/gi";
 
 import "./Inicio.css";
 
@@ -18,25 +26,22 @@ const diapositivas = [
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785272557/WhatsApp_Image_2026-07-28_at_14.59.00_flctg8.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785278631/WhatsApp_Image_2026-07-28_at_16.25.49_f741qr.jpg",
     alt: "Foto 2",
   },
   {
     id: 3,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785272557/WhatsApp_Image_2026-07-28_at_14.59.00_1_er9y6m.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785278631/WhatsApp_Image_2026-07-28_at_16.29.34_zjv3jv.jpg",
     alt: "Foto 3",
   },
-  
 ];
 
 const servicios = [
   {
     id: 1,
     titulo: "Procesos de Ingeniería",
-    imagen:
-      "https://www.boberry-mach.com/wp-content/uploads/2025/07/Medium-Gears.webp",
-    alt: "Ingeniero trabajando en procesos de diseño industrial",
+    icono: FaCogs,
     descripcion: [
       "Asistencia de diseño de producto",
       "Ingeniería y diseño de recipientes a presión con código ASME",
@@ -49,9 +54,7 @@ const servicios = [
   {
     id: 2,
     titulo: "Servicios de Fabricación",
-    imagen:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=85&w=1200&auto=format&fit=crop",
-    alt: "Procesos de fabricación dentro de una planta industrial",
+    icono: FaIndustry,
     descripcion: [
       "Corte Plasma HD",
       "Oxicorte CNC",
@@ -65,22 +68,8 @@ const servicios = [
   },
   {
     id: 3,
-    titulo: "Maquinados de Precisión",
-    imagen:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ85R7tNiOMpkBfNHXS0c2pPRunMsjpdBb5tfrpq2jyjWOKLqIPhqpQGdM&s=10",
-    alt: "Maquinaria industrial para trabajos de precisión",
-    descripcion: [
-      "Pre-maquinado",
-      "Maquinado semi-final",
-      "Maquinado de acabado final",
-    ],
-  },
-  {
-    id: 4,
     titulo: "Montaje",
-    imagen:
-      "https://www.estructurasmetalicascolombia.com/images/montaje_estructuras/construccion/montaje_de_diferentes_tipos_de_estructuras_metalicas_en_bogota_colombia.jpg",
-    alt: "Montaje de estructuras y maquinaria industrial",
+    icono: GiCrane,
     descripcion: [
       "Planeación",
       "Pre-ensambles",
@@ -138,7 +127,9 @@ function Inicio() {
 
   return (
     <main className="inicio-page">
-      {/* Carrusel principal */}
+      {/* =====================================
+          CARRUSEL PRINCIPAL
+          ===================================== */}
       <section
         className="inicio-carousel"
         aria-roledescription="carrusel"
@@ -218,7 +209,9 @@ function Inicio() {
         </div>
       </section>
 
-      {/* Acerca de Grinsa */}
+      {/* =====================================
+          ACERCA DE GRINSA
+          ===================================== */}
       <section
         className="inicio-about"
         aria-labelledby="inicio-about-title"
@@ -234,160 +227,115 @@ function Inicio() {
           <div className="inicio-about-line" />
 
           <p className="inicio-about-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer malesuada, nisl vel tincidunt tincidunt, sapien
-            libero malesuada enim, vitae tristique neque erat sed
-            justo. Sed consequat, mauris sit amet tincidunt feugiat,
-            arcu erat volutpat lorem, vitae posuere justo lorem non
-            massa. Praesent dignissim, erat vel suscipit facilisis,
-            tortor sapien porttitor libero, vitae scelerisque justo
-            neque quis augue.
+            Somos una empresa líder en fabricaciones de acero con más
+            de 10 años innovando nuestros procesos y sistemas de
+            calidad. Nuestro compromiso es la satisfacción de nuestros
+            clientes.
           </p>
         </div>
       </section>
 
-      {/* Servicios y soluciones */}
+      {/* =====================================
+          SERVICIOS
+          ===================================== */}
       <section
         className="inicio-services"
         aria-labelledby="inicio-services-title"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
           <div className="inicio-services-heading">
-            <p className="inicio-services-eyebrow">
-              Nuestros servicios
-            </p>
-
             <h2
               id="inicio-services-title"
               className="inicio-services-title"
             >
-              Fabricación y Soluciones de Maquinado
+              Nuestros servicios
             </h2>
 
             <div className="inicio-services-line" />
-
-            <p className="inicio-services-intro">
-              Ofrecemos soluciones industriales integrales para
-              diferentes etapas de ingeniería, fabricación, maquinado
-              y montaje.
-            </p>
           </div>
 
-          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
-            {servicios.map((servicio) => (
-              <div
-                key={servicio.id}
-                className="col"
-              >
-                <article className="card inicio-service-card h-100">
-                  <div className="inicio-service-image-wrapper">
-                    <img
-                      src={servicio.imagen}
-                      alt={servicio.alt}
-                      className="card-img-top inicio-service-image"
-                      loading="lazy"
-                      draggable="false"
-                    />
-                  </div>
+          <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+            {servicios.map((servicio) => {
+              const IconoServicio = servicio.icono;
 
-                  <div className="card-body inicio-service-body">
-                    <h3 className="card-title inicio-service-title">
-                      {servicio.titulo}
-                    </h3>
+              return (
+                <div
+                  key={servicio.id}
+                  className="col"
+                >
+                  <article className="card inicio-service-card h-100">
+                    {/* Icono circular estilo Durosa */}
+                    <div className="inicio-service-icon-area">
+                      <div
+                        className="inicio-service-icon-circle"
+                        aria-hidden="true"
+                      >
+                        <IconoServicio className="inicio-service-icon" />
+                      </div>
+                    </div>
 
-                    <ul className="inicio-service-list">
-                      {servicio.descripcion.map((elemento) => (
-                        <li key={elemento}>
-                          {elemento}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </article>
-              </div>
-            ))}
+                    <div className="card-body inicio-service-body">
+                      <h3 className="card-title inicio-service-title">
+                        {servicio.titulo}
+                      </h3>
+
+                      <ul className="inicio-service-list">
+                        {servicio.descripcion.map((elemento) => (
+                          <li key={elemento}>
+                            {elemento}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </article>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Contacto y equipos de maquinado */}
+      {/* =====================================
+          CONTACTO A TODO EL ANCHO
+          ===================================== */}
       <section
-        className="inicio-dual-cta"
-        aria-label="Contacto y capacidades de maquinado"
+        className="inicio-contact-cta"
+        aria-labelledby="inicio-contact-title"
       >
-        <div className="container-fluid p-0">
-          <div className="row g-0">
-            {/* Columna de contacto */}
-            <div className="col-12 col-lg-6 d-flex">
-              <article className="inicio-cta-panel inicio-cta-contact">
-                <div className="inicio-cta-content">
-                  <p className="inicio-cta-eyebrow">
-                    Estamos para ayudarte
-                  </p>
+        <article className="inicio-cta-panel inicio-cta-contact">
+          <div className="inicio-cta-content">
+            <p className="inicio-cta-eyebrow">
+              Estamos para ayudarte
+            </p>
 
-                  <h2 className="inicio-cta-title">
-                    Contacto
-                  </h2>
+            <h2
+              id="inicio-contact-title"
+              className="inicio-cta-title"
+            >
+              Contacto
+            </h2>
 
-                  <div className="inicio-cta-line" />
+            <div className="inicio-cta-line" />
 
-                  <p className="inicio-cta-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Integer malesuada, nisl vel tincidunt
-                    tincidunt, sapien libero malesuada enim, vitae
-                    tristique neque erat sed justo.
-                  </p>
+            <p className="inicio-cta-description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Integer malesuada, nisl vel tincidunt tincidunt, sapien
+              libero malesuada enim, vitae tristique neque erat sed
+              justo.
+            </p>
 
-                  <NavLink
-                    to="/contacto"
-                    className="
-                      inicio-cta-button
-                      inicio-cta-button-light
-                    "
-                  >
-                    Contactar a Grinsa
-                    <FiArrowRight aria-hidden="true" />
-                  </NavLink>
-                </div>
-              </article>
-            </div>
-
-            {/* Columna de equipos */}
-            <div className="col-12 col-lg-6 d-flex">
-              <article className="inicio-cta-panel inicio-cta-machining">
-                <div className="inicio-cta-content">
-                  <p className="inicio-cta-eyebrow">
-                    Tecnología y precisión
-                  </p>
-
-                  <h2 className="inicio-cta-title">
-                    Equipos de Maquinado
-                  </h2>
-
-                  <div className="inicio-cta-line" />
-
-                  <p className="inicio-cta-description">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing
-                    elit. Praesent dignissim, erat vel suscipit
-                    facilisis, tortor sapien porttitor libero, vitae
-                    scelerisque justo neque quis augue.
-                  </p>
-
-                  <NavLink
-                    to="/soluciones"
-                    className="
-                      inicio-cta-button
-                      inicio-cta-button-outline
-                    "
-                  >
-                    Capacidades de Maquinado
-                    <FiArrowRight aria-hidden="true" />
-                  </NavLink>
-                </div>
-              </article>
-            </div>
+            <NavLink
+              to="/contacto"
+              className="
+                inicio-cta-button
+                inicio-cta-button-light
+              "
+            >
+              Contactar a Grinsa
+              <FiArrowRight aria-hidden="true" />
+            </NavLink>
           </div>
-        </div>
+        </article>
       </section>
     </main>
   );

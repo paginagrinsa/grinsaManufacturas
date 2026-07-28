@@ -12,27 +12,22 @@ const diapositivas = [
   {
     id: 1,
     imagen:
-      "https://plus.unsplash.com/premium_photo-1682141563888-e64fd5b66e4d?q=85&w=2000&auto=format&fit=crop",
-    alt: "Maquinaria y procesos industriales",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785272557/WhatsApp_Image_2026-07-28_at_14.59.00_2_qmehaz.jpg",
+    alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://images.unsplash.com/photo-1721622045835-51a5447f281c?q=85&w=2000&auto=format&fit=crop",
-    alt: "Instalaciones industriales",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785272557/WhatsApp_Image_2026-07-28_at_14.59.00_flctg8.jpg",
+    alt: "Foto 2",
   },
   {
     id: 3,
     imagen:
-      "https://plus.unsplash.com/premium_photo-1723759401659-7984c69b1b18?q=85&w=2000&auto=format&fit=crop",
-    alt: "Proceso de manufactura industrial",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785272557/WhatsApp_Image_2026-07-28_at_14.59.00_1_er9y6m.jpg",
+    alt: "Foto 3",
   },
-  {
-    id: 4,
-    imagen:
-      "https://images.unsplash.com/photo-1609627016501-b862497c7294?q=85&w=2000&auto=format&fit=crop",
-    alt: "Equipo utilizado en manufactura",
-  },
+  
 ];
 
 const servicios = [

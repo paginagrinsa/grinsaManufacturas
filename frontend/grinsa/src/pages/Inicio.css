@@ -5,19 +5,23 @@
 .inicio-page {
   flex: 1;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background-color: #ffffff;
 }
 
 /* =========================================
-   CARRUSEL
+   CARRUSEL PRINCIPAL
    ========================================= */
 
 .inicio-carousel {
   position: relative;
   width: 100%;
-  height: calc(100vh - 101px);
-  min-height: 650px;
-  max-height: 850px;
+  height: clamp(680px, 65vw, 980px);
+  min-height: 680px;
+  max-height: 980px;
+  margin: 0;
   overflow: hidden;
   background-color: #0b2232;
   isolation: isolate;
@@ -31,6 +35,10 @@
   height: 100%;
 }
 
+/* =========================================
+   DIAPOSITIVAS
+   ========================================= */
+
 .inicio-carousel-slide {
   position: absolute;
   inset: 0;
@@ -38,8 +46,9 @@
   height: 100%;
   visibility: hidden;
   overflow: hidden;
+  background-color: #0b2232;
   opacity: 0;
-  transform: scale(1.025);
+  transform: scale(1.015);
   transition:
     opacity 0.8s ease,
     transform 5s ease,
@@ -57,7 +66,7 @@
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
   user-select: none;
   -webkit-user-drag: none;
 }
@@ -321,6 +330,7 @@
 .inicio-service-image {
   width: 100%;
   height: 100%;
+  display: block;
   object-fit: cover;
   object-position: center;
   transition: transform 0.45s ease;
@@ -400,7 +410,10 @@
   isolation: isolate;
 }
 
-/* Fondo con imagen para Contacto */
+/* =========================================
+   FONDO DE CONTACTO
+   ========================================= */
+
 .inicio-cta-contact {
   background:
     linear-gradient(
@@ -413,7 +426,10 @@
   background-size: cover;
 }
 
-/* Fondo con imagen para Equipos de Maquinado */
+/* =========================================
+   FONDO DE EQUIPOS DE MAQUINADO
+   ========================================= */
+
 .inicio-cta-machining {
   background:
     linear-gradient(
@@ -534,14 +550,14 @@
 }
 
 /* =========================================
-   PANTALLAS MEDIANAS
+   LAPTOPS Y PANTALLAS MEDIANAS
    ========================================= */
 
-@media (max-width: 1199.98px) {
+@media screen and (min-width: 992px) and (max-width: 1399.98px) {
   .inicio-carousel {
-    height: calc(100vh - 101px);
-    min-height: 620px;
-    max-height: 800px;
+    height: clamp(680px, 65vw, 900px);
+    min-height: 680px;
+    max-height: 900px;
   }
 
   .inicio-carousel-control {
@@ -600,7 +616,7 @@
    TABLETS
    ========================================= */
 
-@media (max-width: 991.98px) {
+@media screen and (max-width: 991.98px) {
   .inicio-carousel {
     height: calc(100vh - 87px);
     min-height: 560px;
@@ -663,7 +679,7 @@
    TABLETS EN PANTALLA HORIZONTAL
    ========================================= */
 
-@media (max-width: 1100px) and (max-height: 800px) and (orientation: landscape) {
+@media screen and (max-width: 1100px) and (max-height: 800px) and (orientation: landscape) {
   .inicio-carousel {
     height: calc(100vh - 87px);
     min-height: 520px;
@@ -687,7 +703,7 @@
    CELULARES
    ========================================= */
 
-@media (max-width: 575.98px) {
+@media screen and (max-width: 575.98px) {
   .inicio-carousel {
     height: calc(100svh - 87px);
     min-height: 500px;
@@ -828,7 +844,7 @@
    CELULARES EN PANTALLA HORIZONTAL
    ========================================= */
 
-@media (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
+@media screen and (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
   .inicio-carousel {
     height: calc(100vh - 87px);
     min-height: 390px;
@@ -862,7 +878,7 @@
    CELULARES MUY PEQUEÑOS
    ========================================= */
 
-@media (max-width: 350px) {
+@media screen and (max-width: 350px) {
   .inicio-carousel {
     min-height: 460px;
   }
@@ -909,7 +925,119 @@
 }
 
 /* =========================================
-   USUARIOS CON MOVIMIENTO REDUCIDO
+   POSICIÓN DE FOTOS EN CELULARES VERTICALES
+   ========================================= */
+
+@media screen and (max-width: 767.98px) {
+  .inicio-carousel-slide:nth-child(1)
+    .inicio-carousel-image {
+    object-position: 12% center;
+  }
+
+  .inicio-carousel-slide:nth-child(2)
+    .inicio-carousel-image {
+    object-position: 88% center;
+  }
+
+  .inicio-carousel-slide:nth-child(3)
+    .inicio-carousel-image {
+    object-position: 86% center;
+  }
+}
+
+/* =========================================
+   POSICIÓN DE FOTOS EN CELULARES HORIZONTALES
+   ========================================= */
+
+@media screen and (min-width: 568px) and (max-width: 950px) and (max-height: 550px) and (orientation: landscape) {
+  .inicio-carousel-slide:nth-child(1)
+    .inicio-carousel-image {
+    object-position: 12% center;
+  }
+
+  .inicio-carousel-slide:nth-child(2)
+    .inicio-carousel-image {
+    object-position: 88% center;
+  }
+
+  .inicio-carousel-slide:nth-child(3)
+    .inicio-carousel-image {
+    object-position: 86% center;
+  }
+}
+
+/* =========================================
+   IPAD MINI E IPAD AIR VERTICALES
+   ========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 900px) and (min-height: 900px) and (orientation: portrait) {
+  .inicio-carousel-slide:nth-child(1)
+    .inicio-carousel-image {
+    object-position: 15% center;
+  }
+
+  .inicio-carousel-slide:nth-child(2)
+    .inicio-carousel-image {
+    object-position: 85% center;
+  }
+
+  .inicio-carousel-slide:nth-child(3)
+    .inicio-carousel-image {
+    object-position: 83% center;
+  }
+}
+
+/* =========================================
+   IPAD MINI E IPAD AIR HORIZONTALES
+   ========================================= */
+
+@media screen and (min-width: 900px) and (max-width: 1250px) and (min-height: 700px) and (max-height: 900px) and (orientation: landscape) and (max-aspect-ratio: 3/2) {
+  .inicio-carousel-slide:nth-child(1)
+    .inicio-carousel-image {
+    object-position: 15% center;
+  }
+
+  .inicio-carousel-slide:nth-child(2)
+    .inicio-carousel-image {
+    object-position: 85% center;
+  }
+
+  .inicio-carousel-slide:nth-child(3)
+    .inicio-carousel-image {
+    object-position: 83% center;
+  }
+}
+
+/* =========================================
+   NEST HUB Y NEST HUB MAX
+   ========================================= */
+
+@media screen and (min-width: 900px) and (max-width: 1300px) and (max-height: 850px) and (min-aspect-ratio: 3/2) {
+  .inicio-carousel-slide:nth-child(3)
+    .inicio-carousel-image {
+    object-position: 84% center;
+  }
+}
+
+/* =========================================
+   FOTO 3 EN LAPTOPS Y COMPUTADORAS
+
+   Se enfoca una parte más alta de la foto para
+   mostrar mejor la parte superior de la tubería.
+
+   Esta regla está colocada después de las demás
+   para que tenga prioridad en equipos con mouse.
+   ========================================= */
+
+@media screen and (min-width: 768px) and (hover: hover) and (pointer: fine) {
+  .inicio-carousel-slide:nth-child(3)
+    .inicio-carousel-image {
+    object-position: center 30%;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {

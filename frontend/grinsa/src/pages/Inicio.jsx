@@ -315,10 +315,9 @@ function Inicio() {
             <div className="inicio-cta-line" />
 
             <p className="inicio-cta-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Integer malesuada, nisl vel tincidunt tincidunt, sapien
-              libero malesuada enim, vitae tristique neque erat sed
-              justo.
+              Ofrecemos soluciones de fabricación de alto valor ,
+              alineando nuestros procesos para satisfacer las necesidades 
+              específicas de nuestros clientes en cada segmento del mercado
             </p>
 
             <NavLink

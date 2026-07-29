@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import "./Nosotros.css";
 
 const imagenPrincipal =
-  "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=85&w=1400&auto=format&fit=crop";
+  "https://www.cetys.mx/educon/wp-content/uploads/2021/08/safety-Image-scaled.jpg";
 
 const imagenManufactura =
   "https://www.prudentialuniforms.com/nitropack_static/jjYSMADVCpuzFVVoriolAeVlcnbfKRtu/assets/images/optimized/rev-012a67a/www.prudentialuniforms.com/wp-content/uploads/2015/02/Industrial-Construction-Workers-Wearing-High-Visibility-Jackets-on-the-Job-1024x683.png";
@@ -14,24 +14,57 @@ const principios = [
     titulo: "Misión",
     imagen:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJDkEF_jclLmGbCyEWgJaB8b8ctjx25IJ4fBV1SVkG9H_VcQX2_qdExJ2-&s=10",
+    alt: "Trabajador realizando procesos de soldadura industrial",
     descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent dignissim, erat vel suscipit facilisis, tortor sapien porttitor libero.",
+      "Fabricar piezas y componentes de acero de alta precisión con los mejores estándares de calidad, superando las expectativas de nuestros clientes a través de procesos eficientes, tecnología de vanguardia y un equipo humano altamente capacitado, impulsando así el desarrollo industrial y competitivo de nuestros aliados comerciales.",
   },
   {
     id: 2,
     titulo: "Visión",
     imagen:
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs0kgNVVbzkHAG2y5IyS4qNj5O5DsLt-D0rB1rmmJdOxAVGc3JH2FJ5S8&s=10",
+    alt: "Trabajador industrial observando una planta de manufactura",
     descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer malesuada, nisl vel tincidunt tincidunt, sapien libero malesuada.",
+      "Ser consolidados como una empresa líder en el sector de la manufactura y transformación del acero a nivel regional y nacional, reconocidos por nuestra innovación tecnológica, confiabilidad operativa, puntualidad en las entregas y por establecer relaciones comerciales sostenibles a largo plazo.",
   },
   {
     id: 3,
     titulo: "Valores",
     imagen:
       "https://www.pegaduro.com.mx/img/Pegaduro-Blog/Blog_282.jpg",
-    descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consequat, mauris sit amet tincidunt feugiat, arcu erat volutpat.",
+    alt: "Equipo de trabajadores dentro de una planta industrial",
+    valores: [
+      {
+        id: 1,
+        nombre: "Calidad y Precisión",
+        descripcion:
+          "Nos aseguramos de que cada pieza cumpla con las especificaciones, tolerancias y estándares requeridos por nuestros clientes.",
+      },
+      {
+        id: 2,
+        nombre: "Compromiso y Confiabilidad",
+        descripcion:
+          "Cumplimos lo que prometemos. Garantizamos tiempos de entrega puntuales y transparencia en cada proyecto.",
+      },
+      {
+        id: 3,
+        nombre: "Innovación Operativa",
+        descripcion:
+          "Buscamos continuamente optimizar nuestros procesos de manufactura mediante el uso eficiente de la tecnología y la mejora continua.",
+      },
+      {
+        id: 4,
+        nombre: "Seguridad",
+        descripcion:
+          "Priorizamos la integridad física y el bienestar de nuestro personal en el taller y en todas las áreas administrativas.",
+      },
+      {
+        id: 5,
+        nombre: "Trabajo en Equipo",
+        descripcion:
+          "Fomentamos la colaboración, la comunicación abierta y el respeto mutuo entre nuestro personal para alcanzar metas comunes.",
+      },
+    ],
   },
 ];
 
@@ -74,74 +107,23 @@ function Nosotros() {
           <div className="nosotros-hero-line" />
 
           <p className="nosotros-hero-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer malesuada, nisl vel tincidunt tincidunt, sapien
-            libero malesuada enim, vitae tristique neque erat sed
-            justo. Sed consequat, mauris sit amet tincidunt feugiat,
-            arcu erat volutpat lorem, vitae posuere justo lorem non
-            massa.
+            <strong>
+              En Grinsa Manufacturas nos especializamos en la
+              fabricación de piezas y componentes de acero para el
+              sector industrial. Nos enfocamos en ofrecer soluciones
+              precisas y funcionales que se adaptan a las necesidades
+              operativas de cada cliente. Contamos con la infraestructura 
+              y el equipo técnico necesario para asegurar procesos de manufactura 
+              eficientes. Nuestro principal compromiso es la calidad de nuestro trabajo,
+               el cumplimiento de las especificaciones requeridas y la puntualidad en los 
+               tiempos de entrega. Buscamos construir relaciones de trabajo duraderas basadas 
+               en la confianza, la transparencia y el respaldo constante a la cadena de suministro 
+               de nuestros clientes.
+            </strong>
           </p>
         </div>
       </section>
 
-      {/* =====================================
-          INFORMACIÓN DE LA EMPRESA
-          ===================================== */}
-      <section
-        className="nosotros-info"
-        aria-label="Información sobre Grinsa Manufacturas"
-      >
-        <div className="nosotros-info-container">
-          {/* Texto izquierdo */}
-          <div className="nosotros-info-content">
-            <div className="nosotros-info-line" />
-
-            <p className="nosotros-info-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Praesent dignissim, erat vel suscipit facilisis, tortor
-              sapien porttitor libero, vitae scelerisque justo neque
-              quis augue. Integer malesuada, nisl vel tincidunt
-              tincidunt, sapien libero malesuada enim, vitae tristique
-              neque erat sed justo.
-            </p>
-
-            <p className="nosotros-info-description">
-              Sed consequat, mauris sit amet tincidunt feugiat, arcu
-              erat volutpat lorem, vitae posuere justo lorem non massa.
-              Donec feugiat, augue vitae malesuada tincidunt, justo
-              lacus consectetur nisi, vel malesuada ligula lorem sit
-              amet neque.
-            </p>
-
-            <p className="nosotros-info-description">
-              Sed consequat, mauris sit amet tincidunt feugiat, arcu
-              erat volutpat lorem, vitae posuere justo lorem non massa.
-              Donec feugiat, augue vitae malesuada tincidunt, justo
-              lacus consectetur nisi, vel malesuada ligula lorem sit
-              amet neque.
-            </p>
-
-            <p className="nosotros-info-description">
-              Sed consequat, mauris sit amet tincidunt feugiat, arcu
-              erat volutpat lorem, vitae posuere justo lorem non massa.
-              Donec feugiat, augue vitae malesuada tincidunt, justo
-              lacus consectetur nisi, vel malesuada ligula lorem sit
-              amet neque.
-            </p>
-          </div>
-
-          {/* Imagen derecha */}
-          <figure className="nosotros-info-image-wrapper">
-            <img
-              src={imagenManufactura}
-              alt="Trabajadores dentro de una planta de manufactura"
-              className="nosotros-info-image"
-              draggable="false"
-              loading="lazy"
-            />
-          </figure>
-        </div>
-      </section>
 
       {/* =====================================
           MISIÓN, VISIÓN Y VALORES
@@ -152,47 +134,77 @@ function Nosotros() {
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
           <div className="row row-cols-1 row-cols-md-3 g-4">
-            {principios.map((principio) => (
-              <div
-                key={principio.id}
-                className="col"
-              >
-                <article
-                  className="
-                    card
-                    nosotros-principio-card
-                    h-100
-                    border-0
-                    text-white
-                  "
-                  style={{
-                    backgroundImage: `url("${principio.imagen}")`,
-                  }}
+            {principios.map((principio) => {
+              const contieneValores =
+                Array.isArray(principio.valores) &&
+                principio.valores.length > 0;
+
+              return (
+                <div
+                  key={principio.id}
+                  className="col"
                 >
-                  <div
-                    className="
-                      card-body
-                      nosotros-principio-body
-                      d-flex
-                      flex-column
-                      justify-content-end
-                    "
+                  <article
+                    className={`
+                      card
+                      nosotros-principio-card
+                      h-100
+                      ${
+                        contieneValores
+                          ? "nosotros-principio-card-valores"
+                          : ""
+                      }
+                    `}
                   >
-                    <div className="nosotros-principio-content">
+                    <div className="nosotros-principio-image-wrapper">
+                      <img
+                        src={principio.imagen}
+                        alt={principio.alt}
+                        className="card-img-top nosotros-principio-image"
+                        loading="lazy"
+                        draggable="false"
+                      />
+                    </div>
+
+                    <div
+                      className={`
+                        card-body
+                        nosotros-principio-body
+                        ${
+                          contieneValores
+                            ? "nosotros-principio-body-valores"
+                            : ""
+                        }
+                      `}
+                    >
                       <h2 className="card-title nosotros-principio-title">
                         {principio.titulo}
                       </h2>
 
                       <div className="nosotros-principio-line" />
 
-                      <p className="card-text nosotros-principio-description">
-                        {principio.descripcion}
-                      </p>
+                      {contieneValores ? (
+                        <div className="nosotros-valores-list">
+                          {principio.valores.map((valor) => (
+                            <p
+                              key={valor.id}
+                              className="nosotros-valor-item"
+                            >
+                              <strong>{valor.nombre}:</strong>{" "}
+                              {valor.descripcion}
+                            </p>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="card-text nosotros-principio-description">
+                          {principio.descripcion}
+                        </p>
+                      )}
                     </div>
-                  </div>
-                </article>
-              </div>
-            ))}
+                  </article>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

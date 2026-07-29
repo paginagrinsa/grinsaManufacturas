@@ -1,10 +1,24 @@
 /* =========================================
+   COLORES PRINCIPALES
+   ========================================= */
+
+:root {
+  --nosotros-azul-marino: #0b2232;
+  --nosotros-texto: #252525;
+  --nosotros-fondo-claro: #f4f6f7;
+  --nosotros-borde: #dfe5e8;
+}
+
+/* =========================================
    PÁGINA NOSOTROS
    ========================================= */
 
 .nosotros-page {
   flex: 1;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   background-color: #ffffff;
 }
 
@@ -20,13 +34,9 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-color: #0b2232;
+  background-color: var(--nosotros-azul-marino);
   isolation: isolate;
 }
-
-/* =========================================
-   FOTOGRAFÍA PRINCIPAL
-   ========================================= */
 
 .nosotros-hero-image {
   position: absolute;
@@ -42,7 +52,7 @@
 }
 
 /* =========================================
-   CAPA OSCURA
+   CAPA OSCURA DEL ENCABEZADO
    ========================================= */
 
 .nosotros-hero-overlay {
@@ -94,10 +104,14 @@
 .nosotros-hero-description {
   max-width: 850px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -123,7 +137,7 @@
 }
 
 /* =========================================
-   TEXTO DE LA SECCIÓN
+   TEXTO DE INFORMACIÓN
    ========================================= */
 
 .nosotros-info-content {
@@ -134,20 +148,20 @@
   width: 68px;
   height: 4px;
   margin: 0 0 27px;
-  background-color: #0b2232;
+  background-color: var(--nosotros-azul-marino);
   border-radius: 20px;
 }
 
 .nosotros-info-description {
-  margin: 0 0 20px;
-  color: #52636f;
+  margin: 0;
+  color: #263845;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.85;
-}
-
-.nosotros-info-description:last-child {
-  margin-bottom: 0;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 /* =========================================
@@ -166,23 +180,9 @@
   box-shadow: 0 20px 45px rgba(8, 27, 40, 0.17);
 }
 
-/*
-  Ya no se utiliza el pseudoelemento ::before,
-  por lo que la imagen no tendrá borde blanco interior.
-*/
-
 .nosotros-info-image-wrapper::after {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 23, 35, 0.22),
-      rgba(5, 23, 35, 0)
-    );
-  content: "";
-  pointer-events: none;
+  display: none;
+  content: none;
 }
 
 .nosotros-info-image {
@@ -192,6 +192,7 @@
   object-fit: cover;
   object-position: center;
   border: none;
+  filter: none;
   transition: transform 0.5s ease;
 }
 
@@ -207,8 +208,16 @@
 .nosotros-principios {
   width: 100%;
   padding: 95px 0 105px;
-  background-color: #f4f6f7;
+  background-color: var(--nosotros-fondo-claro);
   border-top: 1px solid #e0e6e9;
+}
+
+.nosotros-principios .row {
+  align-items: stretch;
+}
+
+.nosotros-principios .col {
+  display: flex;
 }
 
 /* =========================================
@@ -217,45 +226,63 @@
 
 .nosotros-principio-card {
   position: relative;
-  min-height: 430px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  isolation: isolate;
-  background-color: #0b2232;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border: none !important;
-  border-radius: 8px;
-  box-shadow: 0 16px 35px rgba(8, 27, 40, 0.17);
+  background-color: #ffffff;
+  border: 1px solid var(--nosotros-borde);
+  border-radius: 9px;
+  box-shadow: 0 14px 34px rgba(8, 27, 40, 0.12);
   transition:
     transform 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
-
-/* Capa oscura sobre la imagen */
-.nosotros-principio-card::before {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 23, 35, 0.94) 0%,
-      rgba(5, 23, 35, 0.66) 48%,
-      rgba(5, 23, 35, 0.25) 100%
-    );
-  content: "";
-  pointer-events: none;
-}
-
-/*
-  Se elimina el pseudoelemento ::after que generaba
-  el marco blanco interior de las tarjetas.
-*/
 
 .nosotros-principio-card:hover {
-  box-shadow: 0 24px 48px rgba(8, 27, 40, 0.25);
-  transform: translateY(-8px);
+  border-color: #bdc9cf;
+  box-shadow: 0 22px 45px rgba(8, 27, 40, 0.19);
+  transform: translateY(-7px);
+}
+
+.nosotros-principio-card::before,
+.nosotros-principio-card::after,
+.nosotros-principio-card-valores::before,
+.nosotros-principio-card-valores::after {
+  display: none;
+  content: none;
+}
+
+/* =========================================
+   IMÁGENES DE LAS TARJETAS
+   ========================================= */
+
+.nosotros-principio-image-wrapper {
+  position: relative;
+  flex: 0 0 auto;
+  width: 100%;
+  height: 285px;
+  overflow: hidden;
+  background-color: #e1e6e9;
+}
+
+.nosotros-principio-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  filter: none;
+  opacity: 1;
+  transition: transform 0.5s ease;
+}
+
+.nosotros-principio-card:hover
+  .nosotros-principio-image {
+  transform: scale(1.045);
 }
 
 /* =========================================
@@ -263,49 +290,194 @@
    ========================================= */
 
 .nosotros-principio-body {
-  position: relative;
-  z-index: 2;
-  min-height: 430px;
-  padding: 42px 36px;
+  flex: 1 1 auto;
+  min-height: 525px;
+  padding: 34px 30px 28px;
+  display: flex;
+  flex-direction: column;
+  color: #202a31;
+  background-color: #ffffff;
 }
 
-.nosotros-principio-content {
-  position: relative;
-  z-index: 3;
+.nosotros-principio-body-valores {
+  min-height: 525px;
 }
 
 .nosotros-principio-title {
+  flex: 0 0 auto;
   margin: 0;
-  color: #ffffff;
+  color: #111111;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(29px, 3vw, 40px);
+  font-size: clamp(28px, 3vw, 38px);
   font-weight: 800;
-  line-height: 1.1;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.48);
+  line-height: 1.15;
+  text-shadow: none;
 }
 
 .nosotros-principio-line {
+  flex: 0 0 auto;
   width: 55px;
   height: 4px;
-  margin: 18px 0 21px;
-  background-color: #ffffff;
+  margin: 18px 0 22px;
+  background-color: var(--nosotros-azul-marino);
   border-radius: 20px;
 }
 
+/* =========================================
+   CONFIGURACIÓN GENERAL DE LOS PÁRRAFOS
+   ========================================= */
+
 .nosotros-principio-description {
+  width: 100%;
+  flex: 1 1 auto;
   margin: 0;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--nosotros-texto);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.75;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+  font-weight: 400;
+  text-align: left;
+  word-spacing: normal;
+  letter-spacing: normal;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-shadow: none;
 }
 
 /* =========================================
-   PANTALLAS MEDIANAS
+   PÁRRAFO DE MISIÓN
    ========================================= */
 
-@media screen and (max-width: 1199.98px) {
+.nosotros-principios
+  .row
+  > .col:nth-child(1)
+  .nosotros-principio-description {
+  font-size: 27px;
+  line-height: 1.78;
+}
+
+/* =========================================
+   PÁRRAFO DE VISIÓN
+   ========================================= */
+
+.nosotros-principios
+  .row
+  > .col:nth-child(2)
+  .nosotros-principio-description {
+  font-size: 28px;
+  line-height: 1.78;
+}
+
+/* =========================================
+   LISTA DE VALORES
+   ========================================= */
+
+.nosotros-valores-list {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.nosotros-valor-item {
+  margin: 0 0 18px;
+  color: var(--nosotros-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-shadow: none;
+}
+
+.nosotros-valor-item:last-child {
+  margin-bottom: 0;
+}
+
+.nosotros-valor-item strong {
+  color: #111111;
+  font-weight: 800;
+}
+
+/* =========================================
+   MONITORES GRANDES
+   ========================================= */
+
+@media screen and (min-width: 1400px) {
+  .nosotros-principio-image-wrapper {
+    height: 310px;
+  }
+
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    min-height: 550px;
+    padding: 38px 34px 30px;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 28px;
+    line-height: 1.75;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 29px;
+    line-height: 1.75;
+  }
+
+  .nosotros-valor-item {
+    font-size: 17px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   LAPTOPS DE 1200PX A 1399PX
+   ========================================= */
+
+@media screen and (min-width: 1200px) and (max-width: 1399.98px) {
+  .nosotros-principio-image-wrapper {
+    height: 285px;
+  }
+
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    min-height: 525px;
+    padding: 34px 30px 28px;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 27px;
+    line-height: 1.78;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 28px;
+    line-height: 1.78;
+  }
+
+  .nosotros-valor-item {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================
+   LAPTOPS DE 992PX A 1199PX
+   ========================================= */
+
+@media screen and (min-width: 992px) and (max-width: 1199.98px) {
   .nosotros-hero {
     min-height: 600px;
   }
@@ -316,6 +488,7 @@
 
   .nosotros-hero-description {
     font-size: 17px;
+    line-height: 1.75;
   }
 
   .nosotros-info {
@@ -339,29 +512,53 @@
     padding-bottom: 90px;
   }
 
-  .nosotros-principio-card,
-  .nosotros-principio-body {
-    min-height: 400px;
+  .nosotros-principio-image-wrapper {
+    height: 250px;
   }
 
-  .nosotros-principio-body {
-    padding: 35px 28px;
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    min-height: 510px;
+    padding: 30px 23px 27px;
   }
 
   .nosotros-principio-title {
-    font-size: 31px;
+    font-size: 30px;
   }
 
-  .nosotros-principio-description {
-    font-size: 14px;
+  .nosotros-principio-line {
+    margin-top: 16px;
+    margin-bottom: 19px;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 20px;
+    line-height: 1.72;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 22px;
+    line-height: 1.75;
+  }
+
+  .nosotros-valor-item {
+    margin-bottom: 15px;
+    font-size: 13px;
+    line-height: 1.55;
   }
 }
 
 /* =========================================
-   TABLETS
+   TABLETS DE 768PX A 991PX
    ========================================= */
 
-@media screen and (max-width: 991.98px) {
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
   .nosotros-hero {
     min-height: 560px;
   }
@@ -374,7 +571,7 @@
 
   .nosotros-hero-description {
     font-size: 16px;
-    line-height: 1.8;
+    line-height: 1.7;
   }
 
   .nosotros-info {
@@ -400,27 +597,132 @@
     padding-bottom: 80px;
   }
 
-  .nosotros-principio-card,
-  .nosotros-principio-body {
-    min-height: 380px;
+  .nosotros-principio-image-wrapper {
+    height: 225px;
   }
 
-  .nosotros-principio-body {
-    padding: 30px 24px;
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    min-height: 520px;
+    padding: 28px 20px 26px;
   }
 
   .nosotros-principio-title {
     font-size: 27px;
   }
 
-  .nosotros-principio-description {
-    font-size: 13px;
-    line-height: 1.65;
+  .nosotros-principio-line {
+    margin-top: 16px;
+    margin-bottom: 19px;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  .nosotros-valor-item {
+    margin-bottom: 14px;
+    font-size: 12px;
+    line-height: 1.55;
   }
 }
 
 /* =========================================
-   CELULARES
+   CELULARES EN GENERAL
+   Menores de 768px
+   ========================================= */
+
+@media screen and (max-width: 767.98px) {
+  .nosotros-hero {
+    min-height: 540px;
+  }
+
+  .nosotros-hero-content {
+    padding: 65px 24px;
+  }
+
+  .nosotros-hero-title {
+    font-size: clamp(38px, 11vw, 50px);
+  }
+
+  .nosotros-hero-line {
+    width: 60px;
+    height: 3px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+
+  /*
+    Párrafo principal más pequeño
+    para todos los celulares.
+  */
+  .nosotros-hero-description {
+    max-width: 620px;
+    font-size: 14px;
+    line-height: 1.65;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+
+  .nosotros-info {
+    padding: 75px 25px;
+  }
+
+  .nosotros-info-container {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .nosotros-info-image-wrapper {
+    height: 400px;
+  }
+
+  .nosotros-principio-image-wrapper {
+    height: 290px;
+  }
+
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    min-height: auto;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 20px;
+    line-height: 1.78;
+  }
+
+  .nosotros-valor-item {
+    font-size: 14px;
+  }
+}
+
+/* =========================================
+   CELULARES DE HASTA 575PX
    ========================================= */
 
 @media screen and (max-width: 575.98px) {
@@ -433,27 +735,31 @@
   }
 
   .nosotros-hero-overlay {
-    background: rgba(5, 23, 35, 0.76);
+    background: rgba(5, 23, 35, 0.79);
   }
 
   .nosotros-hero-content {
-    padding: 65px 20px;
+    padding: 58px 20px;
   }
 
   .nosotros-hero-title {
-    font-size: clamp(38px, 13vw, 54px);
+    font-size: clamp(36px, 12vw, 48px);
   }
 
   .nosotros-hero-line {
-    width: 60px;
+    width: 56px;
     height: 3px;
-    margin-top: 21px;
-    margin-bottom: 24px;
+    margin-top: 18px;
+    margin-bottom: 20px;
   }
 
+  /*
+    Tamaño reducido para celulares normales.
+  */
   .nosotros-hero-description {
-    font-size: 15px;
-    line-height: 1.7;
+    max-width: 470px;
+    font-size: 10px;
+    line-height: 1.6;
   }
 
   .nosotros-info {
@@ -471,7 +777,6 @@
   }
 
   .nosotros-info-description {
-    margin-bottom: 17px;
     font-size: 15px;
     line-height: 1.75;
   }
@@ -485,29 +790,51 @@
     padding: 60px 0 65px;
   }
 
-  .nosotros-principio-card,
-  .nosotros-principio-body {
-    min-height: 360px;
+  .nosotros-principio-card {
+    border-radius: 7px;
   }
 
-  .nosotros-principio-body {
-    padding: 32px 27px;
+  .nosotros-principio-image-wrapper {
+    height: 250px;
+  }
+
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    min-height: auto;
+    padding: 28px 24px 32px;
   }
 
   .nosotros-principio-title {
-    font-size: 32px;
+    font-size: 31px;
   }
 
   .nosotros-principio-line {
     width: 48px;
     height: 3px;
     margin-top: 16px;
-    margin-bottom: 18px;
+    margin-bottom: 19px;
   }
 
-  .nosotros-principio-description {
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 20px;
+    line-height: 1.78;
+  }
+
+  .nosotros-valor-item {
+    margin-bottom: 15px;
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.6;
   }
 }
 
@@ -521,12 +848,25 @@
   }
 
   .nosotros-hero-content {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding: 50px 16px;
   }
 
+  .nosotros-hero-title {
+    font-size: 34px;
+  }
+
+  .nosotros-hero-line {
+    margin-top: 16px;
+    margin-bottom: 18px;
+  }
+
+  /*
+    Tamaño todavía menor para pantallas
+    como iPhone SE o Galaxy Fold.
+  */
   .nosotros-hero-description {
-    font-size: 14px;
+    font-size: 10px;
+    line-height: 1.55;
   }
 
   .nosotros-info {
@@ -542,21 +882,39 @@
     height: 280px;
   }
 
-  .nosotros-principio-card,
-  .nosotros-principio-body {
-    min-height: 330px;
+  .nosotros-principio-image-wrapper {
+    height: 220px;
   }
 
-  .nosotros-principio-body {
-    padding: 28px 22px;
+  .nosotros-principio-body,
+  .nosotros-principio-body-valores {
+    padding: 25px 20px 29px;
   }
 
   .nosotros-principio-title {
-    font-size: 29px;
+    font-size: 28px;
   }
 
-  .nosotros-principio-description {
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  .nosotros-valor-item {
+    margin-bottom: 13px;
     font-size: 13px;
+    line-height: 1.55;
   }
 }
 
@@ -566,7 +924,61 @@
 
 @media (prefers-reduced-motion: reduce) {
   .nosotros-info-image,
-  .nosotros-principio-card {
+  .nosotros-principio-card,
+  .nosotros-principio-image {
     transition: none;
+  }
+}
+
+/* =========================================
+   AJUSTE FINAL PARA COMPUTADORAS Y LAPTOPS
+   DEBE PERMANECER AL FINAL
+   ========================================= */
+
+@media screen and (min-width: 1200px) {
+  /* Misión */
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(1)
+    .nosotros-principio-description {
+    font-size: 27px !important;
+    line-height: 1.78 !important;
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+  }
+
+  /* Visión */
+
+  .nosotros-principios
+    .row
+    > .col:nth-child(2)
+    .nosotros-principio-description {
+    font-size: 29px !important;
+    line-height: 1.78 !important;
+    text-align: left !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    word-break: normal !important;
+    overflow-wrap: normal !important;
+    hyphens: none !important;
+    -webkit-hyphens: none !important;
+  }
+
+  /* Valores */
+
+  .nosotros-valor-item {
+    margin: 0 0 18px;
+    font-size: 17px;
+    line-height: 1.65;
+    word-break: normal;
+    overflow-wrap: normal;
+    hyphens: none;
+    -webkit-hyphens: none;
   }
 }

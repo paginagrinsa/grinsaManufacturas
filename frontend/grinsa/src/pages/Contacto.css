@@ -240,7 +240,7 @@
 }
 
 .contacto-info-block {
-  margin-bottom: 24px;
+  margin-bottom: 34px;
   padding-bottom: 22px;
   border-bottom: 1px solid #d7dee3;
 }
@@ -281,6 +281,51 @@
   font-size: 15px;
   font-style: normal;
   line-height: 1.75;
+}
+
+/* =========================================
+   ESPACIO ENTRE TELÉFONO Y WHATSAPP
+   ========================================= */
+
+/*
+  Si el número telefónico está dentro de un bloque
+  independiente, aumenta la separación inferior
+  antes del siguiente apartado de WhatsApp.
+*/
+.contacto-info-block:has(.contacto-phone-link) {
+  margin-bottom: 46px;
+  padding-bottom: 28px;
+}
+
+/*
+  Estas reglas también funcionan cuando el título
+  de WhatsApp se encuentra inmediatamente después
+  del enlace del teléfono dentro del mismo bloque.
+*/
+.contacto-phone-link + .contacto-info-label,
+.contacto-phone-link + .contacto-whatsapp-title,
+.contacto-phone-link + h3,
+.contacto-phone-link + h4 {
+  margin-top: 30px;
+  display: block;
+}
+
+/*
+  Clase opcional para el contenedor completo
+  del apartado de WhatsApp.
+*/
+.contacto-whatsapp-section {
+  margin-top: 30px;
+}
+
+.contacto-whatsapp-title {
+  margin: 0 0 10px;
+  color: var(--contacto-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
 }
 
 /* =========================================
@@ -353,6 +398,19 @@
     font-size: 21px;
   }
 
+  .contacto-info-block:has(.contacto-phone-link) {
+    margin-bottom: 42px;
+    padding-bottom: 25px;
+  }
+
+  .contacto-phone-link + .contacto-info-label,
+  .contacto-phone-link + .contacto-whatsapp-title,
+  .contacto-phone-link + h3,
+  .contacto-phone-link + h4,
+  .contacto-whatsapp-section {
+    margin-top: 27px;
+  }
+
   .contacto-map-wrapper,
   .contacto-map {
     min-height: 260px;
@@ -377,6 +435,10 @@
 
   .contacto-info-card {
     margin-top: 4px;
+  }
+
+  .contacto-info-block:has(.contacto-phone-link) {
+    margin-bottom: 40px;
   }
 
   .contacto-map-wrapper,
@@ -440,6 +502,23 @@
 
   .contacto-phone-link {
     font-size: 20px;
+  }
+
+  /*
+    Separación ligeramente menor en celulares
+    para no ocupar demasiado espacio vertical.
+  */
+  .contacto-info-block:has(.contacto-phone-link) {
+    margin-bottom: 34px;
+    padding-bottom: 23px;
+  }
+
+  .contacto-phone-link + .contacto-info-label,
+  .contacto-phone-link + .contacto-whatsapp-title,
+  .contacto-phone-link + h3,
+  .contacto-phone-link + h4,
+  .contacto-whatsapp-section {
+    margin-top: 24px;
   }
 
   .contacto-address {

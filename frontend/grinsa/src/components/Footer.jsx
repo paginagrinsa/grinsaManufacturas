@@ -53,7 +53,7 @@ function Footer() {
                   rel="noopener noreferrer"
                   className="footer-contact-link"
                 >
-                  66062, De La Fundición 333,
+                  66062, Cucharas 303 A,
                   <br />
                   Parque Industrial Escobedo,
                   <br />
@@ -65,10 +65,21 @@ function Footer() {
                 </p>
 
                 <a
-                  href="tel:+528181421520"
+               
                   className="footer-phone-link"
                 >
-                  81 8142 1520
+                   81 4838 7696
+                </a>
+
+                <p className="footer-contact-label footer-phone-label">
+                  WhatsApp
+                </p>
+
+                <a
+                  
+                  className="footer-phone-link"
+                >
+                   81 3605 4006
                 </a>
               </address>
             </div>

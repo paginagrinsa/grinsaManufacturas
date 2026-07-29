@@ -243,10 +243,21 @@ function Contacto() {
                   </span>
 
                   <a
-                    href="tel:+528181421520"
+                    href="tel:+528148387696"
                     className="contacto-phone-link"
                   >
-                    81 8142 1520
+                    81 4838 7696 
+                  </a>
+
+                  <span className="contacto-info-label">
+                    WhatsApp
+                  </span>
+
+                  <a
+                    href="https://wa.me/528136054006"
+                    className="contacto-phone-link"
+                  >
+                     81 3605 4006
                   </a>
                 </div>
 
@@ -257,7 +268,7 @@ function Contacto() {
                   </span>
 
                   <address className="contacto-address">
-                    66062, De La Fundición 333,
+                    66062, Cucharas 303 A,
                     <br />
                     Parque Industrial Escobedo,
                     <br />
@@ -270,11 +281,12 @@ function Contacto() {
                   <iframe
                     className="contacto-map"
                     title="Ubicación de Grinsa Manufacturas"
-                    src="https://www.google.com/maps?q=De%20La%20Fundici%C3%B3n%20333%2C%20Parque%20Industrial%20Escobedo%2C%2066062%2C%20General%20Escobedo%2C%20Nuevo%20Le%C3%B3n&output=embed"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.705733462501!2d-100.35398828866555!3d25.813280477224968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8662918023b06603%3A0x21992865193d5d46!2sCucharas%20303%2C%20Parque%20Industrial%20Escobedo%2C%2066062%20Cdad.%20Gral.%20Escobedo%2C%20N.L.!5e0!3m2!1ses!2smx!4v1785347398687!5m2!1ses!2smx" 
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                   />
+                  
                 </div>
 
                 <a

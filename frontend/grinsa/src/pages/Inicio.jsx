@@ -43,12 +43,11 @@ const servicios = [
     titulo: "Procesos de Ingeniería",
     icono: FaCogs,
     descripcion: [
-      "Asistencia de diseño de producto",
-      "Ingeniería y diseño de recipientes a presión con código ASME",
-      "Diseño de aditamentos y herramientas",
-      "Detallado de estructuras metálicas",
+      "Asistencia y Diseño de Productos",
+      "Diseño de Adimentos",
+      "Diseño de Estructuras",
       "Ingeniería de fabricación y montaje",
-      "Programación CNC",
+     
     ],
   },
   {
@@ -56,14 +55,13 @@ const servicios = [
     titulo: "Servicios de Fabricación",
     icono: FaIndustry,
     descripcion: [
-      "Corte Plasma HD",
+      "Corte Plasma CNC",
       "Oxicorte CNC",
       "Biselado",
-      "Corte con sierra y guillotina",
-      "Punzonado y taladrado",
+      "Corte con sierra",
+      "Taladrado",
       "Rolado",
       "Doblez",
-      "Enderezado",
     ],
   },
   {
@@ -74,7 +72,6 @@ const servicios = [
       "Planeación",
       "Pre-ensambles",
       "Entregas secuenciadas",
-      "Administración de proyectos",
     ],
   },
 ];

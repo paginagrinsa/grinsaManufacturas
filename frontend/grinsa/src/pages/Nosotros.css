@@ -942,7 +942,7 @@
     .row
     > .col:nth-child(1)
     .nosotros-principio-description {
-    font-size: 27px !important;
+    font-size: 20.5px !important;
     line-height: 1.78 !important;
     text-align: left !important;
     word-spacing: normal !important;
@@ -959,7 +959,7 @@
     .row
     > .col:nth-child(2)
     .nosotros-principio-description {
-    font-size: 29px !important;
+    font-size: 22px !important;
     line-height: 1.78 !important;
     text-align: left !important;
     word-spacing: normal !important;
@@ -974,7 +974,7 @@
 
   .nosotros-valor-item {
     margin: 0 0 18px;
-    font-size: 17px;
+    font-size: 13px;
     line-height: 1.65;
     word-break: normal;
     overflow-wrap: normal;

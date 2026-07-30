@@ -9,7 +9,7 @@ const servicios = [
     nombre: "Fabricación",
     ruta: "/soluciones/fabricacion",
     imagen:
-      "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1600&auto=format&fit=crop",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785437059/WhatsApp_Image_2026-07-30_at_12.31.52_x1ycmg.jpg",
     alt: "Fabricación de componentes metálicos en una planta industrial",
   },
   {
@@ -25,7 +25,7 @@ const servicios = [
     nombre: "Embarque",
     ruta: "/soluciones/embarque",
     imagen:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf.jpg",
     alt: "Contenedores y operación de embarque industrial",
   },
   {

@@ -6,19 +6,19 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf.jpg",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.30.49_zjumzj.jpg",
     alt: "Foto 2",
   },
   {
     id: 3,
     imagen:
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.31.24_1_n251np.jpg",
     alt: "Foto 3",
   },
 ];

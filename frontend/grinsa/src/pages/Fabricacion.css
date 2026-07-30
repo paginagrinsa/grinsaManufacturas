@@ -24,106 +24,17 @@
 }
 
 /* =========================================
-   IMAGEN PRINCIPAL
-   ========================================= */
-
-.fabricacion-hero {
-  position: relative;
-  width: 100%;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--fabricacion-azul-marino);
-  isolation: isolate;
-}
-
-.fabricacion-hero-image {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.fabricacion-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 23, 35, 0.86),
-      rgba(5, 23, 35, 0.61),
-      rgba(5, 23, 35, 0.84)
-    );
-}
-
-/* =========================================
-   CONTENIDO DEL ENCABEZADO
-   ========================================= */
-
-.fabricacion-hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 980px);
-  margin: 0 auto;
-  padding: 80px 28px;
-  color: var(--fabricacion-blanco);
-  text-align: center;
-}
-
-.fabricacion-hero-title {
-  margin: 0;
-  color: var(--fabricacion-blanco);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(44px, 7vw, 76px);
-  font-weight: 800;
-  line-height: 1.05;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
-}
-
-.fabricacion-hero-line {
-  width: 78px;
-  height: 4px;
-  margin: 24px auto 29px;
-  background-color: var(--fabricacion-blanco);
-  border-radius: 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
-}
-
-.fabricacion-hero-description {
-  max-width: 870px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.95);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.85;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* =========================================
    SECCIÓN DE INTRODUCCIÓN
    ========================================= */
 
 .fabricacion-introduccion {
   width: 100%;
-  padding: 90px 20px 55px;
+  padding: 90px 20px 58px;
   background-color: var(--fabricacion-blanco);
 }
 
 .fabricacion-introduccion-content {
-  width: min(100%, 900px);
+  width: min(100%, 930px);
   margin: 0 auto;
   text-align: center;
 }
@@ -132,13 +43,13 @@
   margin: 0;
   color: var(--fabricacion-azul-marino);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(38px, 4vw, 52px);
+  font-size: clamp(40px, 4vw, 54px);
   font-weight: 800;
   line-height: 1.12;
 }
 
 .fabricacion-introduccion-line {
-  width: 65px;
+  width: 67px;
   height: 4px;
   margin: 10px auto 25px;
   background-color: var(--fabricacion-azul-marino);
@@ -146,72 +57,71 @@
 }
 
 .fabricacion-introduccion-description {
-  max-width: 850px;
+  max-width: 880px;
   margin: 0 auto;
   color: var(--fabricacion-texto);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   line-height: 1.8;
+  text-align: center;
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
   -webkit-hyphens: none;
 }
 
+.fabricacion-introduccion-description strong {
+  font-weight: 700;
+}
+
 /* =========================================
-   SECCIÓN DE TARJETAS
+   GALERÍA DE FOTOGRAFÍAS
    ========================================= */
 
-.fabricacion-servicios {
+.fabricacion-galeria {
   width: 100%;
-  padding: 35px 0 110px;
+  padding: 35px 0 115px;
   background-color: var(--fabricacion-blanco);
 }
 
-.fabricacion-grid {
-  width: min(100%, 1450px);
+.fabricacion-galeria-grid {
+  width: min(100%, 1500px);
   margin-right: auto;
   margin-left: auto;
   align-items: stretch;
 }
 
 /* =========================================
-   TARJETAS
+   CONTENEDOR DE CADA FOTOGRAFÍA
    ========================================= */
 
-.fabricacion-card {
+.fabricacion-foto-wrapper {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 440px;
+  margin: 0;
   overflow: hidden;
-  background-color: var(--fabricacion-blanco);
+  background-color: #dce3e7;
   border: 1px solid var(--fabricacion-borde);
-  border-radius: 9px;
-  box-shadow: 0 14px 32px rgba(8, 27, 40, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 15px 34px rgba(8, 27, 40, 0.14);
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease,
     border-color 0.3s ease;
 }
 
-.fabricacion-card:hover {
-  border-color: #b7c4ca;
-  box-shadow: 0 23px 44px rgba(8, 27, 40, 0.2);
+.fabricacion-foto-wrapper:hover {
+  border-color: #b4c2c9;
+  box-shadow: 0 24px 46px rgba(8, 27, 40, 0.22);
   transform: translateY(-7px);
 }
 
 /* =========================================
-   IMÁGENES DE LAS TARJETAS
+   FOTOGRAFÍAS
    ========================================= */
 
-.fabricacion-card-image-wrapper {
-  position: relative;
-  width: 100%;
-  height: 285px;
-  overflow: hidden;
-  background-color: #dce3e7;
-}
-
-.fabricacion-card-image {
+.fabricacion-foto {
   width: 100%;
   height: 100%;
   display: block;
@@ -221,65 +131,24 @@
   transition: transform 0.55s ease;
 }
 
-.fabricacion-card-overlay {
+.fabricacion-foto-wrapper:hover .fabricacion-foto {
+  transform: scale(1.055);
+}
+
+/* =========================================
+   CAPA SUAVE SOBRE LAS FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-foto-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
     linear-gradient(
       to top,
-      rgba(5, 23, 35, 0.33),
-      rgba(5, 23, 35, 0.02) 60%
+      rgba(5, 23, 35, 0.22),
+      rgba(5, 23, 35, 0.01) 55%
     );
-}
-
-.fabricacion-card:hover .fabricacion-card-image {
-  transform: scale(1.055);
-}
-
-/* =========================================
-   CONTENIDO DE LAS TARJETAS
-   ========================================= */
-
-.fabricacion-card-body {
-  min-height: 260px;
-  padding: 30px 27px 32px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: var(--fabricacion-blanco);
-  text-align: center;
-}
-
-.fabricacion-card-title {
-  margin: 0;
-  color: var(--fabricacion-azul-marino);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(26px, 2.2vw, 34px);
-  font-weight: 800;
-  line-height: 1.15;
-  text-align: center;
-}
-
-.fabricacion-card-line {
-  width: 50px;
-  height: 4px;
-  margin: 12px auto 21px;
-  background-color: var(--fabricacion-azul-marino);
-  border-radius: 20px;
-}
-
-.fabricacion-card-description {
-  margin: 0;
-  color: var(--fabricacion-texto);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  line-height: 1.75;
-  text-align: center;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
 }
 
 /* =========================================
@@ -289,79 +158,61 @@
 @media screen and (min-width: 1400px) {
   .fabricacion-introduccion {
     padding-top: 100px;
+    padding-bottom: 65px;
   }
 
-  .fabricacion-card-image-wrapper {
-    height: 310px;
+  .fabricacion-introduccion-description {
+    font-size: 18px;
+    line-height: 1.85;
   }
 
-  .fabricacion-card-body {
-    min-height: 270px;
-    padding: 34px 31px 36px;
+  .fabricacion-galeria {
+    padding-top: 40px;
+    padding-bottom: 130px;
   }
 
-  .fabricacion-card-title {
-    font-size: 35px;
+  .fabricacion-galeria-grid {
+    width: min(100%, 1540px);
   }
 
-  .fabricacion-card-description {
-    font-size: 16px;
+  .fabricacion-foto-wrapper {
+    height: 500px;
   }
 }
 
 /* =========================================
    LAPTOPS
-   Tres tarjetas por fila
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 992px) and (max-width: 1399.98px) {
-  .fabricacion-hero {
-    min-height: 600px;
+  .fabricacion-introduccion {
+    padding-top: 80px;
+    padding-bottom: 52px;
   }
 
-  .fabricacion-card-image-wrapper {
-    height: 260px;
+  .fabricacion-galeria {
+    padding-top: 30px;
+    padding-bottom: 105px;
   }
 
-  .fabricacion-card-body {
-    min-height: 245px;
-    padding: 27px 23px 29px;
+  .fabricacion-galeria-grid {
+    width: min(100%, 1350px);
   }
 
-  .fabricacion-card-title {
-    font-size: 29px;
-  }
-
-  .fabricacion-card-description {
-    font-size: 14px;
-    line-height: 1.7;
+  .fabricacion-foto-wrapper {
+    height: 390px;
   }
 }
 
 /* =========================================
    TABLETS
-   Dos tarjetas por fila
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .fabricacion-hero {
-    min-height: 560px;
-  }
-
-  .fabricacion-hero-content {
-    width: min(100%, 760px);
-    padding-right: 34px;
-    padding-left: 34px;
-  }
-
-  .fabricacion-hero-description {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
   .fabricacion-introduccion {
-    padding-top: 75px;
-    padding-bottom: 48px;
+    padding: 72px 28px 48px;
   }
 
   .fabricacion-introduccion-title {
@@ -373,58 +224,29 @@
     line-height: 1.75;
   }
 
-  .fabricacion-servicios {
+  .fabricacion-galeria {
     padding-top: 25px;
-    padding-bottom: 90px;
+    padding-bottom: 88px;
   }
 
-  .fabricacion-card-image-wrapper {
-    height: 260px;
+  .fabricacion-galeria-grid {
+    width: 100%;
   }
 
-  .fabricacion-card-body {
-    min-height: 235px;
-    padding: 26px 22px 28px;
-  }
-
-  .fabricacion-card-title {
-    font-size: 29px;
+  .fabricacion-foto-wrapper {
+    height: 310px;
+    border-radius: 8px;
   }
 }
 
 /* =========================================
    CELULARES
-   Una tarjeta por fila
+   Una fotografía por fila
    ========================================= */
 
 @media screen and (max-width: 767.98px) {
-  .fabricacion-hero {
-    min-height: 540px;
-  }
-
-  .fabricacion-hero-content {
-    padding: 65px 24px;
-  }
-
-  .fabricacion-hero-title {
-    font-size: clamp(38px, 11vw, 50px);
-  }
-
-  .fabricacion-hero-line {
-    width: 60px;
-    height: 3px;
-    margin-top: 20px;
-    margin-bottom: 22px;
-  }
-
-  .fabricacion-hero-description {
-    max-width: 620px;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
   .fabricacion-introduccion {
-    padding: 65px 20px 40px;
+    padding: 63px 24px 42px;
   }
 
   .fabricacion-introduccion-title {
@@ -435,7 +257,7 @@
     width: 56px;
     height: 3px;
     margin-top: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 21px;
   }
 
   .fabricacion-introduccion-description {
@@ -443,32 +265,15 @@
     line-height: 1.7;
   }
 
-  .fabricacion-servicios {
+  .fabricacion-galeria {
     padding: 25px 0 75px;
   }
 
-  .fabricacion-card {
-    max-width: 500px;
+  .fabricacion-foto-wrapper {
+    max-width: 540px;
+    height: 400px;
     margin-right: auto;
     margin-left: auto;
-  }
-
-  .fabricacion-card-image-wrapper {
-    height: 280px;
-  }
-
-  .fabricacion-card-body {
-    min-height: auto;
-    padding: 27px 23px 30px;
-  }
-
-  .fabricacion-card-title {
-    font-size: 30px;
-  }
-
-  .fabricacion-card-description {
-    font-size: 15px;
-    line-height: 1.7;
   }
 }
 
@@ -477,29 +282,8 @@
    ========================================= */
 
 @media screen and (max-width: 575.98px) {
-  .fabricacion-hero {
-    min-height: 520px;
-  }
-
-  .fabricacion-hero-overlay {
-    background: rgba(5, 23, 35, 0.79);
-  }
-
-  .fabricacion-hero-content {
-    padding: 58px 20px;
-  }
-
-  .fabricacion-hero-title {
-    font-size: clamp(36px, 12vw, 48px);
-  }
-
-  .fabricacion-hero-description {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
   .fabricacion-introduccion {
-    padding-top: 58px;
+    padding: 55px 20px 38px;
   }
 
   .fabricacion-introduccion-title {
@@ -511,28 +295,14 @@
     line-height: 1.65;
   }
 
-  .fabricacion-card-image-wrapper {
-    height: 245px;
+  .fabricacion-galeria {
+    padding-top: 20px;
+    padding-bottom: 65px;
   }
 
-  .fabricacion-card-body {
-    padding: 24px 20px 27px;
-  }
-
-  .fabricacion-card-title {
-    font-size: 28px;
-  }
-
-  .fabricacion-card-line {
-    width: 46px;
-    height: 3px;
-    margin-top: 10px;
-    margin-bottom: 18px;
-  }
-
-  .fabricacion-card-description {
-    font-size: 14px;
-    line-height: 1.65;
+  .fabricacion-foto-wrapper {
+    height: 330px;
+    border-radius: 8px;
   }
 }
 
@@ -541,26 +311,8 @@
    ========================================= */
 
 @media screen and (max-width: 350px) {
-  .fabricacion-hero {
-    min-height: 500px;
-  }
-
-  .fabricacion-hero-content {
-    padding: 50px 16px;
-  }
-
-  .fabricacion-hero-title {
-    font-size: 34px;
-  }
-
-  .fabricacion-hero-description {
-    font-size: 10px;
-    line-height: 1.55;
-  }
-
   .fabricacion-introduccion {
-    padding-right: 16px;
-    padding-left: 16px;
+    padding: 48px 16px 34px;
   }
 
   .fabricacion-introduccion-title {
@@ -572,21 +324,8 @@
     line-height: 1.6;
   }
 
-  .fabricacion-card-image-wrapper {
-    height: 215px;
-  }
-
-  .fabricacion-card-body {
-    padding: 21px 17px 24px;
-  }
-
-  .fabricacion-card-title {
-    font-size: 25px;
-  }
-
-  .fabricacion-card-description {
-    font-size: 13px;
-    line-height: 1.6;
+  .fabricacion-foto-wrapper {
+    height: 275px;
   }
 }
 
@@ -595,8 +334,8 @@
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .fabricacion-card,
-  .fabricacion-card-image {
+  .fabricacion-foto-wrapper,
+  .fabricacion-foto {
     transition: none;
   }
 }

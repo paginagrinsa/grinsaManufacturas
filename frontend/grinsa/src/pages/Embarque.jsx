@@ -2,139 +2,101 @@ import { useEffect } from "react";
 
 import "./Embarques.css";
 
-const imagenPrincipal =
-  "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop";
-
-const imagenTransportes =
-  "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=1920&auto=format&fit=crop";
+const imagenesFabricacion = [
+  {
+    id: 1,
+    imagen:
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "Foto 1",
+  },
+  {
+    id: 2,
+    imagen:
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "Foto 2",
+  },
+  {
+    id: 3,
+    imagen:
+      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "Foto 3",
+  },
+];
 
 function Embarque() {
   useEffect(() => {
-    document.title = "Embarque | Grinsa Manufacturas";
+    document.title = "Fabricación | Grinsa Manufacturas";
   }, []);
 
   return (
-    <main className="embarque-page">
+    <main className="fabricacion-page">
       {/* =====================================
-          IMAGEN PRINCIPAL
+          INTRODUCCIÓN
           ===================================== */}
       <section
-        className="embarque-hero"
-        aria-labelledby="embarque-hero-title"
+        className="fabricacion-introduccion"
+        aria-labelledby="fabricacion-introduccion-title"
       >
-        <img
-          src={imagenPrincipal}
-          alt="Camión utilizado para el transporte de piezas industriales"
-          className="embarque-hero-image"
-          draggable="false"
-          loading="eager"
-          fetchPriority="high"
-        />
+        <div className="container">
+          <div className="fabricacion-introduccion-content">
+            <h1
+              id="fabricacion-introduccion-title"
+              className="fabricacion-introduccion-title"
+            >
+              Embarques
+            </h1>
 
-        <div
-          className="embarque-hero-overlay"
-          aria-hidden="true"
-        />
+            <div
+              className="fabricacion-introduccion-line"
+              aria-hidden="true"
+            />
 
-        <div className="embarque-hero-content">
-          <h1
-            id="embarque-hero-title"
-            className="embarque-hero-title"
-          >
-            Embarques
-          </h1>
-
-          <div
-            className="embarque-hero-line"
-            aria-hidden="true"
-          />
-
-          <p className="embarque-hero-description">
-            <strong>
-              Cuidamos cada pieza terminada para asegurar que llegue
-              en perfectas condiciones a su destino final. Diseñamos
-              empaques y soportes de carga a la medida, coordinando la
-              logística y el transporte terrestre especializado para
-              maniobras pesadas o de sobredimensión. Contamos con
-              procesos de etiquetado, sujeción de seguridad y
-              coordinación puntual de los tiempos de entrega.
-            </strong>
-          </p>
+            <p className="fabricacion-introduccion-description">
+              <strong>
+              Cuidamos cada pieza terminada para asegurar que llegue en perfectas condiciones a su destino final. Diseñamos empaque y soporte de carga a la medida de la pieza, coordinando la logística y el transporte terrestre especializado para maniobras pesadas o de sobredimensión.
+              Etiquetado y Empaque según requerimientos
+              sujeción de seguridad para transporte.
+              Logística de piezas sobredimensionadas.
+              Coordinación y puntualidad en tiempos de entrega.
+              </strong>
+            </p>
+          </div>
         </div>
       </section>
 
-      
-
       {/* =====================================
-          SECCIÓN DE TRANSPORTE
+          GALERÍA DE FOTOGRAFÍAS
 
-          Izquierda: imagen.
-          Derecha: dos bloques de información.
+          Las tres imágenes aparecen en una
+          misma fila desde los 768px.
           ===================================== */}
       <section
-        className="embarque-transporte"
-        aria-label="Información sobre transporte y embarques"
+        className="fabricacion-galeria"
+        aria-label="Galería de procesos de fabricación"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
-          <div className="embarque-transporte-grid">
-            {/* Imagen izquierda */}
-            <figure className="embarque-transporte-image-wrapper">
-              <img
-                src={imagenTransportes}
-                alt="Camión de transporte circulando por carretera"
-                className="embarque-transporte-image"
-                loading="lazy"
-                draggable="false"
-              />
-
+          <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
+            {imagenesFabricacion.map((imagen) => (
               <div
-                className="embarque-transporte-image-overlay"
-                aria-hidden="true"
-              />
-            </figure>
+                key={imagen.id}
+                className="col d-flex"
+              >
+                <figure className="fabricacion-foto-wrapper">
+                  <img
+                    src={imagen.imagen}
+                    alt={imagen.alt}
+                    className="fabricacion-foto"
+                    loading="lazy"
+                    draggable="false"
+                  />
 
-            {/* Contenido derecho */}
-            <div className="embarque-transporte-content">
-              {/* Bloque superior */}
-              <article className="embarque-info-panel">
-                <h2 className="embarque-info-title">
-                  Lorem Ipsum
-                </h2>
-
-                <div
-                  className="embarque-info-line"
-                  aria-hidden="true"
-                />
-
-                <p className="embarque-info-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Sed do eiusmod tempor incididunt ut labore et
-                  dolore magna aliqua. Ut enim ad minim veniam, quis
-                  nostrud exercitation ullamco laboris nisi ut aliquip
-                  ex ea commodo consequat.
-                </p>
-              </article>
-
-              {/* Bloque inferior */}
-              <article className="embarque-info-panel">
-                <h2 className="embarque-info-title">
-                  Lorem Ipsum
-                </h2>
-
-                <div
-                  className="embarque-info-line"
-                  aria-hidden="true"
-                />
-
-                <p className="embarque-info-description">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing
-                  elit. Duis aute irure dolor in reprehenderit in
-                  voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non
-                  proident.
-                </p>
-              </article>
-            </div>
+                  <div
+                    className="fabricacion-foto-overlay"
+                    aria-hidden="true"
+                  />
+                </figure>
+              </div>
+            ))}
           </div>
         </div>
       </section>

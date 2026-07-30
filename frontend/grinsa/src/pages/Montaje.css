@@ -3,165 +3,125 @@
    ========================================= */
 
 :root {
-  --montaje-azul-marino: #0b2232;
-  --montaje-azul-oscuro: #071925;
-  --montaje-texto: #334650;
-  --montaje-fondo-claro: #f4f6f7;
-  --montaje-blanco: #ffffff;
-  --montaje-borde: #dfe5e8;
+  --fabricacion-azul-marino: #0b2232;
+  --fabricacion-texto: #334650;
+  --fabricacion-fondo-claro: #f4f6f7;
+  --fabricacion-blanco: #ffffff;
+  --fabricacion-borde: #dfe5e8;
 }
 
 /* =========================================
-   PÁGINA MONTAJE
+   PÁGINA FABRICACIÓN
    ========================================= */
 
-.montaje-page {
+.fabricacion-page {
   width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: var(--montaje-blanco);
+  background-color: var(--fabricacion-blanco);
 }
 
 /* =========================================
-   IMAGEN PRINCIPAL
+   SECCIÓN DE INTRODUCCIÓN
    ========================================= */
 
-.montaje-hero {
-  position: relative;
+.fabricacion-introduccion {
   width: 100%;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--montaje-azul-marino);
-  isolation: isolate;
+  padding: 90px 20px 58px;
+  background-color: var(--fabricacion-blanco);
 }
 
-.montaje-hero-image {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.montaje-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 23, 35, 0.88),
-      rgba(5, 23, 35, 0.62),
-      rgba(5, 23, 35, 0.86)
-    );
-}
-
-/* =========================================
-   CONTENIDO DEL ENCABEZADO
-   ========================================= */
-
-.montaje-hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 980px);
+.fabricacion-introduccion-content {
+  width: min(100%, 930px);
   margin: 0 auto;
-  padding: 80px 28px;
-  color: var(--montaje-blanco);
   text-align: center;
 }
 
-.montaje-hero-title {
+.fabricacion-introduccion-title {
   margin: 0;
-  color: var(--montaje-blanco);
+  color: var(--fabricacion-azul-marino);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(44px, 7vw, 76px);
+  font-size: clamp(40px, 4vw, 54px);
   font-weight: 800;
-  line-height: 1.05;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+  line-height: 1.12;
 }
 
-.montaje-hero-line {
-  width: 78px;
+.fabricacion-introduccion-line {
+  width: 67px;
   height: 4px;
-  margin: 24px auto 29px;
-  background-color: var(--montaje-blanco);
+  margin: 10px auto 25px;
+  background-color: var(--fabricacion-azul-marino);
   border-radius: 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
 }
 
-.montaje-hero-description {
-  max-width: 900px;
+.fabricacion-introduccion-description {
+  max-width: 880px;
   margin: 0 auto;
-  color: rgba(255, 255, 255, 0.95);
+  color: var(--fabricacion-texto);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.85;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: center;
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
   -webkit-hyphens: none;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.fabricacion-introduccion-description strong {
+  font-weight: 700;
 }
 
 /* =========================================
-   SECCIÓN DE SERVICIOS DE MONTAJE
+   GALERÍA DE FOTOGRAFÍAS
    ========================================= */
 
-.montaje-servicios {
+.fabricacion-galeria {
   width: 100%;
-  padding: 75px 0 120px;
-  background-color: var(--montaje-fondo-claro);
-  border-top: 1px solid #e1e7ea;
+  padding: 35px 0 115px;
+  background-color: var(--fabricacion-blanco);
 }
 
-/*
-  La altura de la cuadrícula se determina por
-  las cuatro cartas de la columna derecha.
-
-  La imagen izquierda utiliza height: 100%,
-  por lo tanto crece automáticamente hasta
-  alcanzar exactamente el mismo alto.
-*/
-
-.montaje-servicios-grid {
-  width: min(100%, 1450px);
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1.15fr)
-    minmax(420px, 0.85fr);
+.fabricacion-galeria-grid {
+  width: min(100%, 1500px);
+  margin-right: auto;
+  margin-left: auto;
   align-items: stretch;
-  gap: 38px;
 }
 
 /* =========================================
-   IMAGEN IZQUIERDA
+   CONTENEDOR DE CADA FOTOGRAFÍA
    ========================================= */
 
-.montaje-image-wrapper {
+.fabricacion-foto-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 1080px;
+  height: 440px;
   margin: 0;
   overflow: hidden;
   background-color: #dce3e7;
-  border: 1px solid var(--montaje-borde);
+  border: 1px solid var(--fabricacion-borde);
   border-radius: 10px;
-  box-shadow: 0 18px 42px rgba(8, 27, 40, 0.16);
+  box-shadow: 0 15px 34px rgba(8, 27, 40, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.montaje-section-image {
+.fabricacion-foto-wrapper:hover {
+  border-color: #b4c2c9;
+  box-shadow: 0 24px 46px rgba(8, 27, 40, 0.22);
+  transform: translateY(-7px);
+}
+
+/* =========================================
+   FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-foto {
   width: 100%;
   height: 100%;
   display: block;
@@ -171,101 +131,24 @@
   transition: transform 0.55s ease;
 }
 
-.montaje-image-overlay {
+.fabricacion-foto-wrapper:hover .fabricacion-foto {
+  transform: scale(1.055);
+}
+
+/* =========================================
+   CAPA SUAVE SOBRE LAS FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-foto-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
     linear-gradient(
       to top,
-      rgba(5, 23, 35, 0.32),
-      rgba(5, 23, 35, 0.02) 58%
+      rgba(5, 23, 35, 0.22),
+      rgba(5, 23, 35, 0.01) 55%
     );
-}
-
-.montaje-image-wrapper:hover
-  .montaje-section-image {
-  transform: scale(1.045);
-}
-
-/* =========================================
-   COLUMNA DERECHA
-   ========================================= */
-
-.montaje-info-container {
-  min-width: 0;
-  display: grid;
-  grid-template-rows: repeat(4, minmax(0, 1fr));
-  gap: 24px;
-}
-
-/* =========================================
-   CARTAS DE INFORMACIÓN
-   ========================================= */
-
-.montaje-info-card {
-  width: 100%;
-  min-height: 250px;
-  padding: 38px 38px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--montaje-blanco);
-  border: 1px solid var(--montaje-borde);
-  border-radius: 10px;
-  box-shadow: 0 14px 34px rgba(8, 27, 40, 0.11);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.montaje-info-card:hover {
-  border-color: #bac7cd;
-  box-shadow: 0 21px 42px rgba(8, 27, 40, 0.17);
-  transform: translateY(-5px);
-}
-
-/* =========================================
-   TÍTULOS DE LAS CARTAS
-   ========================================= */
-
-.montaje-info-title {
-  margin: 0;
-  color: var(--montaje-azul-marino);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(30px, 2.7vw, 41px);
-  font-weight: 800;
-  line-height: 1.12;
-}
-
-/* =========================================
-   LÍNEAS DE LAS CARTAS
-   ========================================= */
-
-.montaje-info-line {
-  width: 58px;
-  height: 4px;
-  margin: 12px 0 22px;
-  background-color: var(--montaje-azul-marino);
-  border-radius: 20px;
-}
-
-/* =========================================
-   PÁRRAFOS DE LAS CARTAS
-   ========================================= */
-
-.montaje-info-description {
-  margin: 0;
-  color: var(--montaje-texto);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  line-height: 1.75;
-  text-align: left;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
 }
 
 /* =========================================
@@ -273,227 +156,124 @@
    ========================================= */
 
 @media screen and (min-width: 1400px) {
-  .montaje-servicios {
-    padding-top: 90px;
-    padding-bottom: 135px;
+  .fabricacion-introduccion {
+    padding-top: 100px;
+    padding-bottom: 65px;
   }
 
-  .montaje-servicios-grid {
-    width: min(100%, 1500px);
-    grid-template-columns:
-      minmax(0, 1.18fr)
-      minmax(450px, 0.82fr);
-    gap: 45px;
+  .fabricacion-introduccion-description {
+    font-size: 18px;
+    line-height: 1.85;
   }
 
-  .montaje-image-wrapper {
-    min-height: 1220px;
+  .fabricacion-galeria {
+    padding-top: 40px;
+    padding-bottom: 130px;
   }
 
-  .montaje-info-container {
-    gap: 28px;
+  .fabricacion-galeria-grid {
+    width: min(100%, 1540px);
   }
 
-  .montaje-info-card {
-    min-height: 284px;
-    padding: 45px 44px;
-  }
-
-  .montaje-info-title {
-    font-size: 43px;
-  }
-
-  .montaje-info-description {
-    font-size: 17px;
-    line-height: 1.8;
+  .fabricacion-foto-wrapper {
+    height: 500px;
   }
 }
 
 /* =========================================
    LAPTOPS
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 992px) and (max-width: 1399.98px) {
-  .montaje-hero {
-    min-height: 600px;
+  .fabricacion-introduccion {
+    padding-top: 80px;
+    padding-bottom: 52px;
   }
 
-  .montaje-servicios {
-    padding-top: 65px;
+  .fabricacion-galeria {
+    padding-top: 30px;
     padding-bottom: 105px;
   }
 
-  .montaje-servicios-grid {
-    grid-template-columns:
-      minmax(0, 1.08fr)
-      minmax(390px, 0.92fr);
-    gap: 30px;
+  .fabricacion-galeria-grid {
+    width: min(100%, 1350px);
   }
 
-  .montaje-image-wrapper {
-    min-height: 940px;
-  }
-
-  .montaje-info-container {
-    gap: 20px;
-  }
-
-  .montaje-info-card {
-    min-height: 220px;
-    padding: 30px 31px;
-  }
-
-  .montaje-info-title {
-    font-size: 35px;
-  }
-
-  .montaje-info-line {
-    width: 53px;
-    height: 3px;
-    margin-top: 10px;
-    margin-bottom: 18px;
-  }
-
-  .montaje-info-description {
-    font-size: 14px;
-    line-height: 1.7;
+  .fabricacion-foto-wrapper {
+    height: 390px;
   }
 }
 
 /* =========================================
    TABLETS
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .montaje-hero {
-    min-height: 560px;
+  .fabricacion-introduccion {
+    padding: 72px 28px 48px;
   }
 
-  .montaje-hero-content {
-    width: min(100%, 760px);
-    padding-right: 34px;
-    padding-left: 34px;
+  .fabricacion-introduccion-title {
+    font-size: 43px;
   }
 
-  .montaje-hero-description {
+  .fabricacion-introduccion-description {
     font-size: 16px;
     line-height: 1.75;
   }
 
-  .montaje-servicios {
-    padding-top: 60px;
-    padding-bottom: 90px;
+  .fabricacion-galeria {
+    padding-top: 25px;
+    padding-bottom: 88px;
   }
 
-  .montaje-servicios-grid {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .fabricacion-galeria-grid {
+    width: 100%;
   }
 
-  /*
-    En tablet la imagen aparece arriba
-    y las cuatro cartas debajo en dos
-    columnas.
-  */
-
-  .montaje-image-wrapper {
-    height: 520px;
-    min-height: 0;
-  }
-
-  .montaje-info-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-
-  .montaje-info-card {
-    min-height: 315px;
-    padding: 35px 30px;
-  }
-
-  .montaje-info-title {
-    font-size: 34px;
-  }
-
-  .montaje-info-description {
-    font-size: 15px;
-    line-height: 1.7;
+  .fabricacion-foto-wrapper {
+    height: 310px;
+    border-radius: 8px;
   }
 }
 
 /* =========================================
-   CELULARES EN GENERAL
+   CELULARES
+   Una fotografía por fila
    ========================================= */
 
 @media screen and (max-width: 767.98px) {
-  .montaje-hero {
-    min-height: 540px;
+  .fabricacion-introduccion {
+    padding: 63px 24px 42px;
   }
 
-  .montaje-hero-content {
-    padding: 65px 24px;
+  .fabricacion-introduccion-title {
+    font-size: 38px;
   }
 
-  .montaje-hero-title {
-    font-size: clamp(38px, 11vw, 50px);
-  }
-
-  .montaje-hero-line {
-    width: 60px;
+  .fabricacion-introduccion-line {
+    width: 56px;
     height: 3px;
-    margin-top: 20px;
-    margin-bottom: 22px;
+    margin-top: 8px;
+    margin-bottom: 21px;
   }
 
-  .montaje-hero-description {
-    max-width: 620px;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .montaje-servicios {
-    padding: 45px 0 75px;
-  }
-
-  .montaje-servicios-grid {
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-
-  .montaje-image-wrapper {
-    height: 400px;
-    min-height: 0;
-  }
-
-  .montaje-info-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 22px;
-  }
-
-  .montaje-info-card {
-    min-height: auto;
-    padding: 38px 30px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .montaje-info-title {
-    font-size: 37px;
-    text-align: center;
-  }
-
-  .montaje-info-line {
-    width: 55px;
-    height: 3px;
-    margin: 10px auto 21px;
-  }
-
-  .montaje-info-description {
+  .fabricacion-introduccion-description {
     font-size: 15px;
     line-height: 1.7;
-    text-align: center;
+  }
+
+  .fabricacion-galeria {
+    padding: 25px 0 75px;
+  }
+
+  .fabricacion-foto-wrapper {
+    max-width: 540px;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -502,49 +282,27 @@
    ========================================= */
 
 @media screen and (max-width: 575.98px) {
-  .montaje-hero {
-    min-height: 520px;
+  .fabricacion-introduccion {
+    padding: 55px 20px 38px;
   }
 
-  .montaje-hero-overlay {
-    background: rgba(5, 23, 35, 0.8);
+  .fabricacion-introduccion-title {
+    font-size: 35px;
   }
 
-  .montaje-hero-content {
-    padding: 58px 20px;
+  .fabricacion-introduccion-description {
+    font-size: 14px;
+    line-height: 1.65;
   }
 
-  .montaje-hero-title {
-    font-size: clamp(36px, 12vw, 48px);
-  }
-
-  .montaje-hero-description {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .montaje-servicios {
-    padding-top: 38px;
+  .fabricacion-galeria {
+    padding-top: 20px;
     padding-bottom: 65px;
   }
 
-  .montaje-image-wrapper {
-    height: 320px;
+  .fabricacion-foto-wrapper {
+    height: 330px;
     border-radius: 8px;
-  }
-
-  .montaje-info-card {
-    padding: 33px 24px;
-    border-radius: 8px;
-  }
-
-  .montaje-info-title {
-    font-size: 33px;
-  }
-
-  .montaje-info-description {
-    font-size: 14px;
-    line-height: 1.65;
   }
 }
 
@@ -553,38 +311,21 @@
    ========================================= */
 
 @media screen and (max-width: 350px) {
-  .montaje-hero {
-    min-height: 500px;
+  .fabricacion-introduccion {
+    padding: 48px 16px 34px;
   }
 
-  .montaje-hero-content {
-    padding: 50px 16px;
+  .fabricacion-introduccion-title {
+    font-size: 31px;
   }
 
-  .montaje-hero-title {
-    font-size: 34px;
-  }
-
-  .montaje-hero-description {
-    font-size: 10px;
-    line-height: 1.55;
-  }
-
-  .montaje-image-wrapper {
-    height: 255px;
-  }
-
-  .montaje-info-card {
-    padding: 28px 20px;
-  }
-
-  .montaje-info-title {
-    font-size: 29px;
-  }
-
-  .montaje-info-description {
+  .fabricacion-introduccion-description {
     font-size: 13px;
     line-height: 1.6;
+  }
+
+  .fabricacion-foto-wrapper {
+    height: 275px;
   }
 }
 
@@ -593,8 +334,8 @@
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .montaje-section-image,
-  .montaje-info-card {
+  .fabricacion-foto-wrapper,
+  .fabricacion-foto {
     transition: none;
   }
 }

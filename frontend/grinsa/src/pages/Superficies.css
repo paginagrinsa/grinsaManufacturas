@@ -3,159 +3,66 @@
    ========================================= */
 
 :root {
-  --superficies-azul-marino: #0b2232;
-  --superficies-texto: #334650;
-  --superficies-fondo-claro: #f4f6f7;
-  --superficies-blanco: #ffffff;
-  --superficies-borde: #dfe5e8;
+  --fabricacion-azul-marino: #0b2232;
+  --fabricacion-texto: #334650;
+  --fabricacion-fondo-claro: #f4f6f7;
+  --fabricacion-blanco: #ffffff;
+  --fabricacion-borde: #dfe5e8;
 }
 
 /* =========================================
-   PÁGINA SUPERFICIES
+   PÁGINA FABRICACIÓN
    ========================================= */
 
-.superficies-page {
+.fabricacion-page {
   width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: var(--superficies-blanco);
+  background-color: var(--fabricacion-blanco);
 }
 
 /* =========================================
-   IMAGEN PRINCIPAL
+   SECCIÓN DE INTRODUCCIÓN
    ========================================= */
 
-.superficies-hero {
-  position: relative;
+.fabricacion-introduccion {
   width: 100%;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--superficies-azul-marino);
-  isolation: isolate;
+  padding: 90px 20px 58px;
+  background-color: var(--fabricacion-blanco);
 }
 
-.superficies-hero-image {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.superficies-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 23, 35, 0.88),
-      rgba(5, 23, 35, 0.62),
-      rgba(5, 23, 35, 0.86)
-    );
-}
-
-/* =========================================
-   CONTENIDO DE LA IMAGEN PRINCIPAL
-   ========================================= */
-
-.superficies-hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 980px);
-  margin: 0 auto;
-  padding: 80px 28px;
-  color: var(--superficies-blanco);
-  text-align: center;
-}
-
-.superficies-hero-title {
-  margin: 0;
-  color: var(--superficies-blanco);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(44px, 7vw, 76px);
-  font-weight: 800;
-  line-height: 1.05;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
-}
-
-.superficies-hero-line {
-  width: 78px;
-  height: 4px;
-  margin: 24px auto 29px;
-  background-color: var(--superficies-blanco);
-  border-radius: 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
-}
-
-.superficies-hero-description {
-  max-width: 880px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.95);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.85;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* =========================================
-   INTRODUCCIÓN
-
-   Sección ubicada entre la imagen principal
-   y el primer contenido dividido.
-   ========================================= */
-
-.superficies-introduccion {
-  width: 100%;
-  padding: 80px 20px 70px;
-  background-color: var(--superficies-blanco);
-  border-bottom: 1px solid #e4e9ec;
-}
-
-.superficies-introduccion-content {
-  width: min(100%, 950px);
+.fabricacion-introduccion-content {
+  width: min(100%, 930px);
   margin: 0 auto;
   text-align: center;
 }
 
-.superficies-introduccion-title {
+.fabricacion-introduccion-title {
   margin: 0;
-  color: var(--superficies-azul-marino);
+  color: var(--fabricacion-azul-marino);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(38px, 4vw, 54px);
+  font-size: clamp(40px, 4vw, 54px);
   font-weight: 800;
   line-height: 1.12;
 }
 
-.superficies-introduccion-line {
-  width: 65px;
+.fabricacion-introduccion-line {
+  width: 67px;
   height: 4px;
   margin: 10px auto 25px;
-  background-color: var(--superficies-azul-marino);
+  background-color: var(--fabricacion-azul-marino);
   border-radius: 20px;
 }
 
-.superficies-introduccion-description {
+.fabricacion-introduccion-description {
   max-width: 880px;
   margin: 0 auto;
-  color: var(--superficies-texto);
+  color: var(--fabricacion-texto);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.85;
+  font-size: 17px;
+  line-height: 1.8;
   text-align: center;
   word-break: normal;
   overflow-wrap: normal;
@@ -163,99 +70,58 @@
   -webkit-hyphens: none;
 }
 
+.fabricacion-introduccion-description strong {
+  font-weight: 700;
+}
+
 /* =========================================
-   SECCIONES DIVIDIDAS
+   GALERÍA DE FOTOGRAFÍAS
    ========================================= */
 
-.superficies-seccion {
+.fabricacion-galeria {
   width: 100%;
-  padding: 100px 0;
+  padding: 35px 0 115px;
+  background-color: var(--fabricacion-blanco);
 }
 
-.superficies-seccion-clara {
-  background-color: var(--superficies-blanco);
-}
-
-.superficies-seccion-gris {
-  background-color: var(--superficies-fondo-claro);
-  border-top: 1px solid #e1e7ea;
-}
-
-.superficies-fila {
-  width: min(100%, 1420px);
+.fabricacion-galeria-grid {
+  width: min(100%, 1500px);
   margin-right: auto;
   margin-left: auto;
+  align-items: stretch;
 }
 
 /* =========================================
-   CONTENIDO DE TEXTO
+   CONTENEDOR DE CADA FOTOGRAFÍA
    ========================================= */
 
-.superficies-texto {
-  width: min(100%, 650px);
-  padding: 20px 20px 20px 0;
-}
-
-.superficies-seccion-title {
-  margin: 0;
-  color: var(--superficies-azul-marino);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(38px, 4vw, 54px);
-  font-weight: 800;
-  line-height: 1.12;
-}
-
-.superficies-seccion-line {
-  width: 65px;
-  height: 4px;
-  margin: 13px 0 27px;
-  background-color: var(--superficies-azul-marino);
-  border-radius: 20px;
-}
-
-.superficies-seccion-description {
-  margin: 0;
-  color: var(--superficies-texto);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.85;
-  text-align: left;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
-}
-
-/* =========================================
-   IMAGEN DE LA PRIMERA SECCIÓN
-   ========================================= */
-
-.superficies-image-wrapper {
+.fabricacion-foto-wrapper {
   position: relative;
   width: 100%;
-  height: 470px;
+  height: 440px;
   margin: 0;
   overflow: hidden;
   background-color: #dce3e7;
-  border: 1px solid var(--superficies-borde);
-  border-radius: 9px;
-  box-shadow: 0 18px 42px rgba(8, 27, 40, 0.16);
+  border: 1px solid var(--fabricacion-borde);
+  border-radius: 10px;
+  box-shadow: 0 15px 34px rgba(8, 27, 40, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.superficies-image-wrapper::after {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(
-      to top,
-      rgba(5, 23, 35, 0.24),
-      rgba(5, 23, 35, 0.01) 55%
-    );
-  content: "";
+.fabricacion-foto-wrapper:hover {
+  border-color: #b4c2c9;
+  box-shadow: 0 24px 46px rgba(8, 27, 40, 0.22);
+  transform: translateY(-7px);
 }
 
-.superficies-section-image {
+/* =========================================
+   FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-foto {
   width: 100%;
   height: 100%;
   display: block;
@@ -265,36 +131,24 @@
   transition: transform 0.55s ease;
 }
 
-.superficies-image-wrapper:hover
-  .superficies-section-image {
-  transform: scale(1.045);
+.fabricacion-foto-wrapper:hover .fabricacion-foto {
+  transform: scale(1.055);
 }
 
 /* =========================================
-   PANELES DE TEXTO DE LA ÚLTIMA SECCIÓN
+   CAPA SUAVE SOBRE LAS FOTOGRAFÍAS
    ========================================= */
 
-.superficies-text-panel {
-  width: 100%;
-  min-height: 360px;
-  padding: 48px 44px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--superficies-blanco);
-  border: 1px solid var(--superficies-borde);
-  border-radius: 9px;
-  box-shadow: 0 15px 36px rgba(8, 27, 40, 0.11);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.superficies-text-panel:hover {
-  border-color: #bdc9cf;
-  box-shadow: 0 22px 44px rgba(8, 27, 40, 0.17);
-  transform: translateY(-5px);
+.fabricacion-foto-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.22),
+      rgba(5, 23, 35, 0.01) 55%
+    );
 }
 
 /* =========================================
@@ -302,244 +156,124 @@
    ========================================= */
 
 @media screen and (min-width: 1400px) {
-  .superficies-introduccion {
-    padding-top: 95px;
-    padding-bottom: 85px;
+  .fabricacion-introduccion {
+    padding-top: 100px;
+    padding-bottom: 65px;
   }
 
-  .superficies-introduccion-description {
-    font-size: 19px;
-    line-height: 1.9;
+  .fabricacion-introduccion-description {
+    font-size: 18px;
+    line-height: 1.85;
   }
 
-  .superficies-seccion {
-    padding-top: 115px;
-    padding-bottom: 115px;
+  .fabricacion-galeria {
+    padding-top: 40px;
+    padding-bottom: 130px;
   }
 
-  .superficies-fila {
-    width: min(100%, 1460px);
+  .fabricacion-galeria-grid {
+    width: min(100%, 1540px);
   }
 
-  .superficies-image-wrapper {
-    height: 520px;
-  }
-
-  .superficies-seccion-title {
-    font-size: 55px;
-  }
-
-  .superficies-seccion-description {
-    font-size: 19px;
-    line-height: 1.9;
-  }
-
-  .superficies-text-panel {
-    min-height: 400px;
-    padding: 55px 50px;
+  .fabricacion-foto-wrapper {
+    height: 500px;
   }
 }
 
 /* =========================================
    LAPTOPS
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 992px) and (max-width: 1399.98px) {
-  .superficies-hero {
-    min-height: 600px;
+  .fabricacion-introduccion {
+    padding-top: 80px;
+    padding-bottom: 52px;
   }
 
-  .superficies-introduccion {
-    padding-top: 75px;
-    padding-bottom: 65px;
+  .fabricacion-galeria {
+    padding-top: 30px;
+    padding-bottom: 105px;
   }
 
-  .superficies-introduccion-description {
-    font-size: 17px;
-    line-height: 1.8;
+  .fabricacion-galeria-grid {
+    width: min(100%, 1350px);
   }
 
-  .superficies-seccion {
-    padding-top: 90px;
-    padding-bottom: 90px;
-  }
-
-  .superficies-image-wrapper {
-    height: 430px;
-  }
-
-  .superficies-seccion-title {
-    font-size: 46px;
-  }
-
-  .superficies-seccion-description {
-    font-size: 17px;
-    line-height: 1.8;
-  }
-
-  .superficies-text-panel {
-    min-height: 340px;
-    padding: 40px 36px;
+  .fabricacion-foto-wrapper {
+    height: 390px;
   }
 }
 
 /* =========================================
    TABLETS
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .superficies-hero {
-    min-height: 560px;
+  .fabricacion-introduccion {
+    padding: 72px 28px 48px;
   }
 
-  .superficies-hero-content {
-    width: min(100%, 760px);
-    padding-right: 34px;
-    padding-left: 34px;
-  }
-
-  .superficies-hero-description {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .superficies-introduccion {
-    padding: 70px 28px 62px;
-  }
-
-  .superficies-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 43px;
   }
 
-  .superficies-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 16px;
     line-height: 1.75;
   }
 
-  .superficies-seccion {
-    padding-top: 78px;
-    padding-bottom: 78px;
+  .fabricacion-galeria {
+    padding-top: 25px;
+    padding-bottom: 88px;
   }
 
-  .superficies-texto {
+  .fabricacion-galeria-grid {
     width: 100%;
-    max-width: 760px;
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0;
   }
 
-  .superficies-seccion-title {
-    font-size: 43px;
-  }
-
-  .superficies-seccion-description {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .superficies-image-wrapper {
-    height: 440px;
-  }
-
-  .superficies-text-panel {
-    min-height: auto;
-    padding: 42px 36px;
+  .fabricacion-foto-wrapper {
+    height: 310px;
+    border-radius: 8px;
   }
 }
 
 /* =========================================
-   CELULARES EN GENERAL
+   CELULARES
+   Una fotografía por fila
    ========================================= */
 
 @media screen and (max-width: 767.98px) {
-  .superficies-hero {
-    min-height: 540px;
+  .fabricacion-introduccion {
+    padding: 63px 24px 42px;
   }
 
-  .superficies-hero-content {
-    padding: 65px 24px;
-  }
-
-  .superficies-hero-title {
-    font-size: clamp(38px, 11vw, 50px);
-  }
-
-  .superficies-hero-line {
-    width: 60px;
-    height: 3px;
-    margin-top: 20px;
-    margin-bottom: 22px;
-  }
-
-  .superficies-hero-description {
-    max-width: 620px;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .superficies-introduccion {
-    padding: 62px 24px 55px;
-  }
-
-  .superficies-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 38px;
   }
 
-  .superficies-introduccion-line {
+  .fabricacion-introduccion-line {
     width: 56px;
     height: 3px;
-    margin-top: 9px;
-    margin-bottom: 22px;
+    margin-top: 8px;
+    margin-bottom: 21px;
   }
 
-  .superficies-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 15px;
     line-height: 1.7;
   }
 
-  .superficies-seccion {
-    padding: 65px 0;
+  .fabricacion-galeria {
+    padding: 25px 0 75px;
   }
 
-  .superficies-fila {
-    row-gap: 35px !important;
-  }
-
-  .superficies-texto {
-    width: 100%;
-    max-width: 620px;
+  .fabricacion-foto-wrapper {
+    max-width: 540px;
+    height: 400px;
     margin-right: auto;
     margin-left: auto;
-    padding: 0;
-    text-align: center;
-  }
-
-  .superficies-seccion-title {
-    font-size: 38px;
-    text-align: center;
-  }
-
-  .superficies-seccion-line {
-    width: 56px;
-    height: 3px;
-    margin: 9px auto 22px;
-  }
-
-  .superficies-seccion-description {
-    font-size: 15px;
-    line-height: 1.7;
-    text-align: center;
-  }
-
-  .superficies-image-wrapper {
-    height: 360px;
-  }
-
-  .superficies-text-panel {
-    min-height: auto;
-    padding: 38px 30px;
-    text-align: center;
   }
 }
 
@@ -548,62 +282,27 @@
    ========================================= */
 
 @media screen and (max-width: 575.98px) {
-  .superficies-hero {
-    min-height: 520px;
+  .fabricacion-introduccion {
+    padding: 55px 20px 38px;
   }
 
-  .superficies-hero-overlay {
-    background: rgba(5, 23, 35, 0.79);
-  }
-
-  .superficies-hero-content {
-    padding: 58px 20px;
-  }
-
-  .superficies-hero-title {
-    font-size: clamp(36px, 12vw, 48px);
-  }
-
-  .superficies-hero-description {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .superficies-introduccion {
-    padding: 55px 20px 48px;
-  }
-
-  .superficies-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 35px;
   }
 
-  .superficies-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 14px;
     line-height: 1.65;
   }
 
-  .superficies-seccion {
-    padding-top: 58px;
-    padding-bottom: 58px;
+  .fabricacion-galeria {
+    padding-top: 20px;
+    padding-bottom: 65px;
   }
 
-  .superficies-seccion-title {
-    font-size: 35px;
-  }
-
-  .superficies-seccion-description {
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .superficies-image-wrapper {
-    height: 300px;
-    border-radius: 7px;
-  }
-
-  .superficies-text-panel {
-    padding: 34px 24px;
-    border-radius: 7px;
+  .fabricacion-foto-wrapper {
+    height: 330px;
+    border-radius: 8px;
   }
 }
 
@@ -612,56 +311,21 @@
    ========================================= */
 
 @media screen and (max-width: 350px) {
-  .superficies-hero {
-    min-height: 500px;
+  .fabricacion-introduccion {
+    padding: 48px 16px 34px;
   }
 
-  .superficies-hero-content {
-    padding: 50px 16px;
-  }
-
-  .superficies-hero-title {
-    font-size: 34px;
-  }
-
-  .superficies-hero-description {
-    font-size: 10px;
-    line-height: 1.55;
-  }
-
-  .superficies-introduccion {
-    padding: 48px 16px 43px;
-  }
-
-  .superficies-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 31px;
   }
 
-  .superficies-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 13px;
     line-height: 1.6;
   }
 
-  .superficies-seccion {
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .superficies-seccion-title {
-    font-size: 31px;
-  }
-
-  .superficies-seccion-description {
-    font-size: 13px;
-    line-height: 1.6;
-  }
-
-  .superficies-image-wrapper {
-    height: 245px;
-  }
-
-  .superficies-text-panel {
-    padding: 29px 20px;
+  .fabricacion-foto-wrapper {
+    height: 275px;
   }
 }
 
@@ -670,8 +334,8 @@
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .superficies-section-image,
-  .superficies-text-panel {
+  .fabricacion-foto-wrapper,
+  .fabricacion-foto {
     transition: none;
   }
 }

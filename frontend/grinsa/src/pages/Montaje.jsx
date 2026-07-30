@@ -1,154 +1,101 @@
 import { useEffect } from "react";
 
-import "./Montaje.css";
+import "./Embarques.css";
 
-const imagenPrincipal =
-  "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg";
-
-const imagenMontaje =
-  "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg";
-
-const bloquesMontaje = [
+const imagenesFabricacion = [
   {
     id: 1,
-    titulo: "Lorem Ipsum",
-    descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+    imagen:
+      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
+    alt: "Foto 1",
   },
   {
     id: 2,
-    titulo: "Lorem Ipsum",
-    descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    imagen:
+      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
+    alt: "Foto 2",
   },
   {
     id: 3,
-    titulo: "Lorem Ipsum",
-    descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae justo eget magna fermentum tincidunt. Praesent commodo cursus magna.",
-  },
-  {
-    id: 4,
-    titulo: "Lorem Ipsum",
-    descripcion:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id ligula porta felis euismod semper. Donec ullamcorper nulla non metus auctor fringilla.",
+    imagen:
+      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
+    alt: "Foto 3",
   },
 ];
 
 function Montaje() {
   useEffect(() => {
-    document.title = "Montaje | Grinsa Manufacturas";
+    document.title = "Fabricación | Grinsa Manufacturas";
   }, []);
 
   return (
-    <main className="montaje-page">
+    <main className="fabricacion-page">
       {/* =====================================
-          IMAGEN PRINCIPAL
+          INTRODUCCIÓN
           ===================================== */}
       <section
-        className="montaje-hero"
-        aria-labelledby="montaje-hero-title"
+        className="fabricacion-introduccion"
+        aria-labelledby="fabricacion-introduccion-title"
       >
-        <img
-          src={imagenPrincipal}
-          alt="Estructura metálica instalada dentro de una nave industrial"
-          className="montaje-hero-image"
-          draggable="false"
-          loading="eager"
-          fetchPriority="high"
-        />
+        <div className="container">
+          <div className="fabricacion-introduccion-content">
+            <h1
+              id="fabricacion-introduccion-title"
+              className="fabricacion-introduccion-title"
+            >
+              Montajes
+            </h1>
 
-        <div
-          className="montaje-hero-overlay"
-          aria-hidden="true"
-        />
+            <div
+              className="fabricacion-introduccion-line"
+              aria-hidden="true"
+            />
 
-        <div className="montaje-hero-content">
-          <h1
-            id="montaje-hero-title"
-            className="montaje-hero-title"
-          >
-            Montajes
-          </h1>
-
-          <div
-            className="montaje-hero-line"
-            aria-hidden="true"
-          />
-
-          <p className="montaje-hero-description">
-            <strong>
-              Llevamos la ingeniería al sitio de trabajo. Nuestro
-              equipo técnico realiza el ensamblaje y montaje final de
-              las estructuras y equipos en la planta o proyecto del
-              cliente, garantizando una instalación rápida, eficiente
-              y cumpliendo rigurosamente con todas las normativas de
-              seguridad industrial. Contamos con personal calificado
-              de maniobra e instalación, aplicamos protocolos de
-              seguridad y realizamos la integración e interconexión
-              en sitio.
-            </strong>
-          </p>
+            <p className="fabricacion-introduccion-description">
+              <strong>
+              Llevamos la ingeniería  al sitio de trabajo. Nuestro equipo técnico realiza el ensamblaje y montaje final de las estructuras y equipos en la planta o proyecto del cliente, garantizando una instalación rápida, eficiente y cumpliendo rigurosamente con todas las normativas de seguridad industrial.
+              Personal calificado de maniobra e instalación 
+              Cumplimiento estricto de protocolos de seguridad
+              Integración e interconexión en sitio.
+              </strong>
+            </p>
+          </div>
         </div>
       </section>
 
       {/* =====================================
-          SECCIÓN DE MONTAJE
+          GALERÍA DE FOTOGRAFÍAS
 
-          Izquierda:
-          Imagen de gran tamaño.
-
-          Derecha:
-          Cuatro cartas colocadas verticalmente.
+          Las tres imágenes aparecen en una
+          misma fila desde los 768px.
           ===================================== */}
       <section
-        className="montaje-servicios"
-        aria-label="Información sobre servicios de montaje"
+        className="fabricacion-galeria"
+        aria-label="Galería de procesos de fabricación"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
-          <div className="montaje-servicios-grid">
-            {/* =================================
-                IMAGEN IZQUIERDA
-                ================================= */}
-            <figure className="montaje-image-wrapper">
-              <img
-                src={imagenMontaje}
-                alt="Montaje de estructuras metálicas en un proyecto industrial"
-                className="montaje-section-image"
-                loading="lazy"
-                draggable="false"
-              />
-
+          <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
+            {imagenesFabricacion.map((imagen) => (
               <div
-                className="montaje-image-overlay"
-                aria-hidden="true"
-              />
-            </figure>
-
-            {/* =================================
-                CUATRO CARTAS DERECHAS
-                ================================= */}
-            <div className="montaje-info-container">
-              {bloquesMontaje.map((bloque) => (
-                <article
-                  key={bloque.id}
-                  className="montaje-info-card"
-                >
-                  <h2 className="montaje-info-title">
-                    {bloque.titulo}
-                  </h2>
-
-                  <div
-                    className="montaje-info-line"
-                    aria-hidden="true"
+                key={imagen.id}
+                className="col d-flex"
+              >
+                <figure className="fabricacion-foto-wrapper">
+                  <img
+                    src={imagen.imagen}
+                    alt={imagen.alt}
+                    className="fabricacion-foto"
+                    loading="lazy"
+                    draggable="false"
                   />
 
-                  <p className="montaje-info-description">
-                    {bloque.descripcion}
-                  </p>
-                </article>
-              ))}
-            </div>
+                  <div
+                    className="fabricacion-foto-overlay"
+                    aria-hidden="true"
+                  />
+                </figure>
+              </div>
+            ))}
           </div>
         </div>
       </section>

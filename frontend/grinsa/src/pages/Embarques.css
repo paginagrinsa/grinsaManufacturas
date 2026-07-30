@@ -3,203 +3,125 @@
    ========================================= */
 
 :root {
-  --embarque-azul-marino: #0b2232;
-  --embarque-azul-oscuro: #071925;
-  --embarque-texto: #334650;
-  --embarque-fondo-claro: #f4f6f7;
-  --embarque-blanco: #ffffff;
-  --embarque-borde: #dfe5e8;
+  --fabricacion-azul-marino: #0b2232;
+  --fabricacion-texto: #334650;
+  --fabricacion-fondo-claro: #f4f6f7;
+  --fabricacion-blanco: #ffffff;
+  --fabricacion-borde: #dfe5e8;
 }
 
 /* =========================================
-   PÁGINA EMBARQUES
+   PÁGINA FABRICACIÓN
    ========================================= */
 
-.embarque-page {
+.fabricacion-page {
   width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: var(--embarque-blanco);
+  background-color: var(--fabricacion-blanco);
 }
 
 /* =========================================
-   IMAGEN PRINCIPAL
+   SECCIÓN DE INTRODUCCIÓN
    ========================================= */
 
-.embarque-hero {
-  position: relative;
+.fabricacion-introduccion {
   width: 100%;
-  min-height: 650px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-color: var(--embarque-azul-marino);
-  isolation: isolate;
+  padding: 90px 20px 58px;
+  background-color: var(--fabricacion-blanco);
 }
 
-.embarque-hero-image {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: center;
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.embarque-hero-overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(
-      90deg,
-      rgba(5, 23, 35, 0.88),
-      rgba(5, 23, 35, 0.62),
-      rgba(5, 23, 35, 0.86)
-    );
-}
-
-/* =========================================
-   CONTENIDO DEL ENCABEZADO
-   ========================================= */
-
-.embarque-hero-content {
-  position: relative;
-  z-index: 2;
-  width: min(100%, 980px);
-  margin: 0 auto;
-  padding: 80px 28px;
-  color: var(--embarque-blanco);
-  text-align: center;
-}
-
-.embarque-hero-title {
-  margin: 0;
-  color: var(--embarque-blanco);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(44px, 7vw, 76px);
-  font-weight: 800;
-  line-height: 1.05;
-  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
-}
-
-.embarque-hero-line {
-  width: 78px;
-  height: 4px;
-  margin: 24px auto 29px;
-  background-color: var(--embarque-blanco);
-  border-radius: 20px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
-}
-
-.embarque-hero-description {
-  max-width: 880px;
-  margin: 0 auto;
-  color: rgba(255, 255, 255, 0.95);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 18px;
-  line-height: 1.85;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
-  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
-}
-
-/* =========================================
-   INTRODUCCIÓN
-   ========================================= */
-
-.embarque-introduccion {
-  width: 100%;
-  padding: 88px 20px 68px;
-  background-color: var(--embarque-blanco);
-}
-
-.embarque-introduccion-content {
-  width: min(100%, 920px);
+.fabricacion-introduccion-content {
+  width: min(100%, 930px);
   margin: 0 auto;
   text-align: center;
 }
 
-.embarque-introduccion-title {
+.fabricacion-introduccion-title {
   margin: 0;
-  color: var(--embarque-azul-marino);
+  color: var(--fabricacion-azul-marino);
   font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(38px, 4vw, 52px);
+  font-size: clamp(40px, 4vw, 54px);
   font-weight: 800;
   line-height: 1.12;
 }
 
-.embarque-introduccion-line {
-  width: 65px;
+.fabricacion-introduccion-line {
+  width: 67px;
   height: 4px;
   margin: 10px auto 25px;
-  background-color: var(--embarque-azul-marino);
+  background-color: var(--fabricacion-azul-marino);
   border-radius: 20px;
 }
 
-.embarque-introduccion-description {
-  max-width: 860px;
+.fabricacion-introduccion-description {
+  max-width: 880px;
   margin: 0 auto;
-  color: var(--embarque-texto);
+  color: var(--fabricacion-texto);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 17px;
   line-height: 1.8;
+  text-align: center;
   word-break: normal;
   overflow-wrap: normal;
   hyphens: none;
   -webkit-hyphens: none;
 }
 
-/* =========================================
-   SECCIÓN DE TRANSPORTE
-   ========================================= */
-
-.embarque-transporte {
-  width: 100%;
-  padding: 45px 0 115px;
-  background-color: var(--embarque-fondo-claro);
-  border-top: 1px solid #e1e7ea;
+.fabricacion-introduccion-description strong {
+  font-weight: 700;
 }
 
-.embarque-transporte-grid {
-  width: min(100%, 1450px);
-  min-height: 650px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns:
-    minmax(0, 1.12fr)
-    minmax(420px, 0.88fr);
-  gap: 38px;
+/* =========================================
+   GALERÍA DE FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-galeria {
+  width: 100%;
+  padding: 35px 0 115px;
+  background-color: var(--fabricacion-blanco);
+}
+
+.fabricacion-galeria-grid {
+  width: min(100%, 1500px);
+  margin-right: auto;
+  margin-left: auto;
   align-items: stretch;
 }
 
 /* =========================================
-   IMAGEN DE TRANSPORTE
+   CONTENEDOR DE CADA FOTOGRAFÍA
    ========================================= */
 
-.embarque-transporte-image-wrapper {
+.fabricacion-foto-wrapper {
   position: relative;
   width: 100%;
-  height: 100%;
-  min-height: 650px;
+  height: 440px;
   margin: 0;
   overflow: hidden;
   background-color: #dce3e7;
-  border: 1px solid var(--embarque-borde);
+  border: 1px solid var(--fabricacion-borde);
   border-radius: 10px;
-  box-shadow: 0 18px 42px rgba(8, 27, 40, 0.16);
+  box-shadow: 0 15px 34px rgba(8, 27, 40, 0.14);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.embarque-transporte-image {
+.fabricacion-foto-wrapper:hover {
+  border-color: #b4c2c9;
+  box-shadow: 0 24px 46px rgba(8, 27, 40, 0.22);
+  transform: translateY(-7px);
+}
+
+/* =========================================
+   FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-foto {
   width: 100%;
   height: 100%;
   display: block;
@@ -209,89 +131,24 @@
   transition: transform 0.55s ease;
 }
 
-.embarque-transporte-image-overlay {
+.fabricacion-foto-wrapper:hover .fabricacion-foto {
+  transform: scale(1.055);
+}
+
+/* =========================================
+   CAPA SUAVE SOBRE LAS FOTOGRAFÍAS
+   ========================================= */
+
+.fabricacion-foto-overlay {
   position: absolute;
   inset: 0;
   pointer-events: none;
   background:
     linear-gradient(
       to top,
-      rgba(5, 23, 35, 0.32),
-      rgba(5, 23, 35, 0.02) 58%
+      rgba(5, 23, 35, 0.22),
+      rgba(5, 23, 35, 0.01) 55%
     );
-}
-
-.embarque-transporte-image-wrapper:hover
-  .embarque-transporte-image {
-  transform: scale(1.045);
-}
-
-/* =========================================
-   COLUMNA DERECHA
-   ========================================= */
-
-.embarque-transporte-content {
-  min-width: 0;
-  display: grid;
-  grid-template-rows: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-}
-
-/* =========================================
-   BLOQUES DE INFORMACIÓN
-   ========================================= */
-
-.embarque-info-panel {
-  width: 100%;
-  min-height: 0;
-  padding: 43px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: var(--embarque-blanco);
-  border: 1px solid var(--embarque-borde);
-  border-radius: 10px;
-  box-shadow: 0 14px 34px rgba(8, 27, 40, 0.11);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.embarque-info-panel:hover {
-  border-color: #bac7cd;
-  box-shadow: 0 21px 42px rgba(8, 27, 40, 0.17);
-  transform: translateY(-5px);
-}
-
-.embarque-info-title {
-  margin: 0;
-  color: var(--embarque-azul-marino);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: clamp(32px, 3vw, 44px);
-  font-weight: 800;
-  line-height: 1.12;
-}
-
-.embarque-info-line {
-  width: 60px;
-  height: 4px;
-  margin: 12px 0 24px;
-  background-color: var(--embarque-azul-marino);
-  border-radius: 20px;
-}
-
-.embarque-info-description {
-  margin: 0;
-  color: var(--embarque-texto);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 17px;
-  line-height: 1.8;
-  text-align: left;
-  word-break: normal;
-  overflow-wrap: normal;
-  hyphens: none;
-  -webkit-hyphens: none;
 }
 
 /* =========================================
@@ -299,256 +156,124 @@
    ========================================= */
 
 @media screen and (min-width: 1400px) {
-  .embarque-introduccion {
-    padding-top: 98px;
-    padding-bottom: 78px;
+  .fabricacion-introduccion {
+    padding-top: 100px;
+    padding-bottom: 65px;
   }
 
-  .embarque-transporte {
-    padding-top: 55px;
-    padding-bottom: 125px;
-  }
-
-  .embarque-transporte-grid {
-    width: min(100%, 1500px);
-    min-height: 720px;
-    gap: 44px;
-  }
-
-  .embarque-transporte-image-wrapper {
-    min-height: 720px;
-  }
-
-  .embarque-transporte-content {
-    gap: 34px;
-  }
-
-  .embarque-info-panel {
-    padding: 50px 47px;
-  }
-
-  .embarque-info-title {
-    font-size: 45px;
-  }
-
-  .embarque-info-description {
+  .fabricacion-introduccion-description {
     font-size: 18px;
     line-height: 1.85;
+  }
+
+  .fabricacion-galeria {
+    padding-top: 40px;
+    padding-bottom: 130px;
+  }
+
+  .fabricacion-galeria-grid {
+    width: min(100%, 1540px);
+  }
+
+  .fabricacion-foto-wrapper {
+    height: 500px;
   }
 }
 
 /* =========================================
    LAPTOPS
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 992px) and (max-width: 1399.98px) {
-  .embarque-hero {
-    min-height: 600px;
+  .fabricacion-introduccion {
+    padding-top: 80px;
+    padding-bottom: 52px;
   }
 
-  .embarque-introduccion {
-    padding-top: 78px;
-    padding-bottom: 60px;
+  .fabricacion-galeria {
+    padding-top: 30px;
+    padding-bottom: 105px;
   }
 
-  .embarque-transporte {
-    padding-top: 40px;
-    padding-bottom: 100px;
+  .fabricacion-galeria-grid {
+    width: min(100%, 1350px);
   }
 
-  .embarque-transporte-grid {
-    min-height: 590px;
-    grid-template-columns:
-      minmax(0, 1.08fr)
-      minmax(390px, 0.92fr);
-    gap: 30px;
-  }
-
-  .embarque-transporte-image-wrapper {
-    min-height: 590px;
-  }
-
-  .embarque-transporte-content {
-    gap: 24px;
-  }
-
-  .embarque-info-panel {
-    padding: 34px 32px;
-  }
-
-  .embarque-info-title {
-    font-size: 37px;
-  }
-
-  .embarque-info-description {
-    font-size: 15px;
-    line-height: 1.75;
+  .fabricacion-foto-wrapper {
+    height: 390px;
   }
 }
 
 /* =========================================
    TABLETS
+   Tres fotografías en la misma fila
    ========================================= */
 
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .embarque-hero {
-    min-height: 560px;
+  .fabricacion-introduccion {
+    padding: 72px 28px 48px;
   }
 
-  .embarque-hero-content {
-    width: min(100%, 760px);
-    padding-right: 34px;
-    padding-left: 34px;
-  }
-
-  .embarque-hero-description {
-    font-size: 16px;
-    line-height: 1.75;
-  }
-
-  .embarque-introduccion {
-    padding: 72px 28px 58px;
-  }
-
-  .embarque-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 43px;
   }
 
-  .embarque-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 16px;
     line-height: 1.75;
   }
 
-  .embarque-transporte {
-    padding-top: 35px;
+  .fabricacion-galeria {
+    padding-top: 25px;
     padding-bottom: 88px;
   }
 
-  .embarque-transporte-grid {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .fabricacion-galeria-grid {
+    width: 100%;
   }
 
-  .embarque-transporte-image-wrapper {
-    height: 480px;
-    min-height: 0;
-  }
-
-  .embarque-transporte-content {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: none;
-    gap: 24px;
-  }
-
-  .embarque-info-panel {
-    min-height: 330px;
-    padding: 36px 31px;
-  }
-
-  .embarque-info-title {
-    font-size: 35px;
-  }
-
-  .embarque-info-description {
-    font-size: 15px;
-    line-height: 1.7;
+  .fabricacion-foto-wrapper {
+    height: 310px;
+    border-radius: 8px;
   }
 }
 
 /* =========================================
-   CELULARES EN GENERAL
+   CELULARES
+   Una fotografía por fila
    ========================================= */
 
 @media screen and (max-width: 767.98px) {
-  .embarque-hero {
-    min-height: 540px;
+  .fabricacion-introduccion {
+    padding: 63px 24px 42px;
   }
 
-  .embarque-hero-content {
-    padding: 65px 24px;
-  }
-
-  .embarque-hero-title {
-    font-size: clamp(38px, 11vw, 50px);
-  }
-
-  .embarque-hero-line {
-    width: 60px;
-    height: 3px;
-    margin-top: 20px;
-    margin-bottom: 22px;
-  }
-
-  .embarque-hero-description {
-    max-width: 620px;
-    font-size: 14px;
-    line-height: 1.65;
-  }
-
-  .embarque-introduccion {
-    padding: 63px 24px 52px;
-  }
-
-  .embarque-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 38px;
   }
 
-  .embarque-introduccion-line {
+  .fabricacion-introduccion-line {
     width: 56px;
     height: 3px;
-    margin-top: 9px;
-    margin-bottom: 22px;
+    margin-top: 8px;
+    margin-bottom: 21px;
   }
 
-  .embarque-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 15px;
     line-height: 1.7;
   }
 
-  .embarque-transporte {
-    padding: 30px 0 75px;
+  .fabricacion-galeria {
+    padding: 25px 0 75px;
   }
 
-  .embarque-transporte-grid {
-    min-height: 0;
-    grid-template-columns: 1fr;
-    gap: 26px;
-  }
-
-  .embarque-transporte-image-wrapper {
-    height: 390px;
-    min-height: 0;
-  }
-
-  .embarque-transporte-content {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 22px;
-  }
-
-  .embarque-info-panel {
-    min-height: auto;
-    padding: 38px 30px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .embarque-info-title {
-    font-size: 37px;
-    text-align: center;
-  }
-
-  .embarque-info-line {
-    width: 55px;
-    height: 3px;
-    margin: 10px auto 21px;
-  }
-
-  .embarque-info-description {
-    font-size: 15px;
-    line-height: 1.7;
-    text-align: center;
+  .fabricacion-foto-wrapper {
+    max-width: 540px;
+    height: 400px;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
@@ -557,62 +282,27 @@
    ========================================= */
 
 @media screen and (max-width: 575.98px) {
-  .embarque-hero {
-    min-height: 520px;
+  .fabricacion-introduccion {
+    padding: 55px 20px 38px;
   }
 
-  .embarque-hero-overlay {
-    background: rgba(5, 23, 35, 0.8);
-  }
-
-  .embarque-hero-content {
-    padding: 58px 20px;
-  }
-
-  .embarque-hero-title {
-    font-size: clamp(36px, 12vw, 48px);
-  }
-
-  .embarque-hero-description {
-    font-size: 12px;
-    line-height: 1.6;
-  }
-
-  .embarque-introduccion {
-    padding: 55px 20px 46px;
-  }
-
-  .embarque-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 35px;
   }
 
-  .embarque-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 14px;
     line-height: 1.65;
   }
 
-  .embarque-transporte {
-    padding-top: 25px;
+  .fabricacion-galeria {
+    padding-top: 20px;
     padding-bottom: 65px;
   }
 
-  .embarque-transporte-image-wrapper {
-    height: 310px;
+  .fabricacion-foto-wrapper {
+    height: 330px;
     border-radius: 8px;
-  }
-
-  .embarque-info-panel {
-    padding: 33px 24px;
-    border-radius: 8px;
-  }
-
-  .embarque-info-title {
-    font-size: 33px;
-  }
-
-  .embarque-info-description {
-    font-size: 14px;
-    line-height: 1.65;
   }
 }
 
@@ -621,51 +311,21 @@
    ========================================= */
 
 @media screen and (max-width: 350px) {
-  .embarque-hero {
-    min-height: 500px;
+  .fabricacion-introduccion {
+    padding: 48px 16px 34px;
   }
 
-  .embarque-hero-content {
-    padding: 50px 16px;
-  }
-
-  .embarque-hero-title {
-    font-size: 34px;
-  }
-
-  .embarque-hero-description {
-    font-size: 10px;
-    line-height: 1.55;
-  }
-
-  .embarque-introduccion {
-    padding: 48px 16px 41px;
-  }
-
-  .embarque-introduccion-title {
+  .fabricacion-introduccion-title {
     font-size: 31px;
   }
 
-  .embarque-introduccion-description {
+  .fabricacion-introduccion-description {
     font-size: 13px;
     line-height: 1.6;
   }
 
-  .embarque-transporte-image-wrapper {
-    height: 250px;
-  }
-
-  .embarque-info-panel {
-    padding: 28px 20px;
-  }
-
-  .embarque-info-title {
-    font-size: 29px;
-  }
-
-  .embarque-info-description {
-    font-size: 13px;
-    line-height: 1.6;
+  .fabricacion-foto-wrapper {
+    height: 275px;
   }
 }
 
@@ -674,8 +334,8 @@
    ========================================= */
 
 @media (prefers-reduced-motion: reduce) {
-  .embarque-transporte-image,
-  .embarque-info-panel {
+  .fabricacion-foto-wrapper,
+  .fabricacion-foto {
     transition: none;
   }
 }

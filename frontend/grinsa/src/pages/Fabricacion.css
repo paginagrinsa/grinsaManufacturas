@@ -1,0 +1,602 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+  --fabricacion-azul-marino: #0b2232;
+  --fabricacion-texto: #334650;
+  --fabricacion-fondo-claro: #f4f6f7;
+  --fabricacion-blanco: #ffffff;
+  --fabricacion-borde: #dfe5e8;
+}
+
+/* =========================================
+   PÁGINA FABRICACIÓN
+   ========================================= */
+
+.fabricacion-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--fabricacion-blanco);
+}
+
+/* =========================================
+   IMAGEN PRINCIPAL
+   ========================================= */
+
+.fabricacion-hero {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--fabricacion-azul-marino);
+  isolation: isolate;
+}
+
+.fabricacion-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.fabricacion-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 23, 35, 0.86),
+      rgba(5, 23, 35, 0.61),
+      rgba(5, 23, 35, 0.84)
+    );
+}
+
+/* =========================================
+   CONTENIDO DEL ENCABEZADO
+   ========================================= */
+
+.fabricacion-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 80px 28px;
+  color: var(--fabricacion-blanco);
+  text-align: center;
+}
+
+.fabricacion-hero-title {
+  margin: 0;
+  color: var(--fabricacion-blanco);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+}
+
+.fabricacion-hero-line {
+  width: 78px;
+  height: 4px;
+  margin: 24px auto 29px;
+  background-color: var(--fabricacion-blanco);
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
+}
+
+.fabricacion-hero-description {
+  max-width: 870px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   SECCIÓN DE INTRODUCCIÓN
+   ========================================= */
+
+.fabricacion-introduccion {
+  width: 100%;
+  padding: 90px 20px 55px;
+  background-color: var(--fabricacion-blanco);
+}
+
+.fabricacion-introduccion-content {
+  width: min(100%, 900px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fabricacion-introduccion-title {
+  margin: 0;
+  color: var(--fabricacion-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(38px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.fabricacion-introduccion-line {
+  width: 65px;
+  height: 4px;
+  margin: 10px auto 25px;
+  background-color: var(--fabricacion-azul-marino);
+  border-radius: 20px;
+}
+
+.fabricacion-introduccion-description {
+  max-width: 850px;
+  margin: 0 auto;
+  color: var(--fabricacion-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* =========================================
+   SECCIÓN DE TARJETAS
+   ========================================= */
+
+.fabricacion-servicios {
+  width: 100%;
+  padding: 35px 0 110px;
+  background-color: var(--fabricacion-blanco);
+}
+
+.fabricacion-grid {
+  width: min(100%, 1450px);
+  margin-right: auto;
+  margin-left: auto;
+  align-items: stretch;
+}
+
+/* =========================================
+   TARJETAS
+   ========================================= */
+
+.fabricacion-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--fabricacion-blanco);
+  border: 1px solid var(--fabricacion-borde);
+  border-radius: 9px;
+  box-shadow: 0 14px 32px rgba(8, 27, 40, 0.12);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.fabricacion-card:hover {
+  border-color: #b7c4ca;
+  box-shadow: 0 23px 44px rgba(8, 27, 40, 0.2);
+  transform: translateY(-7px);
+}
+
+/* =========================================
+   IMÁGENES DE LAS TARJETAS
+   ========================================= */
+
+.fabricacion-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 285px;
+  overflow: hidden;
+  background-color: #dce3e7;
+}
+
+.fabricacion-card-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  transition: transform 0.55s ease;
+}
+
+.fabricacion-card-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.33),
+      rgba(5, 23, 35, 0.02) 60%
+    );
+}
+
+.fabricacion-card:hover .fabricacion-card-image {
+  transform: scale(1.055);
+}
+
+/* =========================================
+   CONTENIDO DE LAS TARJETAS
+   ========================================= */
+
+.fabricacion-card-body {
+  min-height: 260px;
+  padding: 30px 27px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--fabricacion-blanco);
+  text-align: center;
+}
+
+.fabricacion-card-title {
+  margin: 0;
+  color: var(--fabricacion-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(26px, 2.2vw, 34px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.fabricacion-card-line {
+  width: 50px;
+  height: 4px;
+  margin: 12px auto 21px;
+  background-color: var(--fabricacion-azul-marino);
+  border-radius: 20px;
+}
+
+.fabricacion-card-description {
+  margin: 0;
+  color: var(--fabricacion-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  text-align: center;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* =========================================
+   MONITORES GRANDES
+   ========================================= */
+
+@media screen and (min-width: 1400px) {
+  .fabricacion-introduccion {
+    padding-top: 100px;
+  }
+
+  .fabricacion-card-image-wrapper {
+    height: 310px;
+  }
+
+  .fabricacion-card-body {
+    min-height: 270px;
+    padding: 34px 31px 36px;
+  }
+
+  .fabricacion-card-title {
+    font-size: 35px;
+  }
+
+  .fabricacion-card-description {
+    font-size: 16px;
+  }
+}
+
+/* =========================================
+   LAPTOPS
+   Tres tarjetas por fila
+   ========================================= */
+
+@media screen and (min-width: 992px) and (max-width: 1399.98px) {
+  .fabricacion-hero {
+    min-height: 600px;
+  }
+
+  .fabricacion-card-image-wrapper {
+    height: 260px;
+  }
+
+  .fabricacion-card-body {
+    min-height: 245px;
+    padding: 27px 23px 29px;
+  }
+
+  .fabricacion-card-title {
+    font-size: 29px;
+  }
+
+  .fabricacion-card-description {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   TABLETS
+   Dos tarjetas por fila
+   ========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .fabricacion-hero {
+    min-height: 560px;
+  }
+
+  .fabricacion-hero-content {
+    width: min(100%, 760px);
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .fabricacion-hero-description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .fabricacion-introduccion {
+    padding-top: 75px;
+    padding-bottom: 48px;
+  }
+
+  .fabricacion-introduccion-title {
+    font-size: 43px;
+  }
+
+  .fabricacion-introduccion-description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .fabricacion-servicios {
+    padding-top: 25px;
+    padding-bottom: 90px;
+  }
+
+  .fabricacion-card-image-wrapper {
+    height: 260px;
+  }
+
+  .fabricacion-card-body {
+    min-height: 235px;
+    padding: 26px 22px 28px;
+  }
+
+  .fabricacion-card-title {
+    font-size: 29px;
+  }
+}
+
+/* =========================================
+   CELULARES
+   Una tarjeta por fila
+   ========================================= */
+
+@media screen and (max-width: 767.98px) {
+  .fabricacion-hero {
+    min-height: 540px;
+  }
+
+  .fabricacion-hero-content {
+    padding: 65px 24px;
+  }
+
+  .fabricacion-hero-title {
+    font-size: clamp(38px, 11vw, 50px);
+  }
+
+  .fabricacion-hero-line {
+    width: 60px;
+    height: 3px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+
+  .fabricacion-hero-description {
+    max-width: 620px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .fabricacion-introduccion {
+    padding: 65px 20px 40px;
+  }
+
+  .fabricacion-introduccion-title {
+    font-size: 38px;
+  }
+
+  .fabricacion-introduccion-line {
+    width: 56px;
+    height: 3px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+  }
+
+  .fabricacion-introduccion-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .fabricacion-servicios {
+    padding: 25px 0 75px;
+  }
+
+  .fabricacion-card {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .fabricacion-card-image-wrapper {
+    height: 280px;
+  }
+
+  .fabricacion-card-body {
+    min-height: auto;
+    padding: 27px 23px 30px;
+  }
+
+  .fabricacion-card-title {
+    font-size: 30px;
+  }
+
+  .fabricacion-card-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   CELULARES PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 575.98px) {
+  .fabricacion-hero {
+    min-height: 520px;
+  }
+
+  .fabricacion-hero-overlay {
+    background: rgba(5, 23, 35, 0.79);
+  }
+
+  .fabricacion-hero-content {
+    padding: 58px 20px;
+  }
+
+  .fabricacion-hero-title {
+    font-size: clamp(36px, 12vw, 48px);
+  }
+
+  .fabricacion-hero-description {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .fabricacion-introduccion {
+    padding-top: 58px;
+  }
+
+  .fabricacion-introduccion-title {
+    font-size: 35px;
+  }
+
+  .fabricacion-introduccion-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .fabricacion-card-image-wrapper {
+    height: 245px;
+  }
+
+  .fabricacion-card-body {
+    padding: 24px 20px 27px;
+  }
+
+  .fabricacion-card-title {
+    font-size: 28px;
+  }
+
+  .fabricacion-card-line {
+    width: 46px;
+    height: 3px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+  }
+
+  .fabricacion-card-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 350px) {
+  .fabricacion-hero {
+    min-height: 500px;
+  }
+
+  .fabricacion-hero-content {
+    padding: 50px 16px;
+  }
+
+  .fabricacion-hero-title {
+    font-size: 34px;
+  }
+
+  .fabricacion-hero-description {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .fabricacion-introduccion {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .fabricacion-introduccion-title {
+    font-size: 31px;
+  }
+
+  .fabricacion-introduccion-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .fabricacion-card-image-wrapper {
+    height: 215px;
+  }
+
+  .fabricacion-card-body {
+    padding: 21px 17px 24px;
+  }
+
+  .fabricacion-card-title {
+    font-size: 25px;
+  }
+
+  .fabricacion-card-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .fabricacion-card,
+  .fabricacion-card-image {
+    transition: none;
+  }
+}

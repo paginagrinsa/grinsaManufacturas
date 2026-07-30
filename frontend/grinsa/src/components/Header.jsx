@@ -5,13 +5,28 @@ import "./Header.css";
 
 function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const [submenuSolucionesAbierto, setSubmenuSolucionesAbierto] =
+    useState(false);
 
   const cerrarNavegacion = () => {
     setMenuAbierto(false);
+    setSubmenuSolucionesAbierto(false);
   };
 
   const alternarMenu = () => {
-    setMenuAbierto((estadoActual) => !estadoActual);
+    setMenuAbierto((estadoActual) => {
+      const nuevoEstado = !estadoActual;
+
+      if (!nuevoEstado) {
+        setSubmenuSolucionesAbierto(false);
+      }
+
+      return nuevoEstado;
+    });
+  };
+
+  const alternarSubmenuSoluciones = () => {
+    setSubmenuSolucionesAbierto((estadoActual) => !estadoActual);
   };
 
   const obtenerClaseEnlace = ({ isActive }) =>
@@ -19,9 +34,13 @@ function Header() {
       isActive ? "active grinsa-nav-link-active" : ""
     }`;
 
+  const obtenerClaseEnlaceSoluciones = ({ isActive }) =>
+    `nav-link grinsa-nav-link ${
+      isActive ? "active grinsa-nav-link-active" : ""
+    }`;
+
   return (
     <>
-      {/* Franja decorativa superior */}
       <div className="header-top-line" />
 
       <header>
@@ -46,7 +65,7 @@ function Header() {
               />
             </NavLink>
 
-            {/* Botón del menú móvil */}
+            {/* Botón de navegación móvil */}
             <button
               type="button"
               className="navbar-toggler grinsa-toggler ms-auto border-0 shadow-none"
@@ -91,25 +110,95 @@ function Header() {
                   </NavLink>
                 </li>
 
-                <li className="nav-item">
-                  <NavLink
-                    to="/soluciones"
-                    className={obtenerClaseEnlace}
-                    onClick={cerrarNavegacion}
+                {/* Dropdown de soluciones */}
+                <li
+                  className={`nav-item grinsa-dropdown ${
+                    submenuSolucionesAbierto
+                      ? "grinsa-dropdown-open"
+                      : ""
+                  }`}
+                  onKeyDown={(evento) => {
+                    if (evento.key === "Escape") {
+                      setSubmenuSolucionesAbierto(false);
+                    }
+                  }}
+                >
+                  <div className="grinsa-dropdown-trigger">
+                    <NavLink
+                      to="/soluciones"
+                      className={obtenerClaseEnlaceSoluciones}
+                      onClick={cerrarNavegacion}
+                    >
+                      Soluciones
+                    </NavLink>
+
+                    <button
+                      type="button"
+                      className="grinsa-dropdown-toggle"
+                      aria-label={
+                        submenuSolucionesAbierto
+                          ? "Cerrar opciones de soluciones"
+                          : "Mostrar opciones de soluciones"
+                      }
+                      aria-expanded={submenuSolucionesAbierto}
+                      aria-controls="submenu-soluciones"
+                      onClick={alternarSubmenuSoluciones}
+                    >
+                      <span
+                        className="grinsa-dropdown-arrow"
+                        aria-hidden="true"
+                      />
+                    </button>
+                  </div>
+
+                  <ul
+                    id="submenu-soluciones"
+                    className="grinsa-dropdown-menu"
+                    aria-label="Servicios de Grinsa Manufacturas"
                   >
-                    Soluciones
-                  </NavLink>
+                    <li>
+                      <NavLink
+                        to="/soluciones/fabricacion"
+                        className="grinsa-dropdown-item"
+                        onClick={cerrarNavegacion}
+                      >
+                        Fabricación
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <NavLink
+                        to="/soluciones/superficies"
+                        className="grinsa-dropdown-item"
+                        onClick={cerrarNavegacion}
+                      >
+                        Superficies
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <NavLink
+                        to="/soluciones/embarque"
+                        className="grinsa-dropdown-item"
+                        onClick={cerrarNavegacion}
+                      >
+                        Embarque
+                      </NavLink>
+                    </li>
+
+                    <li>
+                      <NavLink
+                        to="/soluciones/montaje"
+                        className="grinsa-dropdown-item"
+                        onClick={cerrarNavegacion}
+                      >
+                        Montaje
+                      </NavLink>
+                    </li>
+                  </ul>
                 </li>
 
-                <li className="nav-item">
-                  <NavLink
-                    to="/industrias"
-                    className={obtenerClaseEnlace}
-                    onClick={cerrarNavegacion}
-                  >
-                    Industrias
-                  </NavLink>
-                </li>
+            
 
                 <li className="nav-item">
                   <NavLink

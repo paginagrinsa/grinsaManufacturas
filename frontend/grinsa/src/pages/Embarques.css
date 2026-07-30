@@ -1,0 +1,681 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+  --embarque-azul-marino: #0b2232;
+  --embarque-azul-oscuro: #071925;
+  --embarque-texto: #334650;
+  --embarque-fondo-claro: #f4f6f7;
+  --embarque-blanco: #ffffff;
+  --embarque-borde: #dfe5e8;
+}
+
+/* =========================================
+   PÁGINA EMBARQUES
+   ========================================= */
+
+.embarque-page {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--embarque-blanco);
+}
+
+/* =========================================
+   IMAGEN PRINCIPAL
+   ========================================= */
+
+.embarque-hero {
+  position: relative;
+  width: 100%;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background-color: var(--embarque-azul-marino);
+  isolation: isolate;
+}
+
+.embarque-hero-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.embarque-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(5, 23, 35, 0.88),
+      rgba(5, 23, 35, 0.62),
+      rgba(5, 23, 35, 0.86)
+    );
+}
+
+/* =========================================
+   CONTENIDO DEL ENCABEZADO
+   ========================================= */
+
+.embarque-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 80px 28px;
+  color: var(--embarque-blanco);
+  text-align: center;
+}
+
+.embarque-hero-title {
+  margin: 0;
+  color: var(--embarque-blanco);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(44px, 7vw, 76px);
+  font-weight: 800;
+  line-height: 1.05;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.42);
+}
+
+.embarque-hero-line {
+  width: 78px;
+  height: 4px;
+  margin: 24px auto 29px;
+  background-color: var(--embarque-blanco);
+  border-radius: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.32);
+}
+
+.embarque-hero-description {
+  max-width: 880px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.85;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================================
+   INTRODUCCIÓN
+   ========================================= */
+
+.embarque-introduccion {
+  width: 100%;
+  padding: 88px 20px 68px;
+  background-color: var(--embarque-blanco);
+}
+
+.embarque-introduccion-content {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.embarque-introduccion-title {
+  margin: 0;
+  color: var(--embarque-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(38px, 4vw, 52px);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.embarque-introduccion-line {
+  width: 65px;
+  height: 4px;
+  margin: 10px auto 25px;
+  background-color: var(--embarque-azul-marino);
+  border-radius: 20px;
+}
+
+.embarque-introduccion-description {
+  max-width: 860px;
+  margin: 0 auto;
+  color: var(--embarque-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* =========================================
+   SECCIÓN DE TRANSPORTE
+   ========================================= */
+
+.embarque-transporte {
+  width: 100%;
+  padding: 45px 0 115px;
+  background-color: var(--embarque-fondo-claro);
+  border-top: 1px solid #e1e7ea;
+}
+
+.embarque-transporte-grid {
+  width: min(100%, 1450px);
+  min-height: 650px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.12fr)
+    minmax(420px, 0.88fr);
+  gap: 38px;
+  align-items: stretch;
+}
+
+/* =========================================
+   IMAGEN DE TRANSPORTE
+   ========================================= */
+
+.embarque-transporte-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 650px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #dce3e7;
+  border: 1px solid var(--embarque-borde);
+  border-radius: 10px;
+  box-shadow: 0 18px 42px rgba(8, 27, 40, 0.16);
+}
+
+.embarque-transporte-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  transition: transform 0.55s ease;
+}
+
+.embarque-transporte-image-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.32),
+      rgba(5, 23, 35, 0.02) 58%
+    );
+}
+
+.embarque-transporte-image-wrapper:hover
+  .embarque-transporte-image {
+  transform: scale(1.045);
+}
+
+/* =========================================
+   COLUMNA DERECHA
+   ========================================= */
+
+.embarque-transporte-content {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+/* =========================================
+   BLOQUES DE INFORMACIÓN
+   ========================================= */
+
+.embarque-info-panel {
+  width: 100%;
+  min-height: 0;
+  padding: 43px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--embarque-blanco);
+  border: 1px solid var(--embarque-borde);
+  border-radius: 10px;
+  box-shadow: 0 14px 34px rgba(8, 27, 40, 0.11);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.embarque-info-panel:hover {
+  border-color: #bac7cd;
+  box-shadow: 0 21px 42px rgba(8, 27, 40, 0.17);
+  transform: translateY(-5px);
+}
+
+.embarque-info-title {
+  margin: 0;
+  color: var(--embarque-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(32px, 3vw, 44px);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+.embarque-info-line {
+  width: 60px;
+  height: 4px;
+  margin: 12px 0 24px;
+  background-color: var(--embarque-azul-marino);
+  border-radius: 20px;
+}
+
+.embarque-info-description {
+  margin: 0;
+  color: var(--embarque-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.8;
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: normal;
+  hyphens: none;
+  -webkit-hyphens: none;
+}
+
+/* =========================================
+   MONITORES GRANDES
+   ========================================= */
+
+@media screen and (min-width: 1400px) {
+  .embarque-introduccion {
+    padding-top: 98px;
+    padding-bottom: 78px;
+  }
+
+  .embarque-transporte {
+    padding-top: 55px;
+    padding-bottom: 125px;
+  }
+
+  .embarque-transporte-grid {
+    width: min(100%, 1500px);
+    min-height: 720px;
+    gap: 44px;
+  }
+
+  .embarque-transporte-image-wrapper {
+    min-height: 720px;
+  }
+
+  .embarque-transporte-content {
+    gap: 34px;
+  }
+
+  .embarque-info-panel {
+    padding: 50px 47px;
+  }
+
+  .embarque-info-title {
+    font-size: 45px;
+  }
+
+  .embarque-info-description {
+    font-size: 18px;
+    line-height: 1.85;
+  }
+}
+
+/* =========================================
+   LAPTOPS
+   ========================================= */
+
+@media screen and (min-width: 992px) and (max-width: 1399.98px) {
+  .embarque-hero {
+    min-height: 600px;
+  }
+
+  .embarque-introduccion {
+    padding-top: 78px;
+    padding-bottom: 60px;
+  }
+
+  .embarque-transporte {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+
+  .embarque-transporte-grid {
+    min-height: 590px;
+    grid-template-columns:
+      minmax(0, 1.08fr)
+      minmax(390px, 0.92fr);
+    gap: 30px;
+  }
+
+  .embarque-transporte-image-wrapper {
+    min-height: 590px;
+  }
+
+  .embarque-transporte-content {
+    gap: 24px;
+  }
+
+  .embarque-info-panel {
+    padding: 34px 32px;
+  }
+
+  .embarque-info-title {
+    font-size: 37px;
+  }
+
+  .embarque-info-description {
+    font-size: 15px;
+    line-height: 1.75;
+  }
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .embarque-hero {
+    min-height: 560px;
+  }
+
+  .embarque-hero-content {
+    width: min(100%, 760px);
+    padding-right: 34px;
+    padding-left: 34px;
+  }
+
+  .embarque-hero-description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .embarque-introduccion {
+    padding: 72px 28px 58px;
+  }
+
+  .embarque-introduccion-title {
+    font-size: 43px;
+  }
+
+  .embarque-introduccion-description {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .embarque-transporte {
+    padding-top: 35px;
+    padding-bottom: 88px;
+  }
+
+  .embarque-transporte-grid {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .embarque-transporte-image-wrapper {
+    height: 480px;
+    min-height: 0;
+  }
+
+  .embarque-transporte-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 24px;
+  }
+
+  .embarque-info-panel {
+    min-height: 330px;
+    padding: 36px 31px;
+  }
+
+  .embarque-info-title {
+    font-size: 35px;
+  }
+
+  .embarque-info-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
+
+/* =========================================
+   CELULARES EN GENERAL
+   ========================================= */
+
+@media screen and (max-width: 767.98px) {
+  .embarque-hero {
+    min-height: 540px;
+  }
+
+  .embarque-hero-content {
+    padding: 65px 24px;
+  }
+
+  .embarque-hero-title {
+    font-size: clamp(38px, 11vw, 50px);
+  }
+
+  .embarque-hero-line {
+    width: 60px;
+    height: 3px;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+
+  .embarque-hero-description {
+    max-width: 620px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .embarque-introduccion {
+    padding: 63px 24px 52px;
+  }
+
+  .embarque-introduccion-title {
+    font-size: 38px;
+  }
+
+  .embarque-introduccion-line {
+    width: 56px;
+    height: 3px;
+    margin-top: 9px;
+    margin-bottom: 22px;
+  }
+
+  .embarque-introduccion-description {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .embarque-transporte {
+    padding: 30px 0 75px;
+  }
+
+  .embarque-transporte-grid {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .embarque-transporte-image-wrapper {
+    height: 390px;
+    min-height: 0;
+  }
+
+  .embarque-transporte-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 22px;
+  }
+
+  .embarque-info-panel {
+    min-height: auto;
+    padding: 38px 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .embarque-info-title {
+    font-size: 37px;
+    text-align: center;
+  }
+
+  .embarque-info-line {
+    width: 55px;
+    height: 3px;
+    margin: 10px auto 21px;
+  }
+
+  .embarque-info-description {
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: center;
+  }
+}
+
+/* =========================================
+   CELULARES PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 575.98px) {
+  .embarque-hero {
+    min-height: 520px;
+  }
+
+  .embarque-hero-overlay {
+    background: rgba(5, 23, 35, 0.8);
+  }
+
+  .embarque-hero-content {
+    padding: 58px 20px;
+  }
+
+  .embarque-hero-title {
+    font-size: clamp(36px, 12vw, 48px);
+  }
+
+  .embarque-hero-description {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .embarque-introduccion {
+    padding: 55px 20px 46px;
+  }
+
+  .embarque-introduccion-title {
+    font-size: 35px;
+  }
+
+  .embarque-introduccion-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .embarque-transporte {
+    padding-top: 25px;
+    padding-bottom: 65px;
+  }
+
+  .embarque-transporte-image-wrapper {
+    height: 310px;
+    border-radius: 8px;
+  }
+
+  .embarque-info-panel {
+    padding: 33px 24px;
+    border-radius: 8px;
+  }
+
+  .embarque-info-title {
+    font-size: 33px;
+  }
+
+  .embarque-info-description {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 350px) {
+  .embarque-hero {
+    min-height: 500px;
+  }
+
+  .embarque-hero-content {
+    padding: 50px 16px;
+  }
+
+  .embarque-hero-title {
+    font-size: 34px;
+  }
+
+  .embarque-hero-description {
+    font-size: 10px;
+    line-height: 1.55;
+  }
+
+  .embarque-introduccion {
+    padding: 48px 16px 41px;
+  }
+
+  .embarque-introduccion-title {
+    font-size: 31px;
+  }
+
+  .embarque-introduccion-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .embarque-transporte-image-wrapper {
+    height: 250px;
+  }
+
+  .embarque-info-panel {
+    padding: 28px 20px;
+  }
+
+  .embarque-info-title {
+    font-size: 29px;
+  }
+
+  .embarque-info-description {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .embarque-transporte-image,
+  .embarque-info-panel {
+    transition: none;
+  }
+}

@@ -1,15 +1,26 @@
 /* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+  --header-azul-marino: #0b2232;
+  --header-azul-oscuro: #081b28;
+  --header-blanco: #ffffff;
+  --header-texto-claro: #f5f6f7;
+}
+
+/* =========================================
    FRANJA SUPERIOR
    ========================================= */
 
 .header-top-line {
   width: 100%;
   height: 5px;
-  background-color: #ffffff;
+  background-color: var(--header-blanco);
 }
 
 /* =========================================
-   NAVEGACIÓN PRINCIPAL
+   NAVEGACIÓN
    ========================================= */
 
 .grinsa-navbar {
@@ -56,10 +67,11 @@
   object-fit: contain;
   object-position: center;
   user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* =========================================
-   ENLACES
+   ENLACES PRINCIPALES
    ========================================= */
 
 .grinsa-nav-link {
@@ -69,12 +81,13 @@
   align-items: center;
   padding-right: 0 !important;
   padding-left: 0 !important;
-  color: #f5f6f7 !important;
+  color: var(--header-texto-claro) !important;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.35px;
   text-transform: uppercase;
+  text-decoration: none;
   white-space: nowrap;
   transition:
     color 0.25s ease,
@@ -106,6 +119,180 @@
 }
 
 /* =========================================
+   DROPDOWN
+   ========================================= */
+
+.grinsa-dropdown {
+  position: relative;
+}
+
+.grinsa-dropdown-trigger {
+  position: relative;
+  min-height: 96px;
+  display: flex;
+  align-items: stretch;
+}
+
+.grinsa-dropdown-trigger .grinsa-nav-link {
+  flex: 1 1 auto;
+  padding-right: 24px !important;
+}
+
+/* =========================================
+   BOTÓN Y FLECHA DEL DROPDOWN
+   ========================================= */
+
+.grinsa-dropdown-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: 22px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: #ffffff;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.grinsa-dropdown-toggle:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.grinsa-dropdown-arrow {
+  width: 8px;
+  height: 8px;
+  display: block;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transform-origin: center;
+  transition:
+    transform 0.25s ease,
+    opacity 0.2s ease;
+}
+
+/* =========================================
+   MENÚ DESPLEGABLE
+   ========================================= */
+
+.grinsa-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 1200;
+  min-width: 225px;
+  margin: 0;
+  padding: 8px 0;
+  overflow: hidden;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid rgba(11, 34, 50, 0.13);
+  border-radius: 0 0 7px 7px;
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translate(-50%, 12px);
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+}
+
+.grinsa-dropdown-menu li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.grinsa-dropdown-item {
+  width: 100%;
+  min-height: 49px;
+  padding: 13px 24px;
+  display: flex;
+  align-items: center;
+  color: var(--header-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.25px;
+  text-decoration: none;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(11, 34, 50, 0.09);
+  transition:
+    color 0.22s ease,
+    background-color 0.22s ease,
+    padding-left 0.22s ease;
+}
+
+.grinsa-dropdown-menu li:last-child
+  .grinsa-dropdown-item {
+  border-bottom: none;
+}
+
+.grinsa-dropdown-item::before {
+  width: 0;
+  height: 2px;
+  margin-right: 0;
+  background-color: #ffffff;
+  border-radius: 10px;
+  content: "";
+  transition:
+    width 0.22s ease,
+    margin-right 0.22s ease;
+}
+
+.grinsa-dropdown-item:hover,
+.grinsa-dropdown-item:focus,
+.grinsa-dropdown-item.active {
+  padding-left: 20px;
+  color: #ffffff;
+  background-color: var(--header-azul-marino);
+  outline: none;
+}
+
+.grinsa-dropdown-item:hover::before,
+.grinsa-dropdown-item:focus::before,
+.grinsa-dropdown-item.active::before {
+  width: 13px;
+  margin-right: 9px;
+}
+
+/* =========================================
+   COMPUTADORAS
+
+   El dropdown se abre al pasar el cursor.
+   Se oculta completamente el botón y la
+   flecha para no dejar espacio vacío.
+   ========================================= */
+
+@media screen and (min-width: 992px) {
+  .grinsa-dropdown-trigger .grinsa-nav-link {
+    padding-right: 0 !important;
+  }
+
+  .grinsa-dropdown-toggle {
+    display: none;
+  }
+
+  .grinsa-dropdown:hover .grinsa-dropdown-menu,
+  .grinsa-dropdown:focus-within .grinsa-dropdown-menu,
+  .grinsa-dropdown-open .grinsa-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* =========================================
    BOTÓN HAMBURGUESA
    ========================================= */
 
@@ -121,7 +308,7 @@
    PANTALLAS MEDIANAS
    ========================================= */
 
-@media (max-width: 1199.98px) {
+@media screen and (max-width: 1199.98px) {
   .grinsa-brand {
     width: 200px;
     height: 66px;
@@ -139,11 +326,12 @@
 
 /* =========================================
    TABLETS Y CELULARES
-   Bootstrap navbar-expand-lg cambia a menú
-   móvil por debajo de 992px
+
+   Bootstrap navbar-expand-lg cambia al menú
+   móvil por debajo de 992px.
    ========================================= */
 
-@media (max-width: 991.98px) {
+@media screen and (max-width: 991.98px) {
   .grinsa-navbar,
   .grinsa-navbar > .container-fluid {
     min-height: 82px;
@@ -159,8 +347,10 @@
     top: 100%;
     right: 0;
     left: 0;
+    max-height: calc(100vh - 82px);
     padding: 15px 24px 28px;
-    background-color: #0b2232;
+    overflow-y: auto;
+    background-color: var(--header-azul-marino);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
   }
@@ -202,13 +392,135 @@
     width: 3px;
     height: 27px;
   }
+
+  /* =====================================
+     DROPDOWN EN TABLETS Y CELULARES
+     ===================================== */
+
+  .grinsa-dropdown-trigger {
+    width: 100%;
+    min-height: 56px;
+  }
+
+  .grinsa-dropdown-trigger .grinsa-nav-link {
+    width: 100%;
+    min-height: 56px;
+    padding-right: 56px !important;
+  }
+
+  .grinsa-dropdown-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: auto;
+    width: 52px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .grinsa-dropdown-arrow {
+    width: 9px;
+    height: 9px;
+  }
+
+  .grinsa-dropdown-menu {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+    min-width: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.045);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none;
+    transform: none;
+    transition:
+      max-height 0.3s ease,
+      padding 0.3s ease;
+  }
+
+  .grinsa-dropdown-open .grinsa-dropdown-menu {
+    max-height: 280px;
+    padding: 5px 0 9px;
+    pointer-events: auto;
+  }
+
+  .grinsa-dropdown-open .grinsa-dropdown-arrow {
+    transform: rotate(225deg) translate(-1px, -1px);
+  }
+
+  .grinsa-dropdown-item {
+    min-height: 47px;
+    padding: 12px 22px 12px 28px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+  }
+
+  .grinsa-dropdown-item::before {
+    width: 12px;
+    height: 2px;
+    margin-right: 10px;
+    background-color: rgba(255, 255, 255, 0.55);
+  }
+
+  .grinsa-dropdown-item:hover,
+  .grinsa-dropdown-item:focus,
+  .grinsa-dropdown-item.active {
+    padding-left: 32px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.09);
+  }
+}
+
+/* =========================================
+   TABLETS
+
+   La flecha se oculta, pero el botón sigue
+   funcionando como área táctil invisible.
+   ========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .grinsa-dropdown-arrow {
+    opacity: 0;
+    visibility: hidden;
+    border: none;
+  }
+
+  .grinsa-dropdown-toggle {
+    color: transparent;
+    border-left: none;
+  }
+}
+
+/* =========================================
+   CELULARES
+
+   En celulares se conserva la flecha para
+   indicar que existen opciones desplegables.
+   ========================================= */
+
+@media screen and (max-width: 767.98px) {
+  .grinsa-dropdown-arrow {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* =========================================
    CELULARES PEQUEÑOS
    ========================================= */
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .grinsa-brand {
     width: 155px;
     height: 52px;
@@ -226,13 +538,18 @@
   .grinsa-nav-link::after {
     left: -18px;
   }
+
+  .grinsa-dropdown-item {
+    padding-left: 22px;
+    font-size: 13px;
+  }
 }
 
 /* =========================================
    CELULARES MUY PEQUEÑOS
    ========================================= */
 
-@media (max-width: 350px) {
+@media screen and (max-width: 350px) {
   .grinsa-brand {
     width: 138px;
     height: 47px;
@@ -240,5 +557,34 @@
 
   .grinsa-nav-link {
     font-size: 13px;
+  }
+
+  .grinsa-dropdown-toggle {
+    width: 46px;
+  }
+
+  .grinsa-dropdown-trigger .grinsa-nav-link {
+    padding-right: 48px !important;
+  }
+
+  .grinsa-dropdown-item {
+    padding-left: 18px;
+    font-size: 12px;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .grinsa-brand,
+  .grinsa-nav-link,
+  .grinsa-nav-link::after,
+  .grinsa-dropdown-arrow,
+  .grinsa-dropdown-menu,
+  .grinsa-dropdown-item,
+  .grinsa-dropdown-item::before {
+    transition: none;
   }
 }

@@ -1,0 +1,472 @@
+/* =========================================
+   VARIABLES DE LA PÁGINA
+   ========================================= */
+
+:root {
+  --soluciones-azul-marino: #0b2232;
+  --soluciones-texto: #334650;
+  --soluciones-fondo: #f4f6f7;
+  --soluciones-blanco: #ffffff;
+  --soluciones-borde: #dfe5e8;
+}
+
+/* =========================================
+   PÁGINA SOLUCIONES
+   ========================================= */
+
+.soluciones-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--soluciones-blanco);
+}
+
+/* =========================================
+   SECCIÓN DE SERVICIOS
+   ========================================= */
+
+.soluciones-servicios {
+  width: 100%;
+  padding: 90px 0 115px;
+  background-color: var(--soluciones-fondo);
+}
+
+/* =========================================
+   ENCABEZADO DE LA SECCIÓN
+   ========================================= */
+
+.soluciones-heading {
+  width: min(100%, 920px);
+  margin: 0 auto 55px;
+  text-align: center;
+}
+
+.soluciones-section-title {
+  margin: 0;
+  color: var(--soluciones-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(40px, 4vw, 54px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+/*
+  Línea colocada directamente debajo
+  del título Soluciones.
+*/
+
+.soluciones-section-line {
+  width: 68px;
+  height: 4px;
+  margin: 8px auto 25px;
+  background-color: var(--soluciones-azul-marino);
+  border-radius: 20px;
+}
+
+.soluciones-intro-text {
+  max-width: 870px;
+  margin: 0 auto;
+  color: var(--soluciones-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  line-height: 1.75;
+}
+
+.soluciones-intro-text b {
+  font-weight: 700;
+}
+
+/* =========================================
+   FILA DE TARJETAS
+   ========================================= */
+
+.soluciones-grid {
+  width: min(100%, 1400px);
+  margin-right: auto;
+  margin-left: auto;
+  align-items: stretch;
+  justify-content: center;
+}
+
+/* =========================================
+   ENLACE DE LA TARJETA
+   ========================================= */
+
+.solucion-card-link {
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+.solucion-card-link:hover,
+.solucion-card-link:focus {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   TARJETA
+   ========================================= */
+
+.solucion-card {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--soluciones-blanco);
+  border: 1px solid var(--soluciones-borde);
+  border-radius: 10px;
+  box-shadow: 0 14px 32px rgba(8, 27, 40, 0.12);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.solucion-card-link:hover .solucion-card,
+.solucion-card-link:focus .solucion-card {
+  border-color: #aebdc4;
+  box-shadow: 0 23px 46px rgba(8, 27, 40, 0.21);
+  transform: translateY(-8px);
+}
+
+/* =========================================
+   IMAGEN DE LA TARJETA
+   ========================================= */
+
+.solucion-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  background-color: #dce3e7;
+}
+
+.solucion-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  transition: transform 0.55s ease;
+}
+
+.solucion-image-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to top,
+      rgba(5, 23, 35, 0.38),
+      rgba(5, 23, 35, 0.03) 60%
+    );
+  transition: background-color 0.3s ease;
+}
+
+.solucion-card-link:hover .solucion-image,
+.solucion-card-link:focus .solucion-image {
+  transform: scale(1.055);
+}
+
+/* =========================================
+   CONTENIDO DE LA TARJETA
+   ========================================= */
+
+.solucion-card-body {
+  min-height: 145px;
+  padding: 28px 24px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--soluciones-blanco);
+  text-align: center;
+}
+
+/* =========================================
+   NOMBRE DEL SERVICIO
+   ========================================= */
+
+.solucion-card-title {
+  margin: 0;
+  color: var(--soluciones-azul-marino);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(29px, 2.6vw, 38px);
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+}
+
+/* =========================================
+   LÍNEA DEBAJO DEL SERVICIO
+   ========================================= */
+
+.solucion-card-line {
+  width: 55px;
+  height: 4px;
+  margin: 11px auto 0;
+  background-color: var(--soluciones-azul-marino);
+  border-radius: 20px;
+}
+
+/* =========================================
+   MONITORES GRANDES
+   ========================================= */
+
+@media screen and (min-width: 1400px) {
+  .soluciones-servicios {
+    padding-top: 100px;
+    padding-bottom: 125px;
+  }
+
+  .soluciones-heading {
+    margin-bottom: 62px;
+  }
+
+  .soluciones-grid {
+    width: min(100%, 1450px);
+  }
+
+  .solucion-image-wrapper {
+    height: 390px;
+  }
+
+  .solucion-card-body {
+    min-height: 155px;
+    padding: 31px 28px 27px;
+  }
+
+  .solucion-card-title {
+    font-size: 39px;
+  }
+
+  .solucion-card-line {
+    width: 58px;
+    margin-top: 12px;
+  }
+}
+
+/* =========================================
+   COMPUTADORAS Y LAPTOPS
+   ========================================= */
+
+@media screen and (min-width: 992px) and (max-width: 1399.98px) {
+  .soluciones-grid {
+    width: min(100%, 1280px);
+  }
+
+  .solucion-image-wrapper {
+    height: 330px;
+  }
+
+  .solucion-card-body {
+    min-height: 140px;
+    padding: 27px 22px 24px;
+  }
+
+  .solucion-card-title {
+    font-size: 34px;
+  }
+}
+
+/* =========================================
+   TABLETS
+   Dos tarjetas por fila
+   ========================================= */
+
+@media screen and (min-width: 768px) and (max-width: 991.98px) {
+  .soluciones-servicios {
+    padding-top: 78px;
+    padding-bottom: 92px;
+  }
+
+  .soluciones-heading {
+    max-width: 730px;
+    margin-bottom: 45px;
+  }
+
+  .soluciones-section-title {
+    font-size: 44px;
+  }
+
+  .soluciones-section-line {
+    margin-top: 7px;
+    margin-bottom: 22px;
+  }
+
+  .soluciones-intro-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .soluciones-grid {
+    width: 100%;
+  }
+
+  .solucion-image-wrapper {
+    height: 265px;
+  }
+
+  .solucion-card-body {
+    min-height: 125px;
+    padding: 24px 18px 22px;
+  }
+
+  .solucion-card-title {
+    font-size: 30px;
+  }
+
+  .solucion-card-line {
+    width: 50px;
+    height: 4px;
+    margin-top: 10px;
+  }
+}
+
+/* =========================================
+   TABLETS PEQUEÑAS
+   Una tarjeta por fila por debajo de 768px
+   ========================================= */
+
+@media screen and (min-width: 576px) and (max-width: 767.98px) {
+  .soluciones-servicios {
+    padding-top: 72px;
+    padding-bottom: 82px;
+  }
+
+  .soluciones-heading {
+    max-width: 620px;
+    margin-bottom: 41px;
+  }
+
+  .soluciones-intro-text {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .solucion-card {
+    max-width: 620px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .solucion-image-wrapper {
+    height: 330px;
+  }
+
+  .solucion-card-body {
+    min-height: 130px;
+  }
+
+  .solucion-card-title {
+    font-size: 33px;
+  }
+}
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media screen and (max-width: 575.98px) {
+  .soluciones-servicios {
+    padding: 60px 0 70px;
+  }
+
+  .soluciones-heading {
+    margin-bottom: 37px;
+  }
+
+  .soluciones-section-title {
+    font-size: 38px;
+  }
+
+  .soluciones-section-line {
+    width: 56px;
+    height: 3px;
+    margin-top: 6px;
+    margin-bottom: 20px;
+  }
+
+  .soluciones-intro-text {
+    max-width: 440px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .solucion-card {
+    max-width: 440px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .solucion-image-wrapper {
+    height: 260px;
+  }
+
+  .solucion-card-body {
+    min-height: 110px;
+    padding: 21px 17px 19px;
+  }
+
+  .solucion-card-title {
+    font-size: 29px;
+  }
+
+  .solucion-card-line {
+    width: 46px;
+    height: 3px;
+    margin-top: 9px;
+  }
+}
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 350px) {
+  .soluciones-servicios {
+    padding-top: 53px;
+    padding-bottom: 62px;
+  }
+
+  .soluciones-section-title {
+    font-size: 34px;
+  }
+
+  .soluciones-intro-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .solucion-image-wrapper {
+    height: 220px;
+  }
+
+  .solucion-card-body {
+    min-height: 100px;
+    padding: 18px 14px 17px;
+  }
+
+  .solucion-card-title {
+    font-size: 26px;
+  }
+
+  .solucion-card-line {
+    width: 43px;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .solucion-card,
+  .solucion-image {
+    transition: none;
+  }
+}

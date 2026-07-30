@@ -6,19 +6,19 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://www.igesur.com/wp-content/uploads/2023/10/como-preparar-superficies-metalicas-para-pintar.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452763/Captura_de_pantalla_2026-07-30_170319_zavzey.png",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://www.igesur.com/wp-content/uploads/2023/10/como-preparar-superficies-metalicas-para-pintar.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452764/Captura_de_pantalla_2026-07-30_170249_llftpo.png",
     alt: "Foto 2",
   },
   {
     id: 3,
     imagen:
-      "https://www.igesur.com/wp-content/uploads/2023/10/como-preparar-superficies-metalicas-para-pintar.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452764/Captura_de_pantalla_2026-07-30_170302_uqiknz.png",
     alt: "Foto 3",
   },
 ];

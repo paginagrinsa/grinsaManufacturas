@@ -17,7 +17,7 @@ const servicios = [
     nombre: "Superficies",
     ruta: "/soluciones/superficies",
     imagen:
-      "https://www.igesur.com/wp-content/uploads/2023/10/como-preparar-superficies-metalicas-para-pintar.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452764/Captura_de_pantalla_2026-07-30_170302_uqiknz.png",
     alt: "Procesamiento y acabado de superficies metálicas",
   },
   {
@@ -33,7 +33,7 @@ const servicios = [
     nombre: "Montaje",
     ruta: "/soluciones/montaje",
     imagen:
-      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785540406/Imagen1_kmlueh.jpg",
     alt: "Montaje de estructuras industriales",
   },
 ];

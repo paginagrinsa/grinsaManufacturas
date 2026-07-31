@@ -6,13 +6,13 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785539985/Captura_de_pantalla_2026-07-31_171802_qkgatb.png",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785539985/Captura_de_pantalla_2026-07-31_171822_tjasd9.png",
     alt: "Foto 2",
   },
   {

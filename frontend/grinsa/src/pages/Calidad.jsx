@@ -2,257 +2,224 @@ import { useEffect } from "react";
 
 import "./Calidad.css";
 
-const imagenPrincipal =
-  "https://mecaluxmx.cdnwm.com/img/blog/control-de-calidad-beneficios.1.11.jpg?imwidth=1024&imdensity=1";
-
-const certificaciones = [
-  {
-    id: 1,
-    imagen:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhwmf1Um0ehs4kqQ3DK2eknRkzQ5p1N7z8dQrNRcbj_Mqb2iw-ekLE9PhI&s=10",
-    alt: "Procesos industriales certificados",
-    
-  },
-  {
-    id: 2,
-    imagen:
-      "https://minsamexico.com.mx/wp-content/uploads/2021/11/Certificado_Minsa-scaled.jpg",
-    alt: "Maquinaria industrial bajo procesos de calidad",
-    
-  },
-  {
-    id: 3,
-    imagen:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4Tv_vX3Xiaq055FcZDqOD2NwKkM4wR3twPNZ0qDJYccdmHyhQlX39yZ1v&s=10",
-    alt: "Personal verificando procesos de manufactura",
-    
-  },
-  {
-    id: 4,
-    imagen:
-      "https://pscmexico.mx/wp-content/uploads/2024/07/Certificado-791x1024.jpg",
-    alt: "Control y supervisión de calidad industrial",
-    
-  },
-];
-
-const imagenSixSigma =
-  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtT0nw5ZREPPYgWE_db96FaE_HHfqvOWMl8F60fpVZqZcomgJOaC6ad1w&s=10";
-
 function Calidad() {
   useEffect(() => {
-    document.title = "Grinsa Manufacturas | Calidad";
+    document.title =
+      "Sistema de Gestión de Calidad | Grinsa Manufacturas";
   }, []);
 
   return (
     <main className="calidad-page">
       {/* =====================================
-          IMAGEN PRINCIPAL
+          ENCABEZADO PRINCIPAL
           ===================================== */}
       <section
-        className="calidad-hero"
-        aria-labelledby="calidad-hero-title"
+        className="calidad-encabezado"
+        aria-labelledby="calidad-title"
       >
-        <img
-          src={imagenPrincipal}
-          alt="Procesos de calidad dentro de una planta industrial"
-          className="calidad-hero-image"
-          draggable="false"
-          loading="eager"
-          fetchPriority="high"
-        />
+        <div className="container">
+          <div className="calidad-encabezado-content">
+            <h1
+              id="calidad-title"
+              className="calidad-encabezado-title"
+            >
+              Sistema de Gestión de Calidad
+            </h1>
 
-        <div
-          className="calidad-hero-overlay"
-          aria-hidden="true"
-        />
-
-        <div className="calidad-hero-content">
-          <h1
-            id="calidad-hero-title"
-            className="calidad-hero-title"
-          >
-            Calidad
-          </h1>
-
-          <div className="calidad-hero-line" />
-
-          <p className="calidad-hero-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer malesuada, nisl vel tincidunt tincidunt, sapien
-            libero malesuada enim, vitae tristique neque erat sed
-            justo. Sed consequat, mauris sit amet tincidunt feugiat,
-            arcu erat volutpat lorem.
-          </p>
+            <div
+              className="calidad-encabezado-line"
+              aria-hidden="true"
+            />
+          </div>
         </div>
       </section>
 
       {/* =====================================
-          CERTIFICACIONES
+          CONTENIDO DEL SISTEMA DE CALIDAD
           ===================================== */}
       <section
-        className="calidad-certificaciones"
-        aria-labelledby="calidad-certificaciones-title"
+        className="calidad-sistema"
+        aria-label="Procesos del Sistema de Gestión de Calidad"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
-          <div className="calidad-section-heading">
-            <h2
-              id="calidad-certificaciones-title"
-              className="calidad-section-title"
-            >
-              Certificaciones
-            </h2>
+          <div className="calidad-grid">
+            {/* =================================
+                CHECKLIST DE PAILERÍA
+                ================================= */}
+            <article className="calidad-card calidad-card-principal">
+              <header className="calidad-card-header">
+                <h2 className="calidad-card-title">
+                  Checklist calidad std. pailería
+                </h2>
+              </header>
 
-            <div className="calidad-section-line" />
-          </div>
-
-          <div className="row row-cols-1 row-cols-sm-2 row-cols-xl-4 g-4">
-            {certificaciones.map((certificacion) => (
               <div
-                key={certificacion.id}
-                className="col"
-              >
-                <article className="card calidad-certificacion-card h-100">
-                  <div className="calidad-certificacion-image-wrapper">
-                    <img
-                      src={certificacion.imagen}
-                      alt={certificacion.alt}
-                      className="card-img-top calidad-certificacion-image"
-                      draggable="false"
-                      loading="lazy"
-                    />
+                className="calidad-card-line"
+                aria-hidden="true"
+              />
 
-                    <div className="calidad-certificacion-overlay">
-                      <h3 className="calidad-certificacion-name">
-                        {certificacion.nombre}
-                      </h3>
-                    </div>
-                  </div>
-                </article>
-              </div>
-            ))}
+              <ul className="calidad-lista">
+                <li>
+                  <strong>Habilitado</strong>
+
+                  <ul className="calidad-sublista">
+                    <li>
+                      <strong>Corte:</strong> dimensiones, cuadratura,
+                      conicidad y ovalamiento de barrenos, inspección
+                      visual de muescas.
+                    </li>
+
+                    <li>
+                      <strong>Barrenado:</strong> trazo, dimensiones y
+                      rebabeo.
+                    </li>
+
+                    <li>
+                      <strong>Rolado:</strong> dimensiones y
+                      ovalamiento.
+                    </li>
+                  </ul>
+                </li>
+
+                <li>
+                  <strong>Armado:</strong> dimensiones, cuadratura,
+                  paralelismo y camber.
+                </li>
+
+                <li>
+                  <strong>Soldadura:</strong> inspección visual,
+                  líquidos penetrantes, inspección de pandeamiento y
+                  camber.
+                </li>
+
+                <li>
+                  Llenado de registro dimensional, planos baloneados y
+                  baloneo de soldadura.
+                </li>
+
+                <li>Perfil de anclaje sand blast.</li>
+
+                <li>Inspección visual de primer y acabado.</li>
+
+                <li>
+                  Inspección de espesores de primer y acabado con
+                  positector.
+                </li>
+              </ul>
+            </article>
+
+            {/* =================================
+                CHECKLIST DE MAQUINADOS
+                ================================= */}
+            <article className="calidad-card calidad-card-principal">
+              <header className="calidad-card-header">
+                <h2 className="calidad-card-title">
+                  Checklist calidad std. maquinados
+                </h2>
+              </header>
+
+              <div
+                className="calidad-card-line"
+                aria-hidden="true"
+              />
+
+              <ul className="calidad-lista">
+                <li>Dimensiones según plano.</li>
+
+                <li>
+                  Inspección visual de acabado y rebabeo.
+                </li>
+
+                <li>Llenado de registro dimensional.</li>
+
+                <li>
+                  Inspección de premaquinado previo a soldadura en
+                  ensambles.
+                </li>
+
+                <li>
+                  Inspección de dimensiones protegidas para tratamiento
+                  térmico y rectificado.
+                </li>
+              </ul>
+            </article>
+
+            {/* =================================
+                PROCEDIMIENTOS
+                ================================= */}
+            <article className="calidad-card">
+              <header className="calidad-card-header">
+                <h2 className="calidad-card-title">
+                  Procedimientos
+                </h2>
+              </header>
+
+              <div
+                className="calidad-card-line"
+                aria-hidden="true"
+              />
+
+              <ul className="calidad-lista">
+                <li>
+                  <strong>Preproducción</strong>
+
+                  <ul className="calidad-sublista">
+                    <li>PPAP / master producción y calidad.</li>
+
+                    <li>Proceso de compras.</li>
+
+                    <li>Proceso de recepción de material.</li>
+                  </ul>
+                </li>
+
+                <li>Producción y mantenimiento.</li>
+              </ul>
+            </article>
+
+            {/* =================================
+                TRAZABILIDAD Y CERTIFICADOS
+                ================================= */}
+            <article className="calidad-card">
+              <header className="calidad-card-header">
+                <h2 className="calidad-card-title">
+                  Trazabilidad y certificados
+                </h2>
+              </header>
+
+              <div
+                className="calidad-card-line"
+                aria-hidden="true"
+              />
+
+              <ul className="calidad-lista">
+                <li>Certificados de materia prima.</li>
+
+                <li>Certificados de pintura.</li>
+
+                <li>Certificados de tratamiento térmico.</li>
+
+                <li>
+                  Certificado de tarima y embalaje con calidad de
+                  exportación.
+                </li>
+
+                <li>
+                  <strong>Procesos</strong>
+
+                  <ul className="calidad-sublista">
+                    <li>
+                      <strong>Soldadores:</strong> número de estampa.
+                    </li>
+
+                    <li>
+                      <strong>Pintores:</strong> registro de preparación
+                      y aplicación.
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </article>
           </div>
-
-          <p className="calidad-certificaciones-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Praesent dignissim, erat vel suscipit facilisis, tortor
-            sapien porttitor libero, vitae scelerisque justo neque
-            quis augue. Integer malesuada, nisl vel tincidunt
-            tincidunt, sapien libero malesuada enim, vitae tristique
-            neque erat sed justo. Sed consequat, mauris sit amet
-            tincidunt feugiat, arcu erat volutpat lorem.
-          </p>
-        </div>
-      </section>
-
-      {/* =====================================
-          NUESTRO COMPROMISO
-          ===================================== */}
-      <section
-        className="calidad-compromiso"
-        aria-labelledby="calidad-compromiso-title"
-      >
-        <div className="calidad-section-heading">
-          <h2
-            id="calidad-compromiso-title"
-            className="calidad-section-title"
-          >
-            Nuestro compromiso
-          </h2>
-
-          <div className="calidad-section-line" />
-        </div>
-
-        <div className="calidad-compromiso-container">
-          {/* Texto izquierdo */}
-          <div className="calidad-compromiso-content">
-           
-
-            <div className="calidad-compromiso-line" />
-
-            <p className="calidad-compromiso-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Integer malesuada, nisl vel tincidunt tincidunt, sapien
-              libero malesuada enim, vitae tristique neque erat sed
-              justo. Praesent dignissim, erat vel suscipit facilisis,
-              tortor sapien porttitor libero.
-            </p>
-
-            <p className="calidad-compromiso-description">
-              Sed consequat, mauris sit amet tincidunt feugiat, arcu
-              erat volutpat lorem, vitae posuere justo lorem non massa.
-              Donec feugiat, augue vitae malesuada tincidunt, justo
-              lacus consectetur nisi, vel malesuada ligula lorem sit
-              amet neque.
-            </p>
-
-            <p className="calidad-compromiso-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Maecenas sed erat vitae neque feugiat tincidunt. Donec
-              quis magna vitae justo malesuada efficitur.
-            </p>
-
-            <p className="calidad-compromiso-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Maecenas sed erat vitae neque feugiat tincidunt. Donec
-              quis magna vitae justo malesuada efficitur.
-            </p>
-
-            <p className="calidad-compromiso-description">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Maecenas sed erat vitae neque feugiat tincidunt. Donec
-              quis magna vitae justo malesuada efficitur.
-            </p>
-          </div>
-
-          {/* Imagen derecha */}
-          <figure className="calidad-six-sigma-image-wrapper">
-            <img
-              src={imagenSixSigma}
-              alt="Análisis de datos aplicado a la metodología Six Sigma"
-              className="calidad-six-sigma-image"
-              draggable="false"
-              loading="lazy"
-            />
-
-            
-          </figure>
-        </div>
-      </section>
-
-      {/* =====================================
-          EQUIPOS DE MEDICIÓN Y CONTROL
-          ===================================== */}
-      <section
-        className="calidad-equipos"
-        aria-labelledby="calidad-equipos-title"
-      >
-        <div className="calidad-equipos-container">
-          <h2
-            id="calidad-equipos-title"
-            className="calidad-equipos-title"
-          >
-            Equipos de Medición y Control
-          </h2>
-
-          <div className="calidad-equipos-line" />
-
-          <p className="calidad-equipos-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Integer malesuada, nisl vel tincidunt tincidunt, sapien
-            libero malesuada enim, vitae tristique neque erat sed
-            justo. Sed consequat, mauris sit amet tincidunt feugiat,
-            arcu erat volutpat lorem, vitae posuere justo lorem non
-            massa.
-          </p>
-
-          <p className="calidad-equipos-description">
-            Praesent dignissim, erat vel suscipit facilisis, tortor
-            sapien porttitor libero, vitae scelerisque justo neque
-            quis augue. Donec feugiat, augue vitae malesuada
-            tincidunt, justo lacus consectetur nisi, vel malesuada
-            ligula lorem sit amet neque.
-          </p>
         </div>
       </section>
     </main>

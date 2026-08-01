@@ -6,13 +6,13 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785539985/Captura_de_pantalla_2026-07-31_171802_qkgatb.png",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785540406/Imagen1_kmlueh.jpg",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785539985/Captura_de_pantalla_2026-07-31_171822_tjasd9.png",
+      "https://res.cloudinary.com/geurbdzo/image/upload/v1785540406/Imagen2_ebkwqd.jpg",
     alt: "Foto 2",
   },
   {

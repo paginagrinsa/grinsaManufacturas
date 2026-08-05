@@ -1,3 +1,5 @@
+
+
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
@@ -25,10 +27,7 @@ function AvisoPrivacidad() {
       >
         <div className="container">
           <div className="privacidad-hero-content">
-            <p className="privacidad-eyebrow">
-              Protección de datos personales
-            </p>
-
+            
             <h1
               id="privacidad-title"
               className="privacidad-title"
@@ -41,15 +40,6 @@ function AvisoPrivacidad() {
               aria-hidden="true"
             />
 
-            <p className="privacidad-intro">
-              Conoce cómo Grinsa Manufacturas recopila, utiliza,
-              protege y conserva los datos proporcionados mediante
-              el formulario de contacto de este sitio web.
-            </p>
-
-            <p className="privacidad-update">
-              Última actualización: 5 de agosto de 2026
-            </p>
           </div>
         </div>
       </section>
@@ -134,7 +124,7 @@ function AvisoPrivacidad() {
                 <div className="privacidad-section-line" />
 
                 <p>
-                  <strong>Eugenio Estrada Ayala</strong>, en adelante
+                  <strong>Grinsa Manufacturas</strong>, en adelante
                   “el Responsable”, es responsable del tratamiento,
                   protección y uso de los datos personales recabados
                   mediante el formulario de contacto disponible en
@@ -191,25 +181,10 @@ function AvisoPrivacidad() {
                     Información incluida voluntariamente dentro del
                     campo de mensaje.
                   </li>
-                  <li>
-                    Datos técnicos mínimos necesarios para la
-                    operación y seguridad del formulario, como fecha
-                    y hora de envío o registros técnicos del servidor.
-                  </li>
+                
                 </ul>
 
-                <div className="privacidad-warning">
-                  <strong>Datos personales sensibles</strong>
-
-                  <p>
-                    El formulario no está diseñado para solicitar
-                    datos personales sensibles. La persona usuaria
-                    deberá abstenerse de incluir información médica,
-                    biométrica, financiera, patrimonial, religiosa,
-                    política o cualquier otro dato sensible dentro del
-                    mensaje.
-                  </p>
-                </div>
+                
               </article>
 
               {/* Finalidades */}
@@ -247,11 +222,6 @@ function AvisoPrivacidad() {
                   </li>
 
                   <li>
-                    Responder preguntas relacionadas con productos,
-                    proyectos, servicios o capacidades de la empresa.
-                  </li>
-
-                  <li>
                     Dar seguimiento a solicitudes de información,
                     cotización o colaboración.
                   </li>
@@ -262,15 +232,7 @@ function AvisoPrivacidad() {
                     para atender la solicitud.
                   </li>
 
-                  <li>
-                    Mantener un historial razonable de las
-                    comunicaciones y del seguimiento proporcionado.
-                  </li>
 
-                  <li>
-                    Detectar y prevenir usos fraudulentos, abusivos o
-                    automatizados del formulario.
-                  </li>
                 </ul>
 
                 <p>
@@ -652,3 +614,5 @@ function AvisoPrivacidad() {
 }
 
 export default AvisoPrivacidad;
+
+

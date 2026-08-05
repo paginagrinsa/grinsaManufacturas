@@ -330,8 +330,6 @@ function Contacto() {
                             <Link
                               to="/aviso-de-privacidad"
                               className="contacto-privacy-link"
-                              target="_blank"
-                              rel="noopener noreferrer"
                             >
                               Aviso de Privacidad
                             </Link>

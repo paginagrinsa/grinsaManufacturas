@@ -155,14 +155,15 @@
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
-    background-color 0.2s ease;
+    background-color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .contacto-input::placeholder {
   color: #9299a1;
 }
 
-.contacto-input:hover {
+.contacto-input:hover:not(:disabled) {
   border-color: #8d9ba5;
 }
 
@@ -173,9 +174,99 @@
   box-shadow: 0 0 0 4px rgba(11, 34, 50, 0.14);
 }
 
+.contacto-input:disabled {
+  color: #64727d;
+  background-color: #eef1f3;
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
 .contacto-textarea {
   min-height: 150px;
   resize: vertical;
+}
+
+/* =========================================
+   ACEPTACIÓN DEL AVISO DE PRIVACIDAD
+   ========================================= */
+
+.contacto-privacy-box {
+  padding: 20px 21px;
+  background-color: #f5f7f8;
+  border: 1px solid #dce3e7;
+  border-left: 4px solid var(--contacto-azul-marino);
+  border-radius: 4px;
+}
+
+.contacto-privacy-check {
+  min-height: 24px;
+  margin: 0;
+  padding-left: 31px;
+}
+
+.contacto-checkbox {
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  margin-left: -31px !important;
+  cursor: pointer;
+  border: 2px solid #75858f;
+  border-radius: 3px !important;
+  box-shadow: none;
+}
+
+.contacto-checkbox:hover:not(:disabled) {
+  border-color: var(--contacto-azul-marino);
+}
+
+.contacto-checkbox:focus {
+  border-color: var(--contacto-azul-marino);
+  box-shadow: 0 0 0 4px rgba(11, 34, 50, 0.13);
+}
+
+.contacto-checkbox:checked {
+  background-color: var(--contacto-azul-marino);
+  border-color: var(--contacto-azul-marino);
+}
+
+.contacto-checkbox:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.contacto-privacy-label {
+  color: #334854;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 1.65;
+  cursor: pointer;
+}
+
+.contacto-checkbox:disabled
+  + .contacto-privacy-label {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.contacto-privacy-link {
+  color: var(--contacto-azul-marino);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.contacto-privacy-link:hover,
+.contacto-privacy-link:focus {
+  color: var(--contacto-azul-hover);
+}
+
+.contacto-privacy-help {
+  margin: 13px 0 0;
+  color: #6d7b84;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 1.55;
 }
 
 /* =========================================
@@ -198,11 +289,12 @@
     background-color 0.2s ease,
     border-color 0.2s ease,
     transform 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.contacto-submit-button:hover,
-.contacto-submit-button:focus {
+.contacto-submit-button:hover:not(:disabled),
+.contacto-submit-button:focus:not(:disabled) {
   color: #ffffff;
   background-color: var(--contacto-azul-hover);
   border-color: var(--contacto-azul-hover);
@@ -210,11 +302,23 @@
   transform: translateY(-2px);
 }
 
-.contacto-submit-button:active {
+.contacto-submit-button:active:not(:disabled) {
   color: #ffffff !important;
-  background-color: var(--contacto-azul-presionado) !important;
-  border-color: var(--contacto-azul-presionado) !important;
+  background-color:
+    var(--contacto-azul-presionado) !important;
+  border-color:
+    var(--contacto-azul-presionado) !important;
   transform: translateY(0);
+}
+
+.contacto-submit-button:disabled {
+  color: #ffffff;
+  background-color: var(--contacto-azul-marino);
+  border-color: var(--contacto-azul-marino);
+  cursor: not-allowed;
+  opacity: 0.65;
+  box-shadow: none;
+  transform: none;
 }
 
 /* =========================================
@@ -274,6 +378,11 @@
   transform: translateX(3px);
 }
 
+.contacto-phone-link
+  + .contacto-info-label {
+  margin-top: 30px;
+}
+
 .contacto-address {
   margin: 0;
   color: #4d5e6b;
@@ -281,51 +390,6 @@
   font-size: 15px;
   font-style: normal;
   line-height: 1.75;
-}
-
-/* =========================================
-   ESPACIO ENTRE TELÉFONO Y WHATSAPP
-   ========================================= */
-
-/*
-  Si el número telefónico está dentro de un bloque
-  independiente, aumenta la separación inferior
-  antes del siguiente apartado de WhatsApp.
-*/
-.contacto-info-block:has(.contacto-phone-link) {
-  margin-bottom: 46px;
-  padding-bottom: 28px;
-}
-
-/*
-  Estas reglas también funcionan cuando el título
-  de WhatsApp se encuentra inmediatamente después
-  del enlace del teléfono dentro del mismo bloque.
-*/
-.contacto-phone-link + .contacto-info-label,
-.contacto-phone-link + .contacto-whatsapp-title,
-.contacto-phone-link + h3,
-.contacto-phone-link + h4 {
-  margin-top: 30px;
-  display: block;
-}
-
-/*
-  Clase opcional para el contenedor completo
-  del apartado de WhatsApp.
-*/
-.contacto-whatsapp-section {
-  margin-top: 30px;
-}
-
-.contacto-whatsapp-title {
-  margin: 0 0 10px;
-  color: var(--contacto-azul-marino);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
 }
 
 /* =========================================
@@ -367,7 +431,32 @@
 }
 
 /* =========================================
-   MENSAJE Y PRIVACIDAD
+   ENLACE DE PRIVACIDAD EN INFORMACIÓN
+   ========================================= */
+
+.contacto-info-privacy-link {
+  margin-top: 22px;
+  padding-top: 20px;
+  display: inline-block;
+  align-self: flex-start;
+  color: var(--contacto-azul-marino);
+  border-top: 1px solid #d7dee3;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.contacto-info-privacy-link:hover {
+  color: var(--contacto-azul-hover);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* =========================================
+   MENSAJES DE ENVÍO
    ========================================= */
 
 .contacto-alert {
@@ -375,14 +464,7 @@
   border-radius: 3px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-}
-
-.contacto-privacy-text {
-  margin: 24px 0 0;
-  color: #80868d;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* =========================================
@@ -396,19 +478,6 @@
 
   .contacto-phone-link {
     font-size: 21px;
-  }
-
-  .contacto-info-block:has(.contacto-phone-link) {
-    margin-bottom: 42px;
-    padding-bottom: 25px;
-  }
-
-  .contacto-phone-link + .contacto-info-label,
-  .contacto-phone-link + .contacto-whatsapp-title,
-  .contacto-phone-link + h3,
-  .contacto-phone-link + h4,
-  .contacto-whatsapp-section {
-    margin-top: 27px;
   }
 
   .contacto-map-wrapper,
@@ -435,10 +504,6 @@
 
   .contacto-info-card {
     margin-top: 4px;
-  }
-
-  .contacto-info-block:has(.contacto-phone-link) {
-    margin-bottom: 40px;
   }
 
   .contacto-map-wrapper,
@@ -496,6 +561,19 @@
     font-size: 14px;
   }
 
+  .contacto-privacy-box {
+    padding: 18px 17px;
+  }
+
+  .contacto-privacy-label {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .contacto-privacy-help {
+    font-size: 11px;
+  }
+
   .contacto-submit-button {
     width: 100%;
   }
@@ -504,20 +582,8 @@
     font-size: 20px;
   }
 
-  /*
-    Separación ligeramente menor en celulares
-    para no ocupar demasiado espacio vertical.
-  */
-  .contacto-info-block:has(.contacto-phone-link) {
-    margin-bottom: 34px;
-    padding-bottom: 23px;
-  }
-
-  .contacto-phone-link + .contacto-info-label,
-  .contacto-phone-link + .contacto-whatsapp-title,
-  .contacto-phone-link + h3,
-  .contacto-phone-link + h4,
-  .contacto-whatsapp-section {
+  .contacto-phone-link
+    + .contacto-info-label {
     margin-top: 24px;
   }
 

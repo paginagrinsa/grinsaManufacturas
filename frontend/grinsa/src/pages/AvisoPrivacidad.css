@@ -1,0 +1,627 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+  --privacidad-azul: #0b2232;
+  --privacidad-azul-hover: #163f59;
+  --privacidad-texto: #344956;
+  --privacidad-secundario: #637580;
+  --privacidad-borde: #dfe6ea;
+  --privacidad-fondo-suave: #f5f7f8;
+  --privacidad-blanco: #ffffff;
+}
+
+/* =========================================
+   PÁGINA
+   ========================================= */
+
+.privacidad-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--privacidad-blanco);
+}
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+
+.privacidad-hero {
+  position: relative;
+  width: 100%;
+  padding: 85px 20px 80px;
+  overflow: hidden;
+  background-color: var(--privacidad-blanco);
+  border-bottom: 1px solid var(--privacidad-borde);
+}
+
+.privacidad-hero::before {
+  position: absolute;
+  top: -230px;
+  left: 50%;
+  width: 570px;
+  height: 570px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(11, 34, 50, 0.055),
+      rgba(11, 34, 50, 0) 70%
+    );
+  border-radius: 50%;
+  content: "";
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.privacidad-hero-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 950px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.privacidad-eyebrow {
+  margin: 0 0 13px;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.privacidad-title {
+  margin: 0;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(42px, 6vw, 68px);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.privacidad-title-line {
+  width: 74px;
+  height: 4px;
+  margin: 22px auto 27px;
+  background-color: var(--privacidad-azul);
+  border-radius: 20px;
+}
+
+.privacidad-intro {
+  max-width: 770px;
+  margin: 0 auto;
+  color: var(--privacidad-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.privacidad-update {
+  margin: 22px 0 0;
+  color: var(--privacidad-secundario);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================
+   CONTENIDO
+   ========================================= */
+
+.privacidad-content {
+  width: 100%;
+  padding: 70px 20px 105px;
+  background-color: var(--privacidad-blanco);
+}
+
+.privacidad-layout {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  align-items: start;
+  gap: 48px;
+}
+
+/* =========================================
+   ÍNDICE
+   ========================================= */
+
+.privacidad-index {
+  position: sticky;
+  top: 25px;
+  padding: 29px 25px;
+  background-color: var(--privacidad-fondo-suave);
+  border: 1px solid var(--privacidad-borde);
+  border-top: 4px solid var(--privacidad-azul);
+  border-radius: 7px;
+}
+
+.privacidad-index h2 {
+  margin: 0 0 21px;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.privacidad-index nav {
+  display: grid;
+  gap: 4px;
+}
+
+.privacidad-index a {
+  padding: 9px 10px;
+  color: #50636f;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.4;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.privacidad-index a:hover,
+.privacidad-index a:focus {
+  color: var(--privacidad-azul);
+  background-color: #ffffff;
+  border-left-color: var(--privacidad-azul);
+  outline: none;
+}
+
+/* =========================================
+   DOCUMENTO
+   ========================================= */
+
+.privacidad-document {
+  min-width: 0;
+}
+
+.privacidad-section {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 42px 43px;
+  scroll-margin-top: 25px;
+  background-color: var(--privacidad-blanco);
+  border: 1px solid var(--privacidad-borde);
+  border-radius: 8px;
+  box-shadow: 0 10px 27px rgba(8, 27, 40, 0.08);
+}
+
+.privacidad-section-number {
+  margin-bottom: 10px;
+  display: block;
+  color: #73838d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+}
+
+.privacidad-section h2 {
+  margin: 0;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(26px, 3vw, 35px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.privacidad-section h3 {
+  margin: 34px 0 17px;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.privacidad-section-line {
+  width: 59px;
+  height: 4px;
+  margin: 17px 0 25px;
+  background-color: var(--privacidad-azul);
+  border-radius: 20px;
+}
+
+.privacidad-section p {
+  margin: 0 0 18px;
+  color: var(--privacidad-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.82;
+}
+
+.privacidad-section p:last-child {
+  margin-bottom: 0;
+}
+
+.privacidad-section strong {
+  color: #162f3f;
+  font-weight: 800;
+}
+
+/* =========================================
+   DIRECCIÓN
+   ========================================= */
+
+.privacidad-address-card {
+  margin-top: 28px;
+  padding: 25px 27px;
+  background-color: var(--privacidad-fondo-suave);
+  border-left: 4px solid var(--privacidad-azul);
+  border-radius: 4px;
+}
+
+.privacidad-address-card > strong {
+  margin-bottom: 12px;
+  display: block;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+}
+
+.privacidad-address-card address {
+  margin: 0 0 13px;
+  color: var(--privacidad-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.privacidad-address-card p {
+  margin: 0;
+  font-size: 15px;
+}
+
+.privacidad-address-card a {
+  color: var(--privacidad-azul);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* =========================================
+   LISTAS
+   ========================================= */
+
+.privacidad-list,
+.privacidad-number-list {
+  margin: 23px 0;
+  padding: 0;
+  display: grid;
+  gap: 13px;
+}
+
+.privacidad-list {
+  list-style: none;
+}
+
+.privacidad-list li {
+  position: relative;
+  padding-left: 25px;
+  color: var(--privacidad-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.privacidad-list li::before {
+  position: absolute;
+  top: 0.75em;
+  left: 1px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--privacidad-azul);
+  border-radius: 2px;
+  content: "";
+  transform: translateY(-50%);
+}
+
+.privacidad-number-list {
+  padding-left: 23px;
+}
+
+.privacidad-number-list li {
+  padding-left: 8px;
+  color: var(--privacidad-texto);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.privacidad-number-list li::marker {
+  color: var(--privacidad-azul);
+  font-weight: 800;
+}
+
+/* =========================================
+   ADVERTENCIA
+   ========================================= */
+
+.privacidad-warning {
+  margin-top: 29px;
+  padding: 24px 26px;
+  background-color: #fffaf0;
+  border: 1px solid #eee0bd;
+  border-left: 4px solid #a47712;
+  border-radius: 5px;
+}
+
+.privacidad-warning > strong {
+  margin-bottom: 9px;
+  display: block;
+  color: #73530d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.privacidad-warning p {
+  margin: 0;
+  color: #665835;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   TARJETAS ARCO
+   ========================================= */
+
+.privacidad-arco-grid {
+  margin: 27px 0 34px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.privacidad-arco-card {
+  padding: 24px 22px;
+  background-color: var(--privacidad-fondo-suave);
+  border: 1px solid var(--privacidad-borde);
+  border-radius: 5px;
+}
+
+.privacidad-arco-card strong {
+  margin-bottom: 8px;
+  display: block;
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.privacidad-arco-card p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* =========================================
+   BOTÓN DE CONTACTO
+   ========================================= */
+
+.privacidad-contact-button {
+  min-height: 50px;
+  margin-top: 12px;
+  padding: 13px 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: var(--privacidad-azul);
+  border: 2px solid var(--privacidad-azul);
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.privacidad-contact-button:hover,
+.privacidad-contact-button:focus {
+  color: var(--privacidad-azul);
+  background-color: transparent;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   CONSENTIMIENTO
+   ========================================= */
+
+.privacidad-consent {
+  padding: 38px 40px;
+  color: #ffffff;
+  background-color: var(--privacidad-azul);
+  border-radius: 8px;
+  box-shadow: 0 14px 32px rgba(8, 27, 40, 0.15);
+}
+
+.privacidad-consent h2 {
+  margin: 0 0 14px;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 29px;
+  font-weight: 800;
+}
+
+.privacidad-consent p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.91);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+/* =========================================
+   REGRESAR
+   ========================================= */
+
+.privacidad-back {
+  margin-top: 34px;
+  text-align: center;
+}
+
+.privacidad-back a {
+  color: var(--privacidad-azul);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.privacidad-back a:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   TABLETS
+   ========================================= */
+
+@media screen and (max-width: 991.98px) {
+  .privacidad-hero {
+    padding-top: 75px;
+    padding-bottom: 70px;
+  }
+
+  .privacidad-content {
+    padding-top: 55px;
+    padding-bottom: 90px;
+  }
+
+  .privacidad-layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .privacidad-index {
+    position: static;
+  }
+
+  .privacidad-index nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 15px;
+  }
+
+  .privacidad-section {
+    padding: 38px 36px;
+  }
+}
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media screen and (max-width: 575.98px) {
+  .privacidad-hero {
+    padding: 58px 18px 55px;
+  }
+
+  .privacidad-eyebrow {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .privacidad-title {
+    font-size: 39px;
+  }
+
+  .privacidad-title-line {
+    width: 59px;
+    height: 3px;
+    margin-top: 18px;
+    margin-bottom: 21px;
+  }
+
+  .privacidad-intro {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .privacidad-content {
+    padding: 38px 12px 70px;
+  }
+
+  .privacidad-index {
+    padding: 25px 20px;
+  }
+
+  .privacidad-index nav {
+    grid-template-columns: 1fr;
+  }
+
+  .privacidad-section {
+    margin-bottom: 20px;
+    padding: 30px 22px;
+  }
+
+  .privacidad-section h2 {
+    font-size: 27px;
+  }
+
+  .privacidad-section h3 {
+    font-size: 19px;
+  }
+
+  .privacidad-section-line {
+    width: 52px;
+    height: 3px;
+    margin-top: 15px;
+    margin-bottom: 21px;
+  }
+
+  .privacidad-section p {
+    font-size: 14px;
+    line-height: 1.72;
+  }
+
+  .privacidad-list li,
+  .privacidad-number-list li {
+    font-size: 14px;
+    line-height: 1.68;
+  }
+
+  .privacidad-address-card {
+    padding: 22px 20px;
+  }
+
+  .privacidad-arco-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .privacidad-consent {
+    padding: 30px 24px;
+  }
+
+  .privacidad-consent h2 {
+    font-size: 25px;
+  }
+
+  .privacidad-consent p {
+    font-size: 14px;
+  }
+
+  .privacidad-contact-button {
+    width: 100%;
+  }
+}
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .privacidad-index a,
+  .privacidad-contact-button {
+    transition: none;
+  }
+}

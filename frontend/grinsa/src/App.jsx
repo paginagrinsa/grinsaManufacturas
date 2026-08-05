@@ -10,10 +10,10 @@ import Fabricacion from "./pages/Fabricacion";
 import Superficies from "./pages/Superficies";
 import Embarque from "./pages/Embarque";
 import Montaje from "./pages/Montaje";
-
 import Calidad from "./pages/Calidad";
 import Proyectos from "./pages/Proyectos";
 import Contacto from "./pages/Contacto";
+import AvisoPrivacidad from "./pages/AvisoPrivacidad";
 
 import "./App.css";
 
@@ -58,8 +58,6 @@ function App() {
           element={<Montaje />}
         />
 
-       
-
         <Route
           path="/calidad"
           element={<Calidad />}
@@ -73,6 +71,11 @@ function App() {
         <Route
           path="/contacto"
           element={<Contacto />}
+        />
+
+        <Route
+          path="/aviso-de-privacidad"
+          element={<AvisoPrivacidad />}
         />
       </Routes>
 

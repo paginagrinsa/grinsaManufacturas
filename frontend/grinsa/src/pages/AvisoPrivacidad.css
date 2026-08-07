@@ -1,4 +1,3 @@
-
 /* =========================================
    VARIABLES
    ========================================= */
@@ -169,7 +168,7 @@
 }
 
 .privacidad-index a:hover,
-.privacidad-index a:focus {
+.privacidad-index a:focus-visible {
   color: var(--privacidad-azul);
   background-color: #ffffff;
   border-left-color: var(--privacidad-azul);
@@ -188,7 +187,7 @@
   position: relative;
   margin-bottom: 30px;
   padding: 42px 43px;
-  scroll-margin-top: 25px;
+  scroll-margin-top: 110px;
   background-color: var(--privacidad-blanco);
   border: 1px solid var(--privacidad-borde);
   border-radius: 8px;
@@ -247,6 +246,19 @@
   font-weight: 800;
 }
 
+.privacidad-inline-link {
+  color: var(--privacidad-azul);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.privacidad-inline-link:hover,
+.privacidad-inline-link:focus-visible {
+  color: var(--privacidad-azul-hover);
+}
+
 /* =========================================
    DIRECCIÓN
    ========================================= */
@@ -277,14 +289,25 @@
 }
 
 .privacidad-address-card p {
-  margin: 0;
+  margin: 0 0 7px;
   font-size: 15px;
+}
+
+.privacidad-address-card p:last-child {
+  margin-bottom: 0;
 }
 
 .privacidad-address-card a {
   color: var(--privacidad-azul);
   font-weight: 800;
+  overflow-wrap: anywhere;
   text-decoration: none;
+}
+
+.privacidad-address-card a:hover,
+.privacidad-address-card a:focus-visible {
+  color: var(--privacidad-azul-hover);
+  text-decoration: underline;
 }
 
 /* =========================================
@@ -420,6 +443,7 @@
   font-size: 13px;
   font-weight: 800;
   letter-spacing: 0.6px;
+  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
   transition:
@@ -429,14 +453,15 @@
 }
 
 .privacidad-contact-button:hover,
-.privacidad-contact-button:focus {
+.privacidad-contact-button:focus-visible {
   color: var(--privacidad-azul);
   background-color: transparent;
+  outline: none;
   transform: translateY(-2px);
 }
 
 /* =========================================
-   CONSENTIMIENTO
+   BLOQUE FINAL
    ========================================= */
 
 .privacidad-consent {
@@ -473,6 +498,8 @@
 }
 
 .privacidad-back a {
+  display: inline-block;
+  padding: 8px 4px;
   color: var(--privacidad-azul);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -480,8 +507,11 @@
   text-decoration: none;
 }
 
-.privacidad-back a:hover {
+.privacidad-back a:hover,
+.privacidad-back a:focus-visible {
+  color: var(--privacidad-azul-hover);
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* =========================================
@@ -548,6 +578,10 @@
     line-height: 1.65;
   }
 
+  .privacidad-update {
+    font-size: 12px;
+  }
+
   .privacidad-content {
     padding: 38px 12px 70px;
   }
@@ -563,6 +597,7 @@
   .privacidad-section {
     margin-bottom: 20px;
     padding: 30px 22px;
+    scroll-margin-top: 90px;
   }
 
   .privacidad-section h2 {
@@ -595,6 +630,11 @@
     padding: 22px 20px;
   }
 
+  .privacidad-address-card address,
+  .privacidad-address-card p {
+    font-size: 14px;
+  }
+
   .privacidad-arco-grid {
     grid-template-columns: 1fr;
   }
@@ -624,5 +664,71 @@
   .privacidad-index a,
   .privacidad-contact-button {
     transition: none;
+  }
+}
+
+/* =========================================
+   IMPRESIÓN
+   ========================================= */
+
+@media print {
+  .privacidad-hero {
+    padding: 25px 0;
+    border-bottom: 2px solid #000000;
+  }
+
+  .privacidad-title {
+    color: #000000;
+    font-size: 36px;
+  }
+
+  .privacidad-title-line {
+    background-color: #000000;
+  }
+
+  .privacidad-content {
+    padding: 25px 0;
+  }
+
+  .privacidad-layout {
+    display: block;
+  }
+
+  .privacidad-index,
+  .privacidad-back,
+  .privacidad-contact-button {
+    display: none;
+  }
+
+  .privacidad-section {
+    padding: 20px 0;
+    border: 0;
+    border-bottom: 1px solid #cccccc;
+    border-radius: 0;
+    box-shadow: none;
+    break-inside: avoid;
+  }
+
+  .privacidad-section h2,
+  .privacidad-section h3,
+  .privacidad-section strong {
+    color: #000000;
+  }
+
+  .privacidad-section-line {
+    background-color: #000000;
+  }
+
+  .privacidad-consent {
+    padding: 20px;
+    color: #000000;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: none;
+  }
+
+  .privacidad-consent h2,
+  .privacidad-consent p {
+    color: #000000;
   }
 }

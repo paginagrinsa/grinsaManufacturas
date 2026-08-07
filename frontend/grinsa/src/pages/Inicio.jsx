@@ -20,19 +20,19 @@ const diapositivas = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785272557/WhatsApp_Image_2026-07-28_at_14.59.00_2_qmehaz.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_14.59.00_2_qmehaz_yehjmw.jpg",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785278631/WhatsApp_Image_2026-07-28_at_16.25.49_f741qr.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_16.25.49_f741qr_psa25v.jpg",
     alt: "Foto 2",
   },
   {
     id: 3,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785278631/WhatsApp_Image_2026-07-28_at_16.29.34_zjv3jv.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_16.29.34_zjv3jv_faqkbw.jpg",
     alt: "Foto 3",
   },
 ];

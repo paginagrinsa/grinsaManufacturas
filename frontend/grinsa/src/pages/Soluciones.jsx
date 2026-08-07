@@ -9,7 +9,7 @@ const servicios = [
     nombre: "Fabricación",
     ruta: "/soluciones/fabricacion",
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785437059/WhatsApp_Image_2026-07-30_at_12.31.52_x1ycmg.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_12.31.52_x1ycmg_rysyxw.jpg",
     alt: "Fabricación de componentes metálicos en una planta industrial",
   },
   {
@@ -17,7 +17,7 @@ const servicios = [
     nombre: "Superficies",
     ruta: "/soluciones/superficies",
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452764/Captura_de_pantalla_2026-07-30_170302_uqiknz.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170302_uqiknz_m7aeyt.png",
     alt: "Procesamiento y acabado de superficies metálicas",
   },
   {
@@ -25,7 +25,7 @@ const servicios = [
     nombre: "Embarque",
     ruta: "/soluciones/embarque",
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf_ihwkou.jpg",
     alt: "Contenedores y operación de embarque industrial",
   },
   {
@@ -33,7 +33,7 @@ const servicios = [
     nombre: "Montaje",
     ruta: "/soluciones/montaje",
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785540406/Imagen1_kmlueh.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen1_kmlueh_ydxq6h.jpg",
     alt: "Montaje de estructuras industriales",
   },
 ];

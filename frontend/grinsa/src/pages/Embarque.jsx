@@ -6,26 +6,26 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf_ihwkou.jpg",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.30.49_zjumzj.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/WhatsApp_Image_2026-07-30_at_14.30.49_zjumzj_uvcnf9.jpg",
     alt: "Foto 2",
   },
   {
     id: 3,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785444207/WhatsApp_Image_2026-07-30_at_14.31.24_1_n251np.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/WhatsApp_Image_2026-07-30_at_14.31.24_1_n251np_engyet.jpg",
     alt: "Foto 3",
   },
 ];
 
 function Embarque() {
   useEffect(() => {
-    document.title = "Fabricación | Grinsa Manufacturas";
+    document.title = "Grinsa Manufacturas | Embarques";
   }, []);
 
   return (

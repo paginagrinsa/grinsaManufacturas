@@ -7,27 +7,27 @@ const imagenesFabricacion = [
     id: 1,
 
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452764/Captura_de_pantalla_2026-07-30_170302_uqiknz.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170302_uqiknz_m7aeyt.png",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452763/Captura_de_pantalla_2026-07-30_170319_zavzey.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170319_zavzey_pixjyw.png",
     alt: "Foto 2",
   },
   {
     id: 3,
     
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785452764/Captura_de_pantalla_2026-07-30_170249_llftpo.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170249_llftpo_luttsj.png",
     alt: "Foto 3",
   },
 ];
 
 function Superficies() {
   useEffect(() => {
-    document.title = "Fabricación | Grinsa Manufacturas";
+    document.title = "Grinsa Manufacturas | Superficies";
   }, []);
 
   return (

@@ -5,7 +5,7 @@ import "./Calidad.css";
 function Calidad() {
   useEffect(() => {
     document.title =
-      "Sistema de Gestión de Calidad | Grinsa Manufacturas";
+      "Grinsa Manufacturas | Calidad";
   }, []);
 
   return (

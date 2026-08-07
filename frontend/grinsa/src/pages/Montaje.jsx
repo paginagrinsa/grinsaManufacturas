@@ -6,13 +6,13 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785540406/Imagen1_kmlueh.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen1_kmlueh_ydxq6h.jpg",
     alt: "Foto 1",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785540406/Imagen2_ebkwqd.jpg",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen2_ebkwqd_suv91i.jpg",
     alt: "Foto 2",
   },
   {
@@ -25,7 +25,7 @@ const imagenesFabricacion = [
 
 function Montaje() {
   useEffect(() => {
-    document.title = "Fabricación | Grinsa Manufacturas";
+    document.title = "Grinsa Manufacturas | Montaje";
   }, []);
 
   return (

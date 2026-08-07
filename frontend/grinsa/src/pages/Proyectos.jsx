@@ -6,37 +6,37 @@ const proyectos = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785892922/Imagen2_pieeo8.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen2_pieeo8_s654mg.png",
     alt: "Fabricación de una estructura metálica industrial",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785892922/Imagen3_l9rgkf.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119250/Imagen3_l9rgkf_wfozhc.png",
     alt: "Maquinaria CNC dentro de una planta industrial",
   },
   {
     id: 3,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785892923/Imagen1_kexxns.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Imagen1_kexxns_iqubov.png",
     alt: "Montaje de una línea de producción industrial",
   },
   {
     id: 4,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785892950/Imagen4_hukyfs.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119250/Imagen4_hukyfs_guaffx.png",
     alt: "Manufactura de componentes metálicos",
   },
   {
     id: 5,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785892949/Imagen5_y0093y.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/WhatsApp_Image_2026-07-30_at_14.30.49_zjumzj_uvcnf9.jpg",
     alt: "Automatización de procesos dentro de una fábrica",
   },
   {
     id: 6,
     imagen:
-      "https://res.cloudinary.com/geurbdzo/image/upload/v1785892948/Imagen6_rgnzok.png",
+      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119250/Imagen6_rgnzok_befrjg.png",
     alt: "Construcción de plataforma metálica industrial",
   },
 ];

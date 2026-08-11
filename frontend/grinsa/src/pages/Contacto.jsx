@@ -1,12 +1,24 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import {
+  useEffect,
+  useState,
+} from "react";
+
+import {
+  Link,
+} from "react-router-dom";
+
+import {
+  configurarSEO,
+} from "./seo";
 
 import "./Contacto.css";
+
 
 const API_URL = (
   import.meta.env.VITE_API_URL ||
   "http://127.0.0.1:8000"
 ).replace(/\/+$/, "");
+
 
 const formularioInicial = {
   nombre: "",
@@ -16,115 +28,258 @@ const formularioInicial = {
   mensaje: "",
 };
 
+
 const estadoInicial = {
   tipo: "",
   mensaje: "",
 };
 
+
 function Contacto() {
-  const [formulario, setFormulario] =
-    useState(formularioInicial);
+  const [
+    formulario,
+    setFormulario,
+  ] = useState(
+    formularioInicial
+  );
 
-  const [aceptaPrivacidad, setAceptaPrivacidad] =
-    useState(false);
+  const [
+    aceptaPrivacidad,
+    setAceptaPrivacidad,
+  ] = useState(false);
 
-  const [enviando, setEnviando] = useState(false);
+  const [
+    enviando,
+    setEnviando,
+  ] = useState(false);
 
-  const [estadoEnvio, setEstadoEnvio] =
-    useState(estadoInicial);
+  const [
+    estadoEnvio,
+    setEstadoEnvio,
+  ] = useState(
+    estadoInicial
+  );
 
+
+  // ==========================================
+  // SEO + LOCAL BUSINESS
+  // ==========================================
   useEffect(() => {
-    document.title = "Grinsa Manufacturas | Contacto";
+    const datosEstructurados = {
+      "@context":
+        "https://schema.org",
+
+      "@type":
+        "LocalBusiness",
+
+      name:
+        "Grinsa Manufacturas",
+
+      url:
+        window.location.origin,
+
+      telephone:
+        "+528148387696",
+
+      address: {
+        "@type":
+          "PostalAddress",
+
+        streetAddress:
+          "Cucharas 303 A, Parque Industrial Escobedo",
+
+        addressLocality:
+          "Ciudad General Escobedo",
+
+        addressRegion:
+          "Nuevo León",
+
+        postalCode:
+          "66062",
+
+        addressCountry:
+          "MX",
+      },
+
+      hasMap:
+        "https://www.google.com/maps/search/?api=1&query=Cucharas+303+A%2C+Parque+Industrial+Escobedo%2C+66062%2C+General+Escobedo%2C+Nuevo+Le%C3%B3n",
+    };
+
+
+    configurarSEO({
+      titulo:
+        "Contacto | Grinsa Manufacturas en Escobedo, N.L.",
+
+      descripcion:
+        "Contacta a Grinsa Manufacturas en Parque Industrial Escobedo, Nuevo León. Solicita información sobre fabricación, ingeniería y montaje industrial.",
+
+      rutaCanonical:
+        "/contacto",
+
+      datosEstructurados,
+    });
   }, []);
 
-  const limpiarEstadoEnvio = () => {
-    if (estadoEnvio.tipo) {
-      setEstadoEnvio(estadoInicial);
-    }
-  };
 
-  const manejarCambio = (evento) => {
-    const { name, value } = evento.target;
-
-    setFormulario((datosActuales) => ({
-      ...datosActuales,
-      [name]: value,
-    }));
-
-    limpiarEstadoEnvio();
-  };
-
-  const manejarPrivacidad = (evento) => {
-    setAceptaPrivacidad(evento.target.checked);
-    limpiarEstadoEnvio();
-  };
-
-  const manejarEnvio = async (evento) => {
-    evento.preventDefault();
-
-    if (!aceptaPrivacidad || enviando) {
-      return;
-    }
-
-    setEnviando(true);
-    setEstadoEnvio(estadoInicial);
-
-    try {
-      const respuesta = await fetch(
-        `${API_URL}/api/contacto/`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nombre: formulario.nombre.trim(),
-            empresa: formulario.empresa.trim(),
-            email: formulario.email.trim(),
-            telefono: formulario.telefono.trim(),
-            mensaje: formulario.mensaje.trim(),
-            acepta_privacidad: aceptaPrivacidad,
-          }),
-        }
-      );
-
-      const datos = await respuesta
-        .json()
-        .catch(() => ({}));
-
-      if (!respuesta.ok) {
-        throw new Error(
-          datos.error ||
-            datos.mensaje ||
-            "No fue posible enviar el mensaje."
+  const limpiarEstadoEnvio =
+    () => {
+      if (
+        estadoEnvio.tipo
+      ) {
+        setEstadoEnvio(
+          estadoInicial
         );
       }
+    };
 
-      setEstadoEnvio({
-        tipo: "exito",
-        mensaje:
-          datos.mensaje ||
-          "Tu mensaje fue enviado correctamente.",
-      });
 
-      setFormulario(formularioInicial);
-      setAceptaPrivacidad(false);
-    } catch (error) {
-      console.error(
-        "Error al enviar el formulario de contacto:",
-        error
+  const manejarCambio =
+    (evento) => {
+      const {
+        name,
+        value,
+      } =
+        evento.target;
+
+      setFormulario(
+        (
+          datosActuales
+        ) => ({
+          ...datosActuales,
+
+          [name]:
+            value,
+        })
       );
 
-      setEstadoEnvio({
-        tipo: "error",
-        mensaje:
-          error.message ||
-          "No fue posible enviar tu mensaje. Intenta nuevamente.",
-      });
-    } finally {
-      setEnviando(false);
-    }
-  };
+      limpiarEstadoEnvio();
+    };
+
+
+  const manejarPrivacidad =
+    (evento) => {
+      setAceptaPrivacidad(
+        evento.target.checked
+      );
+
+      limpiarEstadoEnvio();
+    };
+
+
+  const manejarEnvio =
+    async (evento) => {
+      evento.preventDefault();
+
+      if (
+        !aceptaPrivacidad ||
+        enviando
+      ) {
+        return;
+      }
+
+      setEnviando(true);
+
+      setEstadoEnvio(
+        estadoInicial
+      );
+
+      try {
+        const respuesta =
+          await fetch(
+            `${API_URL}/api/contacto/`,
+            {
+              method:
+                "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json",
+              },
+
+              body:
+                JSON.stringify(
+                  {
+                    nombre:
+                      formulario.nombre.trim(),
+
+                    empresa:
+                      formulario.empresa.trim(),
+
+                    email:
+                      formulario.email.trim(),
+
+                    telefono:
+                      formulario.telefono.trim(),
+
+                    mensaje:
+                      formulario.mensaje.trim(),
+
+                    acepta_privacidad:
+                      aceptaPrivacidad,
+                  }
+                ),
+            }
+          );
+
+
+        const datos =
+          await respuesta
+            .json()
+            .catch(
+              () => ({})
+            );
+
+
+        if (
+          !respuesta.ok
+        ) {
+          throw new Error(
+            datos.error ||
+              datos.mensaje ||
+              "No fue posible enviar el mensaje."
+          );
+        }
+
+
+        setEstadoEnvio({
+          tipo:
+            "exito",
+
+          mensaje:
+            datos.mensaje ||
+            "Tu mensaje fue enviado correctamente.",
+        });
+
+
+        setFormulario(
+          formularioInicial
+        );
+
+        setAceptaPrivacidad(
+          false
+        );
+      } catch (error) {
+        console.error(
+          "Error al enviar el formulario de contacto:",
+          error
+        );
+
+
+        setEstadoEnvio({
+          tipo:
+            "error",
+
+          mensaje:
+            error.message ||
+            "No fue posible enviar tu mensaje. Intenta nuevamente.",
+        });
+      } finally {
+        setEnviando(
+          false
+        );
+      }
+    };
+
 
   return (
     <main className="contacto-page">
@@ -142,12 +297,14 @@ function Contacto() {
           </h1>
 
           <p className="contacto-descripcion">
-            Envíanos tus datos y cuéntanos cómo podemos
-            ayudarte. Nuestro equipo se pondrá en contacto
-            contigo.
+            Envíanos tus datos y
+            cuéntanos cómo podemos
+            ayudarte. Nuestro equipo se
+            pondrá en contacto contigo.
           </p>
         </div>
       </section>
+
 
       {/* =====================================
           FORMULARIO, INFORMACIÓN Y MAPA
@@ -155,36 +312,51 @@ function Contacto() {
       <section className="contacto-content-section">
         <div className="container">
           <div className="row g-4 g-xl-5 align-items-stretch">
+
             {/* =================================
                 FORMULARIO
                 ================================= */}
             <div className="col-12 col-lg-7">
               <div className="contacto-card contacto-form-card">
+
                 <div className="contacto-card-header">
-                  <h2>Envíanos un mensaje</h2>
+                  <h2>
+                    Envíanos un mensaje
+                  </h2>
 
                   <p>
-                    Completa el siguiente formulario con tus
+                    Completa el siguiente
+                    formulario con tus
                     datos.
                   </p>
                 </div>
 
+
                 {estadoEnvio.tipo && (
                   <div
                     className={`alert contacto-alert ${
-                      estadoEnvio.tipo === "exito"
+                      estadoEnvio.tipo ===
+                      "exito"
                         ? "alert-success"
                         : "alert-danger"
                     }`}
                     role="alert"
                     aria-live="polite"
                   >
-                    {estadoEnvio.mensaje}
+                    {
+                      estadoEnvio.mensaje
+                    }
                   </div>
                 )}
 
-                <form onSubmit={manejarEnvio}>
+
+                <form
+                  onSubmit={
+                    manejarEnvio
+                  }
+                >
                   <div className="row g-4">
+
                     {/* Nombre */}
                     <div className="col-12 col-md-6">
                       <label
@@ -200,14 +372,23 @@ function Contacto() {
                         name="nombre"
                         className="form-control contacto-input"
                         placeholder="Escribe tu nombre"
-                        value={formulario.nombre}
-                        onChange={manejarCambio}
+                        value={
+                          formulario.nombre
+                        }
+                        onChange={
+                          manejarCambio
+                        }
                         autoComplete="name"
-                        maxLength={120}
-                        disabled={enviando}
+                        maxLength={
+                          120
+                        }
+                        disabled={
+                          enviando
+                        }
                         required
                       />
                     </div>
+
 
                     {/* Empresa */}
                     <div className="col-12 col-md-6">
@@ -224,13 +405,22 @@ function Contacto() {
                         name="empresa"
                         className="form-control contacto-input"
                         placeholder="Nombre de tu empresa"
-                        value={formulario.empresa}
-                        onChange={manejarCambio}
+                        value={
+                          formulario.empresa
+                        }
+                        onChange={
+                          manejarCambio
+                        }
                         autoComplete="organization"
-                        maxLength={150}
-                        disabled={enviando}
+                        maxLength={
+                          150
+                        }
+                        disabled={
+                          enviando
+                        }
                       />
                     </div>
+
 
                     {/* Email */}
                     <div className="col-12 col-md-6">
@@ -247,14 +437,23 @@ function Contacto() {
                         name="email"
                         className="form-control contacto-input"
                         placeholder="correo@empresa.com"
-                        value={formulario.email}
-                        onChange={manejarCambio}
+                        value={
+                          formulario.email
+                        }
+                        onChange={
+                          manejarCambio
+                        }
                         autoComplete="email"
-                        maxLength={254}
-                        disabled={enviando}
+                        maxLength={
+                          254
+                        }
+                        disabled={
+                          enviando
+                        }
                         required
                       />
                     </div>
+
 
                     {/* Teléfono */}
                     <div className="col-12 col-md-6">
@@ -271,15 +470,24 @@ function Contacto() {
                         name="telefono"
                         className="form-control contacto-input"
                         placeholder="81 1234 5678"
-                        value={formulario.telefono}
-                        onChange={manejarCambio}
+                        value={
+                          formulario.telefono
+                        }
+                        onChange={
+                          manejarCambio
+                        }
                         autoComplete="tel"
                         inputMode="tel"
-                        maxLength={25}
-                        disabled={enviando}
+                        maxLength={
+                          25
+                        }
+                        disabled={
+                          enviando
+                        }
                         required
                       />
                     </div>
+
 
                     {/* Mensaje */}
                     <div className="col-12">
@@ -295,14 +503,25 @@ function Contacto() {
                         name="mensaje"
                         className="form-control contacto-input contacto-textarea"
                         placeholder="Escribe tu mensaje"
-                        value={formulario.mensaje}
-                        onChange={manejarCambio}
-                        rows={6}
-                        maxLength={3000}
-                        disabled={enviando}
+                        value={
+                          formulario.mensaje
+                        }
+                        onChange={
+                          manejarCambio
+                        }
+                        rows={
+                          6
+                        }
+                        maxLength={
+                          3000
+                        }
+                        disabled={
+                          enviando
+                        }
                         required
                       />
                     </div>
+
 
                     {/* =================================
                         AVISO DE PRIVACIDAD
@@ -310,49 +529,75 @@ function Contacto() {
                     <div className="col-12">
                       <div className="contacto-privacy-box">
                         <div className="form-check contacto-privacy-check">
+
                           <input
                             type="checkbox"
                             id="aceptaPrivacidad"
                             name="aceptaPrivacidad"
                             className="form-check-input contacto-checkbox"
-                            checked={aceptaPrivacidad}
-                            onChange={manejarPrivacidad}
-                            disabled={enviando}
+                            checked={
+                              aceptaPrivacidad
+                            }
+                            onChange={
+                              manejarPrivacidad
+                            }
+                            disabled={
+                              enviando
+                            }
                             required
                           />
+
 
                           <label
                             htmlFor="aceptaPrivacidad"
                             className="form-check-label contacto-privacy-label"
                           >
-                            He leído y acepto el tratamiento de
-                            mis datos personales conforme al{" "}
+                            He leído y
+                            acepto el
+                            tratamiento
+                            de mis datos
+                            personales
+                            conforme al{" "}
+
                             <Link
                               to="/aviso-de-privacidad"
                               className="contacto-privacy-link"
                             >
-                              Aviso de Privacidad
+                              Aviso de
+                              Privacidad
                             </Link>
                             .
                           </label>
                         </div>
 
+
                         <p className="contacto-privacy-help">
-                          Tus datos serán enviados al personal
-                          autorizado de Grinsa Manufacturas para
-                          atender tu solicitud y ponerse en
+                          Tus datos serán
+                          enviados al
+                          personal
+                          autorizado de
+                          Grinsa
+                          Manufacturas
+                          para atender tu
+                          solicitud y
+                          ponerse en
                           contacto contigo.
                         </p>
                       </div>
                     </div>
+
 
                     {/* Botón */}
                     <div className="col-12">
                       <button
                         type="submit"
                         className="btn contacto-submit-button"
-                        disabled={enviando}
-                        aria-busy={enviando}
+                        disabled={
+                          enviando
+                        }
+                        aria-busy={
+                          enviando
+                        }
                       >
                         {enviando
                           ? "Enviando..."
@@ -364,26 +609,34 @@ function Contacto() {
               </div>
             </div>
 
+
             {/* =================================
                 INFORMACIÓN Y MAPA
                 ================================= */}
             <div className="col-12 col-lg-5">
               <aside className="contacto-card contacto-info-card">
+
                 <div className="contacto-info-header">
                   <p className="contacto-info-eyebrow">
-                    Información de contacto
+                    Información de
+                    contacto
                   </p>
 
-                  <h2>Visítanos</h2>
+                  <h2>
+                    Visítanos
+                  </h2>
 
                   <p>
-                    Comunícate con nosotros o consulta nuestra
-                    ubicación.
+                    Comunícate con
+                    nosotros o consulta
+                    nuestra ubicación.
                   </p>
                 </div>
 
+
                 {/* Teléfono y WhatsApp */}
                 <div className="contacto-info-block">
+
                   <span className="contacto-info-label">
                     Teléfono
                   </span>
@@ -394,6 +647,7 @@ function Contacto() {
                   >
                     81 4838 7696
                   </a>
+
 
                   <span className="contacto-info-label">
                     WhatsApp
@@ -409,20 +663,30 @@ function Contacto() {
                   </a>
                 </div>
 
+
                 {/* Dirección */}
                 <div className="contacto-info-block">
+
                   <span className="contacto-info-label">
                     Dirección
                   </span>
 
                   <address className="contacto-address">
-                    66062, Cucharas 303 A,
+                    66062,
+                    Cucharas 303 A,
                     <br />
-                    Parque Industrial Escobedo,
+
+                    Parque
+                    Industrial
+                    Escobedo,
                     <br />
-                    Cdad. Gral. Escobedo, N.L.
+
+                    Cdad. Gral.
+                    Escobedo,
+                    N.L.
                   </address>
                 </div>
+
 
                 {/* Mapa */}
                 <div className="contacto-map-wrapper">
@@ -436,14 +700,17 @@ function Contacto() {
                   />
                 </div>
 
+
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Cucharas+303+A%2C+Parque+Industrial+Escobedo%2C+66062%2C+General+Escobedo%2C+Nuevo+Le%C3%B3n"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="contacto-map-link"
                 >
-                  Abrir ubicación en Google Maps
+                  Abrir ubicación en
+                  Google Maps
                 </a>
+
               </aside>
             </div>
           </div>
@@ -452,5 +719,6 @@ function Contacto() {
     </main>
   );
 }
+
 
 export default Contacto;

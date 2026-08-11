@@ -1,12 +1,28 @@
 import { useEffect } from "react";
 
+import { configurarSEO } from "./seo";
+
 import "./Calidad.css";
 
+
 function Calidad() {
+
+  // ==========================================
+  // SEO
+  // ==========================================
   useEffect(() => {
-    document.title =
-      "Grinsa Manufacturas | Calidad";
+    configurarSEO({
+      titulo:
+        "Calidad en Fabricación y Maquinados | Grinsa Manufacturas",
+
+      descripcion:
+        "Conoce el Sistema de Gestión de Calidad de Grinsa Manufacturas para pailería, maquinados, soldadura, trazabilidad, certificados e inspección.",
+
+      rutaCanonical:
+        "/calidad",
+    });
   }, []);
+
 
   return (
     <main className="calidad-page">
@@ -34,6 +50,7 @@ function Calidad() {
         </div>
       </section>
 
+
       {/* =====================================
           CONTENIDO DEL SISTEMA DE CALIDAD
           ===================================== */}
@@ -60,53 +77,89 @@ function Calidad() {
 
               <ul className="calidad-lista">
                 <li>
-                  <strong>Habilitado</strong>
+                  <strong>
+                    Habilitado
+                  </strong>
 
                   <ul className="calidad-sublista">
                     <li>
-                      <strong>Corte:</strong> dimensiones, cuadratura,
-                      conicidad y ovalamiento de barrenos, inspección
-                      visual de muescas.
+                      <strong>
+                        Corte:
+                      </strong>{" "}
+                      dimensiones,
+                      cuadratura,
+                      conicidad y
+                      ovalamiento de
+                      barrenos,
+                      inspección visual
+                      de muescas.
                     </li>
 
                     <li>
-                      <strong>Barrenado:</strong> trazo, dimensiones y
+                      <strong>
+                        Barrenado:
+                      </strong>{" "}
+                      trazo,
+                      dimensiones y
                       rebabeo.
                     </li>
 
                     <li>
-                      <strong>Rolado:</strong> dimensiones y
+                      <strong>
+                        Rolado:
+                      </strong>{" "}
+                      dimensiones y
                       ovalamiento.
                     </li>
                   </ul>
                 </li>
 
                 <li>
-                  <strong>Armado:</strong> dimensiones, cuadratura,
+                  <strong>
+                    Armado:
+                  </strong>{" "}
+                  dimensiones,
+                  cuadratura,
                   paralelismo y camber.
                 </li>
 
                 <li>
-                  <strong>Soldadura:</strong> inspección visual,
-                  líquidos penetrantes, inspección de pandeamiento y
+                  <strong>
+                    Soldadura:
+                  </strong>{" "}
+                  inspección visual,
+                  líquidos penetrantes,
+                  inspección de
+                  pandeamiento y
                   camber.
                 </li>
 
                 <li>
-                  Llenado de registro dimensional, planos baloneados y
-                  baloneo de soldadura.
+                  Llenado de registro
+                  dimensional, planos
+                  baloneados y baloneo
+                  de soldadura.
                 </li>
 
-                <li>Perfil de anclaje sand blast.</li>
-
-                <li>Inspección visual de primer y acabado.</li>
+                <li>
+                  Perfil de anclaje
+                  sand blast.
+                </li>
 
                 <li>
-                  Inspección de espesores de primer y acabado con
+                  Inspección visual de
+                  primer y acabado.
+                </li>
+
+                <li>
+                  Inspección de
+                  espesores de primer
+                  y acabado con
                   positector.
                 </li>
               </ul>
             </article>
+
 
             {/* =================================
                 CHECKLIST DE MAQUINADOS
@@ -124,25 +177,35 @@ function Calidad() {
               />
 
               <ul className="calidad-lista">
-                <li>Dimensiones según plano.</li>
-
                 <li>
-                  Inspección visual de acabado y rebabeo.
-                </li>
-
-                <li>Llenado de registro dimensional.</li>
-
-                <li>
-                  Inspección de premaquinado previo a soldadura en
-                  ensambles.
+                  Dimensiones según plano.
                 </li>
 
                 <li>
-                  Inspección de dimensiones protegidas para tratamiento
-                  térmico y rectificado.
+                  Inspección visual de
+                  acabado y rebabeo.
+                </li>
+
+                <li>
+                  Llenado de registro
+                  dimensional.
+                </li>
+
+                <li>
+                  Inspección de
+                  premaquinado previo a
+                  soldadura en ensambles.
+                </li>
+
+                <li>
+                  Inspección de
+                  dimensiones protegidas
+                  para tratamiento térmico
+                  y rectificado.
                 </li>
               </ul>
             </article>
+
 
             {/* =================================
                 PROCEDIMIENTOS
@@ -161,20 +224,34 @@ function Calidad() {
 
               <ul className="calidad-lista">
                 <li>
-                  <strong>Preproducción</strong>
+                  <strong>
+                    Preproducción
+                  </strong>
 
                   <ul className="calidad-sublista">
-                    <li>PPAP / master producción y calidad.</li>
+                    <li>
+                      PPAP / master
+                      producción y calidad.
+                    </li>
 
-                    <li>Proceso de compras.</li>
+                    <li>
+                      Proceso de compras.
+                    </li>
 
-                    <li>Proceso de recepción de material.</li>
+                    <li>
+                      Proceso de recepción
+                      de material.
+                    </li>
                   </ul>
                 </li>
 
-                <li>Producción y mantenimiento.</li>
+                <li>
+                  Producción y
+                  mantenimiento.
+                </li>
               </ul>
             </article>
+
 
             {/* =================================
                 TRAZABILIDAD Y CERTIFICADOS
@@ -192,28 +269,47 @@ function Calidad() {
               />
 
               <ul className="calidad-lista">
-                <li>Certificados de materia prima.</li>
-
-                <li>Certificados de pintura.</li>
-
-                <li>Certificados de tratamiento térmico.</li>
-
                 <li>
-                  Certificado de tarima y embalaje con calidad de
-                  exportación.
+                  Certificados de
+                  materia prima.
                 </li>
 
                 <li>
-                  <strong>Procesos</strong>
+                  Certificados de
+                  pintura.
+                </li>
+
+                <li>
+                  Certificados de
+                  tratamiento térmico.
+                </li>
+
+                <li>
+                  Certificado de tarima
+                  y embalaje con calidad
+                  de exportación.
+                </li>
+
+                <li>
+                  <strong>
+                    Procesos
+                  </strong>
 
                   <ul className="calidad-sublista">
                     <li>
-                      <strong>Soldadores:</strong> número de estampa.
+                      <strong>
+                        Soldadores:
+                      </strong>{" "}
+                      número de estampa.
                     </li>
 
                     <li>
-                      <strong>Pintores:</strong> registro de preparación
-                      y aplicación.
+                      <strong>
+                        Pintores:
+                      </strong>{" "}
+                      registro de
+                      preparación y
+                      aplicación.
                     </li>
                   </ul>
                 </li>
@@ -225,5 +321,6 @@ function Calidad() {
     </main>
   );
 }
+
 
 export default Calidad;

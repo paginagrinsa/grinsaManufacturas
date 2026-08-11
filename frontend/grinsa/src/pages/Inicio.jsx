@@ -14,7 +14,10 @@ import {
 
 import { GiCrane } from "react-icons/gi";
 
+import { configurarSEO } from "./seo";
+
 import "./Inicio.css";
+
 
 const diapositivas = [
   {
@@ -37,6 +40,7 @@ const diapositivas = [
   },
 ];
 
+
 const servicios = [
   {
     id: 1,
@@ -47,7 +51,6 @@ const servicios = [
       "Diseño de Adimentos",
       "Diseño de Estructuras",
       "Ingeniería de fabricación y montaje",
-     
     ],
   },
   {
@@ -76,51 +79,92 @@ const servicios = [
   },
 ];
 
-function Inicio() {
-  const [diapositivaActual, setDiapositivaActual] = useState(0);
-  const [carruselPausado, setCarruselPausado] = useState(false);
 
+function Inicio() {
+  const [
+    diapositivaActual,
+    setDiapositivaActual,
+  ] = useState(0);
+
+  const [
+    carruselPausado,
+    setCarruselPausado,
+  ] = useState(false);
+
+
+  // ==========================================
+  // SEO
+  // ==========================================
   useEffect(() => {
-    document.title = "Grinsa Manufacturas";
+    configurarSEO({
+      titulo:
+        "Grinsa Manufacturas | Fabricación Industrial en Nuevo León",
+
+      descripcion:
+        "Grinsa Manufacturas ofrece fabricación de acero, ingeniería, corte CNC y montaje industrial en General Escobedo, Nuevo León. Conoce nuestras soluciones.",
+
+      rutaCanonical: "/",
+    });
   }, []);
 
+
+  // ==========================================
+  // CARRUSEL AUTOMÁTICO
+  // ==========================================
   useEffect(() => {
     if (carruselPausado) {
       return undefined;
     }
 
-    const intervalo = window.setInterval(() => {
-      setDiapositivaActual((indiceActual) =>
-        indiceActual === diapositivas.length - 1
-          ? 0
-          : indiceActual + 1
-      );
-    }, 5000);
+    const intervalo =
+      window.setInterval(() => {
+        setDiapositivaActual(
+          (indiceActual) =>
+            indiceActual ===
+            diapositivas.length - 1
+              ? 0
+              : indiceActual + 1
+        );
+      }, 5000);
 
     return () => {
-      window.clearInterval(intervalo);
+      window.clearInterval(
+        intervalo
+      );
     };
   }, [carruselPausado]);
 
-  const mostrarDiapositivaAnterior = () => {
-    setDiapositivaActual((indiceActual) =>
-      indiceActual === 0
-        ? diapositivas.length - 1
-        : indiceActual - 1
-    );
-  };
 
-  const mostrarDiapositivaSiguiente = () => {
-    setDiapositivaActual((indiceActual) =>
-      indiceActual === diapositivas.length - 1
-        ? 0
-        : indiceActual + 1
-    );
-  };
+  const mostrarDiapositivaAnterior =
+    () => {
+      setDiapositivaActual(
+        (indiceActual) =>
+          indiceActual === 0
+            ? diapositivas.length - 1
+            : indiceActual - 1
+      );
+    };
 
-  const seleccionarDiapositiva = (indice) => {
-    setDiapositivaActual(indice);
-  };
+
+  const mostrarDiapositivaSiguiente =
+    () => {
+      setDiapositivaActual(
+        (indiceActual) =>
+          indiceActual ===
+          diapositivas.length - 1
+            ? 0
+            : indiceActual + 1
+      );
+    };
+
+
+  const seleccionarDiapositiva =
+    (indice) => {
+      setDiapositivaActual(
+        indice
+      );
+    };
+
 
   return (
     <main className="inicio-page">
@@ -131,30 +175,57 @@ function Inicio() {
         className="inicio-carousel"
         aria-roledescription="carrusel"
         aria-label="Galería principal de Grinsa Manufacturas"
-        onMouseEnter={() => setCarruselPausado(true)}
-        onMouseLeave={() => setCarruselPausado(false)}
+        onMouseEnter={() =>
+          setCarruselPausado(true)
+        }
+        onMouseLeave={() =>
+          setCarruselPausado(false)
+        }
       >
         <div className="inicio-carousel-slides">
-          {diapositivas.map((diapositiva, indice) => (
-            <article
-              key={diapositiva.id}
-              className={`inicio-carousel-slide ${
-                indice === diapositivaActual
-                  ? "inicio-carousel-slide-active"
-                  : ""
-              }`}
-              aria-hidden={indice !== diapositivaActual}
-            >
-              <img
-                src={diapositiva.imagen}
-                alt={diapositiva.alt}
-                className="inicio-carousel-image"
-                draggable="false"
-                loading={indice === 0 ? "eager" : "lazy"}
-                fetchPriority={indice === 0 ? "high" : "auto"}
-              />
-            </article>
-          ))}
+          {diapositivas.map(
+            (
+              diapositiva,
+              indice
+            ) => (
+              <article
+                key={
+                  diapositiva.id
+                }
+                className={`inicio-carousel-slide ${
+                  indice ===
+                  diapositivaActual
+                    ? "inicio-carousel-slide-active"
+                    : ""
+                }`}
+                aria-hidden={
+                  indice !==
+                  diapositivaActual
+                }
+              >
+                <img
+                  src={
+                    diapositiva.imagen
+                  }
+                  alt={
+                    diapositiva.alt
+                  }
+                  className="inicio-carousel-image"
+                  draggable="false"
+                  loading={
+                    indice === 0
+                      ? "eager"
+                      : "lazy"
+                  }
+                  fetchPriority={
+                    indice === 0
+                      ? "high"
+                      : "auto"
+                  }
+                />
+              </article>
+            )
+          )}
         </div>
 
         <button
@@ -164,9 +235,13 @@ function Inicio() {
             inicio-carousel-control-left
           "
           aria-label="Mostrar imagen anterior"
-          onClick={mostrarDiapositivaAnterior}
+          onClick={
+            mostrarDiapositivaAnterior
+          }
         >
-          <FiChevronLeft aria-hidden="true" />
+          <FiChevronLeft
+            aria-hidden="true"
+          />
         </button>
 
         <button
@@ -176,35 +251,55 @@ function Inicio() {
             inicio-carousel-control-right
           "
           aria-label="Mostrar imagen siguiente"
-          onClick={mostrarDiapositivaSiguiente}
+          onClick={
+            mostrarDiapositivaSiguiente
+          }
         >
-          <FiChevronRight aria-hidden="true" />
+          <FiChevronRight
+            aria-hidden="true"
+          />
         </button>
 
         <div
           className="inicio-carousel-indicators"
           aria-label="Seleccionar imagen"
         >
-          {diapositivas.map((diapositiva, indice) => (
-            <button
-              key={diapositiva.id}
-              type="button"
-              className={`inicio-carousel-indicator ${
-                indice === diapositivaActual
-                  ? "inicio-carousel-indicator-active"
-                  : ""
-              }`}
-              aria-label={`Mostrar imagen ${indice + 1}`}
-              aria-current={
-                indice === diapositivaActual
-                  ? "true"
-                  : undefined
-              }
-              onClick={() => seleccionarDiapositiva(indice)}
-            />
-          ))}
+          {diapositivas.map(
+            (
+              diapositiva,
+              indice
+            ) => (
+              <button
+                key={
+                  diapositiva.id
+                }
+                type="button"
+                className={`inicio-carousel-indicator ${
+                  indice ===
+                  diapositivaActual
+                    ? "inicio-carousel-indicator-active"
+                    : ""
+                }`}
+                aria-label={`Mostrar imagen ${
+                  indice + 1
+                }`}
+                aria-current={
+                  indice ===
+                  diapositivaActual
+                    ? "true"
+                    : undefined
+                }
+                onClick={() =>
+                  seleccionarDiapositiva(
+                    indice
+                  )
+                }
+              />
+            )
+          )}
         </div>
       </section>
+
 
       {/* =====================================
           ACERCA DE GRINSA
@@ -224,13 +319,17 @@ function Inicio() {
           <div className="inicio-about-line" />
 
           <p className="inicio-about-description">
-            Somos una empresa líder en fabricaciones de acero con más
-            de 10 años innovando nuestros procesos y sistemas de
-            calidad. Nuestro compromiso es la satisfacción de nuestros
-            clientes.
+            Somos una empresa líder en
+            fabricaciones de acero con
+            más de 10 años innovando
+            nuestros procesos y sistemas
+            de calidad. Nuestro
+            compromiso es la satisfacción
+            de nuestros clientes.
           </p>
         </div>
       </section>
+
 
       {/* =====================================
           SERVICIOS
@@ -252,45 +351,62 @@ function Inicio() {
           </div>
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
-            {servicios.map((servicio) => {
-              const IconoServicio = servicio.icono;
+            {servicios.map(
+              (servicio) => {
+                const IconoServicio =
+                  servicio.icono;
 
-              return (
-                <div
-                  key={servicio.id}
-                  className="col"
-                >
-                  <article className="card inicio-service-card h-100">
-                    {/* Icono circular estilo Durosa */}
-                    <div className="inicio-service-icon-area">
-                      <div
-                        className="inicio-service-icon-circle"
-                        aria-hidden="true"
-                      >
-                        <IconoServicio className="inicio-service-icon" />
+                return (
+                  <div
+                    key={
+                      servicio.id
+                    }
+                    className="col"
+                  >
+                    <article className="card inicio-service-card h-100">
+                      <div className="inicio-service-icon-area">
+                        <div
+                          className="inicio-service-icon-circle"
+                          aria-hidden="true"
+                        >
+                          <IconoServicio className="inicio-service-icon" />
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="card-body inicio-service-body">
-                      <h3 className="card-title inicio-service-title">
-                        {servicio.titulo}
-                      </h3>
+                      <div className="card-body inicio-service-body">
+                        <h3 className="card-title inicio-service-title">
+                          {
+                            servicio.titulo
+                          }
+                        </h3>
 
-                      <ul className="inicio-service-list">
-                        {servicio.descripcion.map((elemento) => (
-                          <li key={elemento}>
-                            {elemento}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </article>
-                </div>
-              );
-            })}
+                        <ul className="inicio-service-list">
+                          {servicio.descripcion.map(
+                            (
+                              elemento
+                            ) => (
+                              <li
+                                key={
+                                  elemento
+                                }
+                              >
+                                {
+                                  elemento
+                                }
+                              </li>
+                            )
+                          )}
+                        </ul>
+                      </div>
+                    </article>
+                  </div>
+                );
+              }
+            )}
           </div>
         </div>
       </section>
+
 
       {/* =====================================
           CONTACTO A TODO EL ANCHO
@@ -315,9 +431,13 @@ function Inicio() {
             <div className="inicio-cta-line" />
 
             <p className="inicio-cta-description">
-              Ofrecemos soluciones de fabricación de alto valor ,
-              alineando nuestros procesos para satisfacer las necesidades 
-              específicas de nuestros clientes en cada segmento del mercado
+              Ofrecemos soluciones de
+              fabricación de alto valor,
+              alineando nuestros procesos
+              para satisfacer las
+              necesidades específicas de
+              nuestros clientes en cada
+              segmento del mercado
             </p>
 
             <NavLink
@@ -328,7 +448,9 @@ function Inicio() {
               "
             >
               Contactar a Grinsa
-              <FiArrowRight aria-hidden="true" />
+              <FiArrowRight
+                aria-hidden="true"
+              />
             </NavLink>
           </div>
         </article>
@@ -336,5 +458,6 @@ function Inicio() {
     </main>
   );
 }
+
 
 export default Inicio;

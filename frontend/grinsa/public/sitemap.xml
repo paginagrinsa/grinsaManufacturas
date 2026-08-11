@@ -2,31 +2,90 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
+  <!-- ======================================
+       INICIO
+       ====================================== -->
   <url>
     <loc>https://www.grinsa.mx/</loc>
     <priority>1.0</priority>
   </url>
 
+
+  <!-- ======================================
+       NOSOTROS
+       ====================================== -->
   <url>
     <loc>https://www.grinsa.mx/nosotros</loc>
     <priority>0.8</priority>
   </url>
-  
+
+
+  <!-- ======================================
+       SOLUCIONES
+       ====================================== -->
   <url>
     <loc>https://www.grinsa.mx/soluciones</loc>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- ======================================
+       FABRICACIÓN
+       ====================================== -->
+  <url>
+    <loc>https://www.grinsa.mx/soluciones/fabricacion</loc>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- ======================================
+       SUPERFICIES
+       ====================================== -->
+  <url>
+    <loc>https://www.grinsa.mx/soluciones/superficies</loc>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- ======================================
+       EMBARQUE
+       ====================================== -->
+  <url>
+    <loc>https://www.grinsa.mx/soluciones/embarque</loc>
     <priority>0.8</priority>
   </url>
 
+
+  <!-- ======================================
+       MONTAJE
+       ====================================== -->
+  <url>
+    <loc>https://www.grinsa.mx/soluciones/montaje</loc>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- ======================================
+       CALIDAD
+       ====================================== -->
   <url>
     <loc>https://www.grinsa.mx/calidad</loc>
     <priority>0.8</priority>
   </url>
 
+
+  <!-- ======================================
+       PROYECTOS
+       ====================================== -->
   <url>
     <loc>https://www.grinsa.mx/proyectos</loc>
     <priority>0.8</priority>
   </url>
 
+
+  <!-- ======================================
+       CONTACTO
+       ====================================== -->
   <url>
     <loc>https://www.grinsa.mx/contacto</loc>
     <priority>0.8</priority>

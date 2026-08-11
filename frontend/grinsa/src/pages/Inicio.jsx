@@ -22,21 +22,32 @@ import "./Inicio.css";
 const diapositivas = [
   {
     id: 1,
+
     imagen:
       "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_14.59.00_2_qmehaz_yehjmw.jpg",
-    alt: "Foto 1",
+
+    alt:
+      "Trabajos de fabricación industrial realizados por Grinsa Manufacturas",
   },
+
   {
     id: 2,
+
     imagen:
       "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_16.25.49_f741qr_psa25v.jpg",
-    alt: "Foto 2",
+
+    alt:
+      "Proceso industrial de manufactura y transformación de acero en Grinsa Manufacturas",
   },
+
   {
     id: 3,
+
     imagen:
       "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_16.29.34_zjv3jv_faqkbw.jpg",
-    alt: "Foto 3",
+
+    alt:
+      "Fabricación de estructuras y componentes metálicos para proyectos industriales",
   },
 ];
 
@@ -44,8 +55,13 @@ const diapositivas = [
 const servicios = [
   {
     id: 1,
-    titulo: "Procesos de Ingeniería",
-    icono: FaCogs,
+
+    titulo:
+      "Procesos de Ingeniería",
+
+    icono:
+      FaCogs,
+
     descripcion: [
       "Asistencia y Diseño de Productos",
       "Diseño de Adimentos",
@@ -53,10 +69,16 @@ const servicios = [
       "Ingeniería de fabricación y montaje",
     ],
   },
+
   {
     id: 2,
-    titulo: "Servicios de Fabricación",
-    icono: FaIndustry,
+
+    titulo:
+      "Servicios de Fabricación",
+
+    icono:
+      FaIndustry,
+
     descripcion: [
       "Corte Plasma CNC",
       "Oxicorte CNC",
@@ -67,10 +89,16 @@ const servicios = [
       "Doblez",
     ],
   },
+
   {
     id: 3,
-    titulo: "Montaje",
-    icono: GiCrane,
+
+    titulo:
+      "Montaje",
+
+    icono:
+      GiCrane,
+
     descripcion: [
       "Planeación",
       "Pre-ensambles",
@@ -93,9 +121,81 @@ function Inicio() {
 
 
   // ==========================================
-  // SEO
+  // SEO + ORGANIZATION + WEBSITE
   // ==========================================
   useEffect(() => {
+    const datosEstructurados = {
+      "@context":
+        "https://schema.org",
+
+      "@graph": [
+        {
+          "@type":
+            "WebSite",
+
+          "@id":
+            "https://www.grinsa.mx/#website",
+
+          url:
+            "https://www.grinsa.mx/",
+
+          name:
+            "Grinsa Manufacturas",
+
+          publisher: {
+            "@id":
+              "https://www.grinsa.mx/#organization",
+          },
+        },
+
+        {
+          "@type":
+            "Organization",
+
+          "@id":
+            "https://www.grinsa.mx/#organization",
+
+          name:
+            "Grinsa Manufacturas",
+
+          url:
+            "https://www.grinsa.mx/",
+
+          logo: {
+            "@type":
+              "ImageObject",
+
+            url:
+              "https://www.grinsa.mx/logoGrinsa.png",
+          },
+
+          telephone:
+            "+528148387696",
+
+          address: {
+            "@type":
+              "PostalAddress",
+
+            streetAddress:
+              "Cucharas 303 A, Parque Industrial Escobedo",
+
+            addressLocality:
+              "Ciudad General Escobedo",
+
+            addressRegion:
+              "Nuevo León",
+
+            postalCode:
+              "66062",
+
+            addressCountry:
+              "MX",
+          },
+        },
+      ],
+    };
+
+
     configurarSEO({
       titulo:
         "Grinsa Manufacturas | Fabricación Industrial en Nuevo León",
@@ -103,7 +203,10 @@ function Inicio() {
       descripcion:
         "Grinsa Manufacturas ofrece fabricación de acero, ingeniería, corte CNC y montaje industrial en General Escobedo, Nuevo León. Conoce nuestras soluciones.",
 
-      rutaCanonical: "/",
+      rutaCanonical:
+        "/",
+
+      datosEstructurados,
     });
   }, []);
 
@@ -168,6 +271,7 @@ function Inicio() {
 
   return (
     <main className="inicio-page">
+
       {/* =====================================
           CARRUSEL PRINCIPAL
           ===================================== */}
@@ -228,6 +332,7 @@ function Inicio() {
           )}
         </div>
 
+
         <button
           type="button"
           className="
@@ -244,6 +349,7 @@ function Inicio() {
           />
         </button>
 
+
         <button
           type="button"
           className="
@@ -259,6 +365,7 @@ function Inicio() {
             aria-hidden="true"
           />
         </button>
+
 
         <div
           className="inicio-carousel-indicators"
@@ -303,20 +410,26 @@ function Inicio() {
 
       {/* =====================================
           ACERCA DE GRINSA
+
+          H1 PRINCIPAL DE LA PÁGINA
           ===================================== */}
       <section
         className="inicio-about"
         aria-labelledby="inicio-about-title"
       >
         <div className="inicio-about-container">
-          <h2
+
+          <h1
             id="inicio-about-title"
             className="inicio-about-title"
           >
             Acerca de Grinsa
-          </h2>
+          </h1>
 
-          <div className="inicio-about-line" />
+          <div
+            className="inicio-about-line"
+            aria-hidden="true"
+          />
 
           <p className="inicio-about-description">
             Somos una empresa líder en
@@ -339,6 +452,7 @@ function Inicio() {
         aria-labelledby="inicio-services-title"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
+
           <div className="inicio-services-heading">
             <h2
               id="inicio-services-title"
@@ -347,8 +461,12 @@ function Inicio() {
               Nuestros servicios
             </h2>
 
-            <div className="inicio-services-line" />
+            <div
+              className="inicio-services-line"
+              aria-hidden="true"
+            />
           </div>
+
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
             {servicios.map(
@@ -364,6 +482,7 @@ function Inicio() {
                     className="col"
                   >
                     <article className="card inicio-service-card h-100">
+
                       <div className="inicio-service-icon-area">
                         <div
                           className="inicio-service-icon-circle"
@@ -372,6 +491,7 @@ function Inicio() {
                           <IconoServicio className="inicio-service-icon" />
                         </div>
                       </div>
+
 
                       <div className="card-body inicio-service-body">
                         <h3 className="card-title inicio-service-title">
@@ -398,6 +518,7 @@ function Inicio() {
                           )}
                         </ul>
                       </div>
+
                     </article>
                   </div>
                 );
@@ -416,7 +537,9 @@ function Inicio() {
         aria-labelledby="inicio-contact-title"
       >
         <article className="inicio-cta-panel inicio-cta-contact">
+
           <div className="inicio-cta-content">
+
             <p className="inicio-cta-eyebrow">
               Estamos para ayudarte
             </p>
@@ -428,7 +551,10 @@ function Inicio() {
               Contacto
             </h2>
 
-            <div className="inicio-cta-line" />
+            <div
+              className="inicio-cta-line"
+              aria-hidden="true"
+            />
 
             <p className="inicio-cta-description">
               Ofrecemos soluciones de
@@ -437,7 +563,7 @@ function Inicio() {
               para satisfacer las
               necesidades específicas de
               nuestros clientes en cada
-              segmento del mercado
+              segmento del mercado.
             </p>
 
             <NavLink
@@ -448,13 +574,16 @@ function Inicio() {
               "
             >
               Contactar a Grinsa
+
               <FiArrowRight
                 aria-hidden="true"
               />
             </NavLink>
+
           </div>
         </article>
       </section>
+
     </main>
   );
 }

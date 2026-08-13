@@ -87,6 +87,10 @@ const servicios = [
       "Taladrado",
       "Rolado",
       "Doblez",
+      "• Armado",
+      "• Soldadura",
+      "• Shotblast",
+      "• Pintura",
     ],
   },
 
@@ -410,8 +414,6 @@ function Inicio() {
 
       {/* =====================================
           ACERCA DE GRINSA
-
-          H1 PRINCIPAL DE LA PÁGINA
           ===================================== */}
       <section
         className="inicio-about"
@@ -504,17 +506,47 @@ function Inicio() {
                           {servicio.descripcion.map(
                             (
                               elemento
-                            ) => (
-                              <li
-                                key={
-                                  elemento
-                                }
-                              >
-                                {
-                                  elemento
-                                }
-                              </li>
-                            )
+                            ) => {
+                              const tieneBullet =
+                                elemento.startsWith(
+                                  "• "
+                                );
+
+                              const textoElemento =
+                                tieneBullet
+                                  ? elemento.slice(
+                                      2
+                                    )
+                                  : elemento;
+
+                              return (
+                                <li
+                                  key={
+                                    elemento
+                                  }
+                                  className={
+                                    tieneBullet
+                                      ? "inicio-service-list-bullet"
+                                      : ""
+                                  }
+                                >
+                                  {tieneBullet && (
+                                    <span
+                                      className="inicio-service-bullet-point"
+                                      aria-hidden="true"
+                                    >
+                                      •
+                                    </span>
+                                  )}
+
+                                  <span>
+                                    {
+                                      textoElemento
+                                    }
+                                  </span>
+                                </li>
+                              );
+                            }
                           )}
                         </ul>
                       </div>

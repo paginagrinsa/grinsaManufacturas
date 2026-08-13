@@ -87,10 +87,10 @@ const servicios = [
       "Taladrado",
       "Rolado",
       "Doblez",
-      "• Armado",
-      "• Soldadura",
-      "• Shotblast",
-      "• Pintura",
+      "Armado",
+      "Soldadura",
+      "Shotblast",
+      "Pintura",
     ],
   },
 
@@ -506,47 +506,17 @@ function Inicio() {
                           {servicio.descripcion.map(
                             (
                               elemento
-                            ) => {
-                              const tieneBullet =
-                                elemento.startsWith(
-                                  "• "
-                                );
-
-                              const textoElemento =
-                                tieneBullet
-                                  ? elemento.slice(
-                                      2
-                                    )
-                                  : elemento;
-
-                              return (
-                                <li
-                                  key={
-                                    elemento
-                                  }
-                                  className={
-                                    tieneBullet
-                                      ? "inicio-service-list-bullet"
-                                      : ""
-                                  }
-                                >
-                                  {tieneBullet && (
-                                    <span
-                                      className="inicio-service-bullet-point"
-                                      aria-hidden="true"
-                                    >
-                                      •
-                                    </span>
-                                  )}
-
-                                  <span>
-                                    {
-                                      textoElemento
-                                    }
-                                  </span>
-                                </li>
-                              );
-                            }
+                            ) => (
+                              <li
+                                key={
+                                  elemento
+                                }
+                              >
+                                {
+                                  elemento
+                                }
+                              </li>
+                            )
                           )}
                         </ul>
                       </div>

@@ -359,44 +359,20 @@
   color: #7a7a7a;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
+  font-weight: 400;
   line-height: 1.55;
   list-style: none;
+  text-align: center;
 }
 
 .inicio-service-list li {
   margin-bottom: 4px;
+  padding: 0;
+  font-weight: 400;
 }
 
 .inicio-service-list li:last-child {
   margin-bottom: 0;
-}
-
-/* =========================================
-   BULLET POINTS DE SERVICIOS
-
-   - Todos quedan alineados verticalmente.
-   - El grupo está desplazado hacia el centro.
-   - Los textos aparecen en negritas.
-   ========================================= */
-
-.inicio-service-list-bullet {
-  width: 135px;
-  margin-right: auto;
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: 12px 1fr;
-  align-items: baseline;
-  column-gap: 4px;
-  text-align: left;
-  font-weight: 700;
-  transform: translateX(18px);
-}
-
-.inicio-service-bullet-point {
-  width: 12px;
-  display: block;
-  font-weight: 700;
-  text-align: center;
 }
 
 /* =========================================
@@ -594,12 +570,6 @@
     font-size: 14px;
   }
 
-  .inicio-service-list-bullet {
-    width: 120px;
-    font-weight: 700;
-    transform: translateX(18px);
-  }
-
   .inicio-cta-panel {
     min-height: 470px;
     padding:
@@ -678,12 +648,6 @@
 
   .inicio-service-list {
     font-size: 14px;
-  }
-
-  .inicio-service-list-bullet {
-    width: 120px;
-    font-weight: 700;
-    transform: translateX(16px);
   }
 
   .inicio-cta-panel {
@@ -826,12 +790,6 @@
     line-height: 1.6;
   }
 
-  .inicio-service-list-bullet {
-    width: 120px;
-    font-weight: 700;
-    transform: translateX(14px);
-  }
-
   .inicio-cta-panel {
     min-height: 410px;
     padding: 60px 25px;
@@ -965,12 +923,6 @@
 
   .inicio-service-list {
     font-size: 13px;
-  }
-
-  .inicio-service-list-bullet {
-    width: 112px;
-    font-weight: 700;
-    transform: translateX(12px);
   }
 
   .inicio-cta-panel {

@@ -1,5 +1,11 @@
-import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import {
+  useEffect,
+  useState,
+} from "react";
+
+import {
+  NavLink,
+} from "react-router-dom";
 
 import {
   FiArrowRight,
@@ -12,9 +18,13 @@ import {
   FaIndustry,
 } from "react-icons/fa";
 
-import { GiCrane } from "react-icons/gi";
+import {
+  GiCrane,
+} from "react-icons/gi";
 
-import { configurarSEO } from "./seo";
+import {
+  configurarSEO,
+} from "./seo";
 
 import "./Inicio.css";
 
@@ -216,36 +226,84 @@ function Inicio() {
 
 
   // ==========================================
+  // PRECARGA DE IMÁGENES DEL CARRUSEL
+  // ==========================================
+  useEffect(() => {
+    const imagenesPrecargadas =
+      diapositivas
+        .slice(1)
+        .map(
+          (
+            diapositiva
+          ) => {
+            const imagen =
+              new Image();
+
+            imagen.src =
+              diapositiva.imagen;
+
+            return imagen;
+          }
+        );
+
+    return () => {
+      imagenesPrecargadas.forEach(
+        (
+          imagen
+        ) => {
+          imagen.onload =
+            null;
+
+          imagen.onerror =
+            null;
+        }
+      );
+    };
+  }, []);
+
+
+  // ==========================================
   // CARRUSEL AUTOMÁTICO
   // ==========================================
   useEffect(() => {
-    if (carruselPausado) {
+    if (
+      carruselPausado
+    ) {
       return undefined;
     }
 
     const intervalo =
-      window.setInterval(() => {
-        setDiapositivaActual(
-          (indiceActual) =>
-            indiceActual ===
-            diapositivas.length - 1
-              ? 0
-              : indiceActual + 1
-        );
-      }, 5000);
+      window.setInterval(
+        () => {
+          setDiapositivaActual(
+            (
+              indiceActual
+            ) =>
+              indiceActual ===
+              diapositivas.length - 1
+                ? 0
+                : indiceActual + 1
+          );
+        },
+        5000
+      );
 
     return () => {
       window.clearInterval(
         intervalo
       );
     };
-  }, [carruselPausado]);
+  }, [
+    carruselPausado,
+  ]);
 
 
   const mostrarDiapositivaAnterior =
     () => {
       setDiapositivaActual(
-        (indiceActual) =>
+        (
+          indiceActual
+        ) =>
           indiceActual === 0
             ? diapositivas.length - 1
             : indiceActual - 1
@@ -256,7 +314,9 @@ function Inicio() {
   const mostrarDiapositivaSiguiente =
     () => {
       setDiapositivaActual(
-        (indiceActual) =>
+        (
+          indiceActual
+        ) =>
           indiceActual ===
           diapositivas.length - 1
             ? 0
@@ -266,7 +326,9 @@ function Inicio() {
 
 
   const seleccionarDiapositiva =
-    (indice) => {
+    (
+      indice
+    ) => {
       setDiapositivaActual(
         indice
       );
@@ -284,10 +346,14 @@ function Inicio() {
         aria-roledescription="carrusel"
         aria-label="Galería principal de Grinsa Manufacturas"
         onMouseEnter={() =>
-          setCarruselPausado(true)
+          setCarruselPausado(
+            true
+          )
         }
         onMouseLeave={() =>
-          setCarruselPausado(false)
+          setCarruselPausado(
+            false
+          )
         }
       >
         <div className="inicio-carousel-slides">
@@ -330,6 +396,7 @@ function Inicio() {
                       ? "high"
                       : "auto"
                   }
+                  decoding="async"
                 />
               </article>
             )
@@ -472,7 +539,9 @@ function Inicio() {
 
           <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
             {servicios.map(
-              (servicio) => {
+              (
+                servicio
+              ) => {
                 const IconoServicio =
                   servicio.icono;
 
@@ -532,7 +601,7 @@ function Inicio() {
 
 
       {/* =====================================
-          CONTACTO A TODO EL ANCHO
+          CONTACTO
           ===================================== */}
       <section
         className="inicio-contact-cta"

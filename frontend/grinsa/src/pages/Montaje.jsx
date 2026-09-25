@@ -1,35 +1,53 @@
-import { useEffect } from "react";
+import {
+  useEffect,
+} from "react";
 
 import "./Montaje.css";
+
 
 const imagenesFabricacion = [
   {
     id: 1,
+
     imagen:
       "/img/montaje1.webp",
-    alt: "Montaje de estructura metálica realizado por Grinsa Manufacturas",
+
+    alt:
+      "Montaje de estructura metálica realizado por Grinsa Manufacturas",
   },
+
   {
     id: 2,
+
     imagen:
       "/img/montaje2.webp",
-    alt: "Proceso de montaje industrial en sitio",
+
+    alt:
+      "Proceso de montaje industrial en sitio",
   },
+
   {
     id: 3,
+
     imagen:
       "/img/gg.webp",
-    alt: "Estructura industrial durante trabajos de montaje",
+
+    alt:
+      "Estructura industrial durante trabajos de montaje",
   },
 ];
 
+
 function Montaje() {
   useEffect(() => {
-    document.title = "Grinsa Manufacturas | Montaje";
+    document.title =
+      "Grinsa Manufacturas | Montaje";
   }, []);
+
 
   return (
     <main className="fabricacion-page">
+
       {/* =====================================
           INTRODUCCIÓN
           ===================================== */}
@@ -38,7 +56,9 @@ function Montaje() {
         aria-labelledby="fabricacion-introduccion-title"
       >
         <div className="container">
+
           <div className="fabricacion-introduccion-content">
+
             <h1
               id="fabricacion-introduccion-title"
               className="fabricacion-introduccion-title"
@@ -53,54 +73,81 @@ function Montaje() {
 
             <p className="fabricacion-introduccion-description">
               <strong>
-              Llevamos la ingeniería  al sitio de trabajo. Nuestro equipo técnico realiza el ensamblaje y montaje final de las estructuras y equipos en la planta o proyecto del cliente, garantizando una instalación rápida, eficiente y cumpliendo rigurosamente con todas las normativas de seguridad industrial.
-              Personal calificado de maniobra e instalación 
-              Cumplimiento estricto de protocolos de seguridad
-              Integración e interconexión en sitio.
+                Llevamos la ingeniería al sitio de trabajo. Nuestro equipo
+                técnico realiza el ensamblaje y montaje final de las
+                estructuras y equipos en la planta o proyecto del cliente,
+                garantizando una instalación rápida, eficiente y cumpliendo
+                rigurosamente con todas las normativas de seguridad
+                industrial. Personal calificado de maniobra e instalación.
+                Cumplimiento estricto de protocolos de seguridad.
+                Integración e interconexión en sitio.
               </strong>
             </p>
+
           </div>
         </div>
       </section>
 
-      {/* =====================================
-          GALERÍA DE FOTOGRAFÍAS
 
-          Las tres imágenes aparecen en una
-          misma fila desde los 768px.
+      {/* =====================================
+          GALERÍA
           ===================================== */}
       <section
         className="fabricacion-galeria"
         aria-label="Galería de trabajos de montaje industrial"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
-          <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
-            {imagenesFabricacion.map((imagen) => (
-              <div
-                key={imagen.id}
-                className="col d-flex"
-              >
-                <figure className="fabricacion-foto-wrapper">
-                  <img
-                    src={imagen.imagen}
-                    alt={imagen.alt}
-                    className="fabricacion-foto"
-                    loading="lazy"
-                    draggable="false"
-                  />
 
-                  <div
-                    className="fabricacion-foto-overlay"
-                    aria-hidden="true"
-                  />
-                </figure>
-              </div>
-            ))}
+          <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
+
+            {imagenesFabricacion.map(
+              (
+                imagen,
+                indice
+              ) => (
+                <div
+                  key={
+                    imagen.id
+                  }
+                  className="col d-flex"
+                >
+                  <figure className="fabricacion-foto-wrapper">
+
+                    <img
+                      src={
+                        imagen.imagen
+                      }
+                      alt={
+                        imagen.alt
+                      }
+                      className="fabricacion-foto"
+                      loading="eager"
+                      fetchPriority={
+                        indice === 0
+                          ? "high"
+                          : "auto"
+                      }
+                      decoding="async"
+                      draggable="false"
+                    />
+
+                    <div
+                      className="fabricacion-foto-overlay"
+                      aria-hidden="true"
+                    />
+
+                  </figure>
+                </div>
+              )
+            )}
+
           </div>
         </div>
       </section>
+
     </main>
   );
 }
+
 
 export default Montaje;

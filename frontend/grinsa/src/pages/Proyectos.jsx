@@ -1,6 +1,10 @@
-import { useEffect } from "react";
+import {
+  useEffect,
+} from "react";
 
-import { configurarSEO } from "./seo";
+import {
+  configurarSEO,
+} from "./seo";
 
 import "./Proyectos.css";
 
@@ -89,6 +93,7 @@ function Proyectos() {
 
   return (
     <main className="proyectos-page">
+
       {/* =====================================
           GALERÍA DE PROYECTOS
           ===================================== */}
@@ -97,7 +102,9 @@ function Proyectos() {
         aria-labelledby="proyectos-gallery-title"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
+
           <div className="proyectos-gallery-heading">
+
             <h1
               id="proyectos-gallery-title"
               className="proyectos-gallery-title"
@@ -109,12 +116,16 @@ function Proyectos() {
               className="proyectos-gallery-line"
               aria-hidden="true"
             />
+
           </div>
 
+
           <div className="row row-cols-1 row-cols-md-2 g-4 g-xl-5 proyectos-grid">
+
             {proyectos.map(
               (
-                proyecto
+                proyecto,
+                indice
               ) => (
                 <div
                   key={
@@ -123,6 +134,7 @@ function Proyectos() {
                   className="col d-flex"
                 >
                   <figure className="proyectos-card">
+
                     <img
                       src={
                         proyecto.imagen
@@ -131,16 +143,29 @@ function Proyectos() {
                         proyecto.alt
                       }
                       className="proyectos-card-image"
-                      loading="lazy"
+                      loading={
+                        indice < 2
+                          ? "eager"
+                          : "lazy"
+                      }
+                      fetchPriority={
+                        indice === 0
+                          ? "high"
+                          : "auto"
+                      }
+                      decoding="async"
                       draggable="false"
                     />
+
                   </figure>
                 </div>
               )
             )}
+
           </div>
         </div>
       </section>
+
     </main>
   );
 }

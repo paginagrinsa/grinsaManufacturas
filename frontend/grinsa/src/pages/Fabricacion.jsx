@@ -1,35 +1,53 @@
-import { useEffect } from "react";
+import {
+  useEffect,
+} from "react";
 
 import "./Fabricacion.css";
+
 
 const imagenesFabricacion = [
   {
     id: 1,
+
     imagen:
       "/img/fabricacion1.webp",
-    alt: "Proceso de fabricación industrial realizado por Grinsa Manufacturas",
+
+    alt:
+      "Proceso de fabricación industrial realizado por Grinsa Manufacturas",
   },
+
   {
     id: 2,
+
     imagen:
       "/img/fabricacion2.webp",
-    alt: "Componentes metálicos fabricados por Grinsa Manufacturas",
+
+    alt:
+      "Componentes metálicos fabricados por Grinsa Manufacturas",
   },
+
   {
     id: 3,
+
     imagen:
       "/img/fabricacion3.webp",
-    alt: "Trabajo de manufactura y transformación de acero",
+
+    alt:
+      "Trabajo de manufactura y transformación de acero",
   },
 ];
 
+
 function Fabricacion() {
   useEffect(() => {
-    document.title = "Grinsa Manufacturas | Fabricación";
+    document.title =
+      "Grinsa Manufacturas | Fabricación";
   }, []);
+
 
   return (
     <main className="fabricacion-page">
+
       {/* =====================================
           INTRODUCCIÓN
           ===================================== */}
@@ -39,6 +57,7 @@ function Fabricacion() {
       >
         <div className="container">
           <div className="fabricacion-introduccion-content">
+
             <h1
               id="fabricacion-introduccion-title"
               className="fabricacion-introduccion-title"
@@ -62,48 +81,71 @@ function Fabricacion() {
                 especificaciones de cada cliente.
               </strong>
             </p>
+
           </div>
         </div>
       </section>
 
-      {/* =====================================
-          GALERÍA DE FOTOGRAFÍAS
 
-          Las tres imágenes aparecen en una
-          misma fila desde los 768px.
+      {/* =====================================
+          GALERÍA
           ===================================== */}
       <section
         className="fabricacion-galeria"
         aria-label="Galería de procesos de fabricación"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
-          <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
-            {imagenesFabricacion.map((imagen) => (
-              <div
-                key={imagen.id}
-                className="col d-flex"
-              >
-                <figure className="fabricacion-foto-wrapper">
-                  <img
-                    src={imagen.imagen}
-                    alt={imagen.alt}
-                    className="fabricacion-foto"
-                    loading="lazy"
-                    draggable="false"
-                  />
 
-                  <div
-                    className="fabricacion-foto-overlay"
-                    aria-hidden="true"
-                  />
-                </figure>
-              </div>
-            ))}
+          <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
+
+            {imagenesFabricacion.map(
+              (
+                imagen,
+                indice
+              ) => (
+                <div
+                  key={
+                    imagen.id
+                  }
+                  className="col d-flex"
+                >
+                  <figure className="fabricacion-foto-wrapper">
+
+                    <img
+                      src={
+                        imagen.imagen
+                      }
+                      alt={
+                        imagen.alt
+                      }
+                      className="fabricacion-foto"
+                      loading="eager"
+                      fetchPriority={
+                        indice === 0
+                          ? "high"
+                          : "auto"
+                      }
+                      decoding="async"
+                      draggable="false"
+                    />
+
+                    <div
+                      className="fabricacion-foto-overlay"
+                      aria-hidden="true"
+                    />
+
+                  </figure>
+                </div>
+              )
+            )}
+
           </div>
         </div>
       </section>
+
     </main>
   );
 }
+
 
 export default Fabricacion;

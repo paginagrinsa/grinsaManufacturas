@@ -1,7 +1,14 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import {
+  useEffect,
+} from "react";
 
-import { configurarSEO } from "./seo";
+import {
+  Link,
+} from "react-router-dom";
+
+import {
+  configurarSEO,
+} from "./seo";
 
 import "./Soluciones.css";
 
@@ -94,6 +101,7 @@ function Soluciones() {
 
   return (
     <main className="soluciones-page">
+
       {/* =====================================
           SECCIÓN DE SOLUCIONES
           ===================================== */}
@@ -102,10 +110,12 @@ function Soluciones() {
         aria-labelledby="servicios-title"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
+
           {/* =====================================
               ENCABEZADO
               ===================================== */}
           <div className="soluciones-heading">
+
             <h1
               id="servicios-title"
               className="soluciones-section-title"
@@ -129,6 +139,7 @@ function Soluciones() {
                 instalación final en sitio.
               </b>
             </p>
+
           </div>
 
 
@@ -136,9 +147,11 @@ function Soluciones() {
               TARJETAS DE SERVICIOS
               ===================================== */}
           <div className="row row-cols-1 row-cols-md-2 g-4 g-xl-5 soluciones-grid">
+
             {servicios.map(
               (
-                servicio
+                servicio,
+                indice
               ) => (
                 <div
                   key={
@@ -154,7 +167,9 @@ function Soluciones() {
                     aria-label={`Conocer el servicio de ${servicio.nombre}`}
                   >
                     <article className="card solucion-card h-100">
+
                       <div className="solucion-image-wrapper">
+
                         <img
                           src={
                             servicio.imagen
@@ -163,7 +178,17 @@ function Soluciones() {
                             servicio.alt
                           }
                           className="card-img-top solucion-image"
-                          loading="lazy"
+                          loading={
+                            indice < 2
+                              ? "eager"
+                              : "lazy"
+                          }
+                          fetchPriority={
+                            indice === 0
+                              ? "high"
+                              : "auto"
+                          }
+                          decoding="async"
                           draggable="false"
                         />
 
@@ -171,9 +196,12 @@ function Soluciones() {
                           className="solucion-image-overlay"
                           aria-hidden="true"
                         />
+
                       </div>
 
+
                       <div className="card-body solucion-card-body">
+
                         <h2 className="card-title solucion-card-title">
                           {
                             servicio.nombre
@@ -184,15 +212,19 @@ function Soluciones() {
                           className="solucion-card-line"
                           aria-hidden="true"
                         />
+
                       </div>
+
                     </article>
                   </Link>
                 </div>
               )
             )}
+
           </div>
         </div>
       </section>
+
     </main>
   );
 }

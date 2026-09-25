@@ -6,20 +6,20 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf_ihwkou.jpg",
-    alt: "Foto 1",
+      "/img/embarque1.webp",
+    alt: "Embarque industrial realizado por Grinsa Manufacturas",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/WhatsApp_Image_2026-07-30_at_14.30.49_zjumzj_uvcnf9.jpg",
-    alt: "Foto 2",
+      "/img/embarque2.webp",
+    alt: "Carga industrial preparada para embarque",
   },
   {
     id: 3,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/WhatsApp_Image_2026-07-30_at_14.31.24_1_n251np_engyet.jpg",
-    alt: "Foto 3",
+      "/img/embarque3.webp",
+    alt: "Logística y transporte de piezas industriales",
   },
 ];
 
@@ -72,7 +72,7 @@ function Embarque() {
           ===================================== */}
       <section
         className="fabricacion-galeria"
-        aria-label="Galería de procesos de fabricación"
+        aria-label="Galería de embarques industriales"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
           <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">

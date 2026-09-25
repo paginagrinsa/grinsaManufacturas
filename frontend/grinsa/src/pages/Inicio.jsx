@@ -24,7 +24,7 @@ const diapositivas = [
     id: 1,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_14.59.00_2_qmehaz_yehjmw.jpg",
+      "/img/inicio1.webp",
 
     alt:
       "Trabajos de fabricación industrial realizados por Grinsa Manufacturas",
@@ -34,7 +34,7 @@ const diapositivas = [
     id: 2,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_16.25.49_f741qr_psa25v.jpg",
+      "/img/inicio2.webp",
 
     alt:
       "Proceso industrial de manufactura y transformación de acero en Grinsa Manufacturas",
@@ -44,7 +44,7 @@ const diapositivas = [
     id: 3,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119255/WhatsApp_Image_2026-07-28_at_16.29.34_zjv3jv_faqkbw.jpg",
+      "/img/inicio3.webp",
 
     alt:
       "Fabricación de estructuras y componentes metálicos para proyectos industriales",

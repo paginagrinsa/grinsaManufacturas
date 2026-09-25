@@ -6,19 +6,19 @@ const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_12.32.16_cgdfqh_omgopl.jpg",
+      "/img/fabricacion1.webp",
     alt: "Proceso de fabricación industrial realizado por Grinsa Manufacturas",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_12.31.52_x1ycmg_rysyxw.jpg",
+      "/img/fabricacion2.webp",
     alt: "Componentes metálicos fabricados por Grinsa Manufacturas",
   },
   {
     id: 3,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_12.32.49_p77lzi_ef8m6o.jpg",
+      "/img/fabricacion3.webp",
     alt: "Trabajo de manufactura y transformación de acero",
   },
 ];

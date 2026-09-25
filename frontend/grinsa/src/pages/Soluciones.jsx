@@ -17,7 +17,7 @@ const servicios = [
       "/soluciones/fabricacion",
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_12.31.52_x1ycmg_rysyxw.jpg",
+      "/img/fabricacion1.webp",
 
     alt:
       "Fabricación de componentes metálicos en una planta industrial",
@@ -33,7 +33,7 @@ const servicios = [
       "/soluciones/superficies",
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170302_uqiknz_m7aeyt.png",
+      "/img/superficies1.webp",
 
     alt:
       "Procesamiento y acabado de superficies metálicas",
@@ -49,7 +49,7 @@ const servicios = [
       "/soluciones/embarque",
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119254/WhatsApp_Image_2026-07-30_at_14.31.24_iqsamf_ihwkou.jpg",
+      "/img/embarque1.webp",
 
     alt:
       "Contenedores y operación de embarque industrial",
@@ -65,7 +65,7 @@ const servicios = [
       "/soluciones/montaje",
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen1_kmlueh_ydxq6h.jpg",
+      "/img/montaje1.webp",
 
     alt:
       "Montaje de estructuras industriales",

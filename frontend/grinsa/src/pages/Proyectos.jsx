@@ -10,7 +10,7 @@ const proyectos = [
     id: 1,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen2_pieeo8_s654mg.png",
+      "/img/proyectos1.webp",
 
     alt:
       "Fabricación de una estructura metálica industrial",
@@ -20,7 +20,7 @@ const proyectos = [
     id: 2,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119250/Imagen3_l9rgkf_wfozhc.png",
+      "/img/proyectos2.webp",
 
     alt:
       "Maquinaria CNC dentro de una planta industrial",
@@ -30,7 +30,7 @@ const proyectos = [
     id: 3,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Imagen1_kexxns_iqubov.png",
+      "/img/proyectos3.webp",
 
     alt:
       "Montaje de una línea de producción industrial",
@@ -40,7 +40,7 @@ const proyectos = [
     id: 4,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119250/Imagen4_hukyfs_guaffx.png",
+      "/img/proyectos4.webp",
 
     alt:
       "Manufactura de componentes metálicos",
@@ -50,7 +50,7 @@ const proyectos = [
     id: 5,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/WhatsApp_Image_2026-07-30_at_14.30.49_zjumzj_uvcnf9.jpg",
+      "/img/proyectos5.webp",
 
     alt:
       "Automatización de procesos dentro de una fábrica",
@@ -60,7 +60,7 @@ const proyectos = [
     id: 6,
 
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119250/Imagen6_rgnzok_befrjg.png",
+      "/img/proyectos6.webp",
 
     alt:
       "Construcción de plataforma metálica industrial",

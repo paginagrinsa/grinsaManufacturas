@@ -5,23 +5,18 @@ import "./Superficies.css";
 const imagenesFabricacion = [
   {
     id: 1,
-
-    imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170302_uqiknz_m7aeyt.png",
-    alt: "Foto 1",
+    imagen: "/img/superficies1.webp",
+    alt: "Preparación y recubrimiento de superficie industrial",
   },
   {
     id: 2,
-    imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170319_zavzey_pixjyw.png",
-    alt: "Foto 2",
+    imagen: "/img/superficies2.webp",
+    alt: "Aplicación de pintura industrial sobre estructura metálica",
   },
   {
     id: 3,
-    
-    imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119253/Captura_de_pantalla_2026-07-30_170249_llftpo_luttsj.png",
-    alt: "Foto 3",
+    imagen: "/img/superficies3.webp",
+    alt: "Proceso de tratamiento de superficies realizado por Grinsa Manufacturas",
   },
 ];
 
@@ -55,10 +50,14 @@ function Superficies() {
 
             <p className="fabricacion-introduccion-description">
               <strong>
-              Garantizamos la durabilidad de nuestras piezas expuestas a ambientes industriales o de alta corrosión. Realizamos una preparación rigurosa de superficies mediante  shot blast  con perfil de anclaje  y aplicamos sistemas de pintura y recubrimientos industriales de alto desempeño.
-              Limpieza y preparación de superficie (shotblast).
-              Aplicación de primarios, epóxicos y poliuretanos industriales.
-              Control de espesores y pruebas de adherencia.
+                Garantizamos la durabilidad de nuestras piezas expuestas a
+                ambientes industriales o de alta corrosión. Realizamos una
+                preparación rigurosa de superficies mediante shot blast con
+                perfil de anclaje y aplicamos sistemas de pintura y
+                recubrimientos industriales de alto desempeño. Limpieza y
+                preparación de superficie (shotblast). Aplicación de
+                primarios, epóxicos y poliuretanos industriales. Control de
+                espesores y pruebas de adherencia.
               </strong>
             </p>
           </div>
@@ -67,21 +66,15 @@ function Superficies() {
 
       {/* =====================================
           GALERÍA DE FOTOGRAFÍAS
-
-          Las tres imágenes aparecen en una
-          misma fila desde los 768px.
           ===================================== */}
       <section
         className="fabricacion-galeria"
-        aria-label="Galería de procesos de fabricación"
+        aria-label="Galería de preparación y recubrimiento de superficies"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
           <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">
             {imagenesFabricacion.map((imagen) => (
-              <div
-                key={imagen.id}
-                className="col d-flex"
-              >
+              <div key={imagen.id} className="col d-flex">
                 <figure className="fabricacion-foto-wrapper">
                   <img
                     src={imagen.imagen}

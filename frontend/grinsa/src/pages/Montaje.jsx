@@ -1,25 +1,25 @@
 import { useEffect } from "react";
 
-import "./Embarques.css";
+import "./Montaje.css";
 
 const imagenesFabricacion = [
   {
     id: 1,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen1_kmlueh_ydxq6h.jpg",
-    alt: "Foto 1",
+      "/img/montaje1.webp",
+    alt: "Montaje de estructura metálica realizado por Grinsa Manufacturas",
   },
   {
     id: 2,
     imagen:
-      "https://res.cloudinary.com/tv0z5dnl/image/upload/v1786119251/Imagen2_ebkwqd_suv91i.jpg",
-    alt: "Foto 2",
+      "/img/montaje2.webp",
+    alt: "Proceso de montaje industrial en sitio",
   },
   {
     id: 3,
     imagen:
-      "https://emingenieria.com.mx/wp-content/uploads/2025/04/Bodega-y-Almacen-METAL-2000.jpg",
-    alt: "Foto 3",
+      "/img/gg.webp",
+    alt: "Estructura industrial durante trabajos de montaje",
   },
 ];
 
@@ -71,7 +71,7 @@ function Montaje() {
           ===================================== */}
       <section
         className="fabricacion-galeria"
-        aria-label="Galería de procesos de fabricación"
+        aria-label="Galería de trabajos de montaje industrial"
       >
         <div className="container-fluid px-3 px-md-4 px-xl-5">
           <div className="row row-cols-1 row-cols-md-3 g-4 fabricacion-galeria-grid">

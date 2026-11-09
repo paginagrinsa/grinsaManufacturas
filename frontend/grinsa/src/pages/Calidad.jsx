@@ -5,12 +5,16 @@ import { configurarSEO } from "./seo";
 import "./Calidad.css";
 
 
-function Calidad() {
+function Calidad({ embedded = false }) {
 
   // ==========================================
   // SEO
   // ==========================================
   useEffect(() => {
+    if (embedded) {
+      return undefined;
+    }
+
     configurarSEO({
       titulo:
         "Calidad en Fabricación y Maquinados | Grinsa Manufacturas",
@@ -21,11 +25,15 @@ function Calidad() {
       rutaCanonical:
         "/calidad",
     });
-  }, []);
+  }, [embedded]);
+
+
+  const PageWrapper = embedded ? "div" : "main";
+  const HeadingTag = embedded ? "h2" : "h1";
 
 
   return (
-    <main className="calidad-page">
+    <PageWrapper className="calidad-page">
       {/* =====================================
           ENCABEZADO PRINCIPAL
           ===================================== */}
@@ -35,12 +43,12 @@ function Calidad() {
       >
         <div className="container">
           <div className="calidad-encabezado-content">
-            <h1
+            <HeadingTag
               id="calidad-title"
               className="calidad-encabezado-title"
             >
               Sistema de Gestión de Calidad
-            </h1>
+            </HeadingTag>
 
             <div
               className="calidad-encabezado-line"
@@ -318,7 +326,7 @@ function Calidad() {
           </div>
         </div>
       </section>
-    </main>
+    </PageWrapper>
   );
 }
 

@@ -24,6 +24,7 @@ import Calidad from "./pages/Calidad";
 import Proyectos from "./pages/Proyectos";
 import Contacto from "./pages/Contacto";
 import AvisoPrivacidad from "./pages/AvisoPrivacidad";
+import LandingPage from "./pages/LandingPage";
 
 
 import {
@@ -95,6 +96,26 @@ function App() {
 
 
   // ==========================================
+  // DETECTAR FLUJO DE LANDING PAGE
+  // ==========================================
+  const searchParams =
+    new URLSearchParams(
+      location.search
+    );
+
+
+  const vieneDeLanding =
+    searchParams.get(
+      "origen"
+    ) === "landing";
+
+
+  const landingMode =
+    location.pathname === "/landingpage" ||
+    vieneDeLanding;
+
+
+  // ==========================================
   // SEO PARA LAS 4 PÁGINAS DE SERVICIOS
   // ==========================================
   useEffect(() => {
@@ -110,13 +131,6 @@ function App() {
     }
 
 
-    /*
-      Se ejecuta en el siguiente frame para
-      asegurarnos de que este SEO quede aplicado
-      después de cualquier document.title antiguo
-      que todavía exista dentro de las páginas
-      individuales.
-    */
     const frame =
       window.requestAnimationFrame(
         () => {
@@ -141,7 +155,9 @@ function App() {
   return (
     <div className="app">
 
-      <Header />
+      <Header
+        landingMode={landingMode}
+      />
 
 
       <Routes>
@@ -257,6 +273,17 @@ function App() {
 
 
         {/* =====================================
+            LANDING PAGE
+            ===================================== */}
+        <Route
+          path="/landingpage"
+          element={
+            <LandingPage />
+          }
+        />
+
+
+        {/* =====================================
             AVISO DE PRIVACIDAD
             ===================================== */}
         <Route
@@ -269,7 +296,9 @@ function App() {
       </Routes>
 
 
-      <Footer />
+      <Footer
+        landingMode={landingMode}
+      />
 
     </div>
   );

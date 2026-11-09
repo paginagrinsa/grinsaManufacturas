@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 import "./Footer.css";
 
-function Footer() {
+function Footer({ landingMode = false }) {
   return (
     <footer className="grinsa-footer">
       {/* =====================================
@@ -15,18 +15,33 @@ function Footer() {
               ================================= */}
           <div className="col-12 col-md-6 col-xl-3">
             <div className="footer-section text-center text-md-start">
-              <NavLink
-                to="/"
-                className="footer-logo-link"
-                aria-label="Ir al inicio de Grinsa Manufacturas"
-              >
-                <img
-                  src="/logo.png"
-                  alt="Logotipo de Grinsa Manufacturas"
-                  className="footer-logo"
-                  draggable="false"
-                />
-              </NavLink>
+              {landingMode ? (
+                <a
+                  href="/landingpage#inicio"
+                  className="footer-logo-link"
+                  aria-label="Ir al inicio de la Landing Page de Grinsa Manufacturas"
+                >
+                  <img
+                    src="/logo.png"
+                    alt="Logotipo de Grinsa Manufacturas"
+                    className="footer-logo"
+                    draggable="false"
+                  />
+                </a>
+              ) : (
+                <NavLink
+                  to="/"
+                  className="footer-logo-link"
+                  aria-label="Ir al inicio de Grinsa Manufacturas"
+                >
+                  <img
+                    src="/logo.png"
+                    alt="Logotipo de Grinsa Manufacturas"
+                    className="footer-logo"
+                    draggable="false"
+                  />
+                </NavLink>
+              )}
 
               <h2 className="footer-company-name">
                 Grinsa Manufacturas
@@ -160,8 +175,21 @@ function Footer() {
               reservados.
             </p>
 
+            {landingMode && (
+              <a
+                href="/landingpage#inicio"
+                className="footer-privacy-link"
+              >
+                Inicio
+              </a>
+            )}
+
             <NavLink
-              to="/aviso-de-privacidad"
+              to={
+                landingMode
+                  ? "/aviso-de-privacidad?origen=landing"
+                  : "/aviso-de-privacidad"
+              }
               className={({ isActive }) =>
                 `footer-privacy-link ${
                   isActive ? "footer-privacy-link-active" : ""

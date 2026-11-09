@@ -72,12 +72,16 @@ const proyectos = [
 ];
 
 
-function Proyectos() {
+function Proyectos({ embedded = false }) {
 
   // ==========================================
   // SEO
   // ==========================================
   useEffect(() => {
+    if (embedded) {
+      return undefined;
+    }
+
     configurarSEO({
       titulo:
         "Proyectos de Fabricación Industrial | Grinsa Manufacturas",
@@ -88,11 +92,15 @@ function Proyectos() {
       rutaCanonical:
         "/proyectos",
     });
-  }, []);
+  }, [embedded]);
+
+
+  const PageWrapper = embedded ? "div" : "main";
+  const HeadingTag = embedded ? "h2" : "h1";
 
 
   return (
-    <main className="proyectos-page">
+    <PageWrapper className="proyectos-page">
 
       {/* =====================================
           GALERÍA DE PROYECTOS
@@ -105,12 +113,12 @@ function Proyectos() {
 
           <div className="proyectos-gallery-heading">
 
-            <h1
+            <HeadingTag
               id="proyectos-gallery-title"
               className="proyectos-gallery-title"
             >
               Proyectos realizados
-            </h1>
+            </HeadingTag>
 
             <div
               className="proyectos-gallery-line"
@@ -166,7 +174,7 @@ function Proyectos() {
         </div>
       </section>
 
-    </main>
+    </PageWrapper>
   );
 }
 

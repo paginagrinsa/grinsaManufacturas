@@ -1,0 +1,1468 @@
+/* =========================================
+   VARIABLES
+   ========================================= */
+
+:root {
+  --landing-azul-marino: #0b2232;
+  --landing-azul-oscuro: #081b28;
+  --landing-azul-medio: #16384d;
+  --landing-blanco: #ffffff;
+  --landing-fondo: #f4f6f7;
+  --landing-texto: #334650;
+  --landing-texto-claro: #dbe5ea;
+  --landing-borde: #dfe5e8;
+  --landing-acento: #1f6f9f;
+}
+
+
+/* =========================================
+   GENERAL
+   ========================================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+.grinsa-landing-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background-color:
+    var(
+      --landing-blanco
+    );
+}
+
+
+.grinsa-landing-container {
+  width:
+    min(
+      100% - 40px,
+      1500px
+    );
+
+  margin:
+    0
+    auto;
+}
+
+
+#inicio,
+#nosotros,
+#servicios,
+#calidad,
+#proyectos,
+#contacto {
+  scroll-margin-top: 18px;
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.grinsa-landing-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 630px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-color:
+    var(
+      --landing-azul-marino
+    );
+}
+
+
+/* =========================================
+   IMAGEN DEL HERO
+   ========================================= */
+
+.grinsa-landing-hero-image {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position:
+    center
+    center;
+}
+
+
+/* =========================================
+   OVERLAY
+
+   Más oscuro únicamente en el lado
+   donde se encuentra el contenido.
+   ========================================= */
+
+.grinsa-landing-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      rgba(
+        4,
+        19,
+        29,
+        0.91
+      )
+      0%,
+
+      rgba(
+        4,
+        19,
+        29,
+        0.80
+      )
+      26%,
+
+      rgba(
+        4,
+        19,
+        29,
+        0.52
+      )
+      48%,
+
+      rgba(
+        4,
+        19,
+        29,
+        0.18
+      )
+      70%,
+
+      rgba(
+        4,
+        19,
+        29,
+        0.04
+      )
+      100%
+    );
+}
+
+
+/* =========================================
+   CONTENIDO HERO
+   ========================================= */
+
+.grinsa-landing-hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding-top: 76px;
+  padding-bottom: 76px;
+
+  color: white;
+}
+
+
+/* =========================================
+   BLOQUE DE TEXTO
+   ========================================= */
+
+.grinsa-landing-hero-copy {
+  width:
+    min(
+      100%,
+      760px
+    );
+}
+
+
+/* =========================================
+   IDENTIFICADOR DE MARCA
+   ========================================= */
+
+.grinsa-landing-hero-brand {
+  width: fit-content;
+
+  margin:
+    0
+    0
+    23px
+    22px;
+
+  padding:
+    7px
+    12px;
+
+  color: #e8f1f5;
+
+  border:
+    1px
+    solid
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+
+  background-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.06
+    );
+
+  border-radius: 3px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.6px;
+}
+
+
+/* =========================================
+   FILA DEL CONTENIDO
+   ========================================= */
+
+.grinsa-landing-hero-copy-row {
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 20px;
+}
+
+
+/* =========================================
+   LÍNEA VERTICAL
+
+   Sustituye la tarjeta oscura del
+   diseño anterior.
+   ========================================= */
+
+.grinsa-landing-hero-accent {
+  flex:
+    0
+    0
+    3px;
+
+  width: 3px;
+
+  min-height: 100%;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #8ba5b4 100%
+    );
+
+  box-shadow:
+    0
+    0
+    13px
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+}
+
+
+/* =========================================
+   CUERPO DEL TEXTO
+   ========================================= */
+
+.grinsa-landing-hero-copy-body {
+  width: 100%;
+
+  max-width: 690px;
+}
+
+
+/* =========================================
+   TÍTULO PRINCIPAL
+
+   Se mantiene en 20px.
+   ========================================= */
+
+.grinsa-landing-hero h1 {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: white;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 20px;
+
+  font-weight: 750;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.1px;
+
+  text-shadow:
+    0
+    2px
+    6px
+    rgba(
+      0,
+      0,
+      0,
+      0.28
+    );
+}
+
+
+/* =========================================
+   PROPUESTA DE VALOR
+
+   Se mantiene en 14px.
+   ========================================= */
+
+.grinsa-landing-hero-description {
+  max-width: 620px;
+
+  margin:
+    22px
+    0
+    0;
+
+  color:
+    rgba(
+      242,
+      247,
+      249,
+      0.90
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  line-height: 1.7;
+
+  text-shadow:
+    0
+    1px
+    5px
+    rgba(
+      0,
+      0,
+      0,
+      0.24
+    );
+}
+
+
+/* =========================================
+   BOTONES HERO
+   ========================================= */
+
+.grinsa-landing-hero-actions {
+  margin-top: 28px;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+}
+
+
+.grinsa-landing-button {
+  min-height: 48px;
+
+  padding:
+    11px
+    20px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 4px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+/* =========================================
+   BOTÓN PRINCIPAL
+   ========================================= */
+
+.grinsa-landing-button-primary {
+  color:
+    var(
+      --landing-azul-marino
+    );
+
+  background-color:
+    white;
+
+  border:
+    2px
+    solid
+    white;
+
+  box-shadow:
+    0
+    7px
+    18px
+    rgba(
+      0,
+      0,
+      0,
+      0.17
+    );
+}
+
+
+.grinsa-landing-button-primary:hover {
+  color:
+    var(
+      --landing-azul-marino
+    );
+
+  background-color:
+    #edf4f7;
+
+  transform:
+    translateY(
+      -2px
+    );
+
+  box-shadow:
+    0
+    11px
+    25px
+    rgba(
+      0,
+      0,
+      0,
+      0.23
+    );
+}
+
+
+/* =========================================
+   BOTÓN SECUNDARIO
+   ========================================= */
+
+.grinsa-landing-button-secondary {
+  color: white;
+
+  background-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.04
+    );
+
+  border:
+    1px
+    solid
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+}
+
+
+.grinsa-landing-button-secondary:hover {
+  color: white;
+
+  background-color:
+    rgba(
+      255,
+      255,
+      255,
+      0.13
+    );
+
+  border-color: white;
+
+  transform:
+    translateY(
+      -2px
+    );
+}
+
+
+/* =========================================
+   SECCIONES EMBEBIDAS
+   ========================================= */
+
+.grinsa-landing-embedded-section {
+  width: 100%;
+
+  margin: 0;
+
+  padding: 0;
+}
+
+
+.grinsa-landing-embedded-section > .nosotros-page,
+.grinsa-landing-embedded-section > .calidad-page,
+.grinsa-landing-embedded-section > .proyectos-page,
+.grinsa-landing-embedded-section > .contacto-page {
+  min-height: 0;
+}
+
+
+/* =========================================
+   SERVICIOS
+   ========================================= */
+
+.grinsa-landing-services {
+  width: 100%;
+
+  padding:
+    95px
+    0
+    110px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #f8fafb 0%,
+      #eef2f4 100%
+    );
+}
+
+
+.grinsa-landing-section-heading {
+  max-width: 900px;
+
+  margin:
+    0
+    auto
+    45px;
+
+  text-align: center;
+}
+
+
+.grinsa-landing-eyebrow {
+  margin:
+    0
+    0
+    12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.8px;
+}
+
+
+.grinsa-landing-eyebrow-dark {
+  color: #4f6a78;
+}
+
+
+.grinsa-landing-section-heading h2,
+.grinsa-landing-solutions-heading h2 {
+  margin: 0;
+
+  color:
+    var(
+      --landing-azul-marino
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size:
+    clamp(
+      35px,
+      4vw,
+      52px
+    );
+
+  font-weight: 800;
+
+  line-height: 1.15;
+}
+
+
+.grinsa-landing-title-line {
+  width: 67px;
+
+  height: 4px;
+
+  margin:
+    13px
+    auto
+    0;
+
+  background-color:
+    var(
+      --landing-azul-marino
+    );
+
+  border-radius: 20px;
+}
+
+
+/* =========================================
+   RESUMEN DE SERVICIOS
+   ========================================= */
+
+.grinsa-landing-service-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 24px;
+}
+
+
+.grinsa-landing-service-card {
+  min-height: 100%;
+
+  padding: 34px;
+
+  border:
+    1px
+    solid
+    var(
+      --landing-borde
+    );
+
+  border-radius: 12px;
+
+  background-color: white;
+
+  box-shadow:
+    0
+    14px
+    32px
+    rgba(
+      11,
+      34,
+      50,
+      0.09
+    );
+
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+
+.grinsa-landing-service-card:hover {
+  transform:
+    translateY(
+      -6px
+    );
+
+  border-color:
+    #b7c8d1;
+
+  box-shadow:
+    0
+    23px
+    45px
+    rgba(
+      11,
+      34,
+      50,
+      0.15
+    );
+}
+
+
+.grinsa-landing-service-icon {
+  width: 64px;
+
+  height: 64px;
+
+  margin-bottom: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 12px;
+
+  color: white;
+
+  background-color:
+    var(
+      --landing-azul-marino
+    );
+
+  font-size: 28px;
+}
+
+
+.grinsa-landing-service-card h3 {
+  margin:
+    0
+    0
+    20px;
+
+  color:
+    var(
+      --landing-azul-marino
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 23px;
+
+  font-weight: 800;
+}
+
+
+.grinsa-landing-service-card ul {
+  margin: 0;
+
+  padding-left: 21px;
+
+  color:
+    var(
+      --landing-texto
+    );
+}
+
+
+.grinsa-landing-service-card li {
+  margin-bottom: 8px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+
+  font-weight: 650;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   SOLUCIONES
+   ========================================= */
+
+.grinsa-landing-solutions-heading {
+  max-width: 950px;
+
+  margin:
+    105px
+    auto
+    45px;
+
+  text-align: center;
+}
+
+
+.grinsa-landing-solutions-heading p:last-child {
+  max-width: 820px;
+
+  margin:
+    20px
+    auto
+    0;
+
+  color:
+    var(
+      --landing-texto
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 17px;
+
+  line-height: 1.75;
+}
+
+
+.grinsa-landing-solutions-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 28px;
+}
+
+
+.grinsa-landing-solution-card {
+  overflow: hidden;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border:
+    1px
+    solid
+    var(
+      --landing-borde
+    );
+
+  border-radius: 14px;
+
+  background-color: white;
+
+  box-shadow:
+    0
+    15px
+    36px
+    rgba(
+      11,
+      34,
+      50,
+      0.1
+    );
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.grinsa-landing-solution-card:hover {
+  transform:
+    translateY(
+      -7px
+    );
+
+  border-color:
+    #b5c6cf;
+
+  box-shadow:
+    0
+    25px
+    50px
+    rgba(
+      11,
+      34,
+      50,
+      0.17
+    );
+}
+
+
+.grinsa-landing-solution-image-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio:
+    16 / 9;
+
+  overflow: hidden;
+
+  background-color:
+    #dce3e7;
+}
+
+
+.grinsa-landing-solution-image {
+  width: 100%;
+
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+.grinsa-landing-solution-card:hover
+.grinsa-landing-solution-image {
+  transform:
+    scale(
+      1.045
+    );
+}
+
+
+.grinsa-landing-solution-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      to top,
+
+      rgba(
+        5,
+        23,
+        35,
+        0.3
+      ),
+
+      rgba(
+        5,
+        23,
+        35,
+        0.02
+      )
+      60%
+    );
+}
+
+
+.grinsa-landing-solution-body {
+  flex: 1;
+
+  padding: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.grinsa-landing-solution-body h3 {
+  margin: 0;
+
+  color:
+    var(
+      --landing-azul-marino
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 28px;
+
+  font-weight: 800;
+}
+
+
+.grinsa-landing-card-line {
+  width: 52px;
+
+  height: 3px;
+
+  margin:
+    11px
+    0
+    18px;
+
+  background-color:
+    var(
+      --landing-azul-marino
+    );
+
+  border-radius: 20px;
+}
+
+
+.grinsa-landing-solution-body p {
+  margin:
+    0
+    0
+    24px;
+
+  color:
+    var(
+      --landing-texto
+    );
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+.grinsa-landing-card-cta {
+  width: fit-content;
+
+  margin-top: auto;
+
+  padding:
+    11px
+    18px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  background-color:
+    var(
+      --landing-azul-marino
+    );
+
+  border:
+    1px
+    solid
+    var(
+      --landing-azul-marino
+    );
+
+  border-radius: 5px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+
+.grinsa-landing-card-cta:hover {
+  color: white;
+
+  background-color:
+    #14384d;
+
+  transform:
+    translateY(
+      -2px
+    );
+}
+
+
+/* =========================================
+   TABLETS / LAPTOPS PEQUEÑAS
+   ========================================= */
+
+@media screen and (max-width: 991.98px) {
+
+  .grinsa-landing-hero {
+    min-height: 580px;
+  }
+
+
+  .grinsa-landing-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.91
+        )
+        0%,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.72
+        )
+        48%,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.25
+        )
+        78%,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.08
+        )
+        100%
+      );
+  }
+
+
+  .grinsa-landing-hero-content {
+    padding-top: 60px;
+
+    padding-bottom: 60px;
+  }
+
+
+  .grinsa-landing-hero-copy {
+    max-width: 680px;
+  }
+
+
+  .grinsa-landing-hero h1 {
+    max-width: 610px;
+
+    font-size: 20px;
+  }
+
+
+  .grinsa-landing-hero-description {
+    max-width: 570px;
+
+    font-size: 14px;
+  }
+
+
+  .grinsa-landing-service-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .grinsa-landing-solutions-grid {
+    grid-template-columns:
+      1fr;
+  }
+
+
+  .grinsa-landing-service-card {
+    padding: 30px;
+  }
+
+}
+
+
+/* =========================================
+   CELULARES
+   ========================================= */
+
+@media screen and (max-width: 767.98px) {
+
+  .grinsa-landing-container {
+    width:
+      min(
+        100% - 30px,
+        1500px
+      );
+  }
+
+
+  .grinsa-landing-hero {
+    min-height: 570px;
+  }
+
+
+  .grinsa-landing-hero-image {
+    object-position:
+      60%
+      center;
+  }
+
+
+  .grinsa-landing-hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.88
+        )
+        0%,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.70
+        )
+        65%,
+
+        rgba(
+          4,
+          19,
+          29,
+          0.42
+        )
+        100%
+      );
+  }
+
+
+  .grinsa-landing-hero-content {
+    padding-top: 50px;
+
+    padding-bottom: 50px;
+  }
+
+
+  .grinsa-landing-hero-brand {
+    margin-left: 16px;
+
+    margin-bottom: 20px;
+
+    font-size: 10px;
+  }
+
+
+  .grinsa-landing-hero-copy-row {
+    gap: 15px;
+  }
+
+
+  .grinsa-landing-hero-accent {
+    width: 3px;
+
+    flex-basis: 3px;
+  }
+
+
+  .grinsa-landing-hero h1 {
+    max-width: 100%;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+  }
+
+
+  .grinsa-landing-hero-description {
+    max-width: 100%;
+
+    margin-top: 19px;
+
+    font-size: 14px;
+
+    line-height: 1.65;
+  }
+
+
+  .grinsa-landing-hero-actions {
+    margin-top: 24px;
+
+    flex-direction: column;
+  }
+
+
+  .grinsa-landing-button {
+    width: 100%;
+
+    min-height: 47px;
+
+    font-size: 14px;
+  }
+
+
+  .grinsa-landing-services {
+    padding:
+      70px
+      0
+      80px;
+  }
+
+
+  .grinsa-landing-service-card,
+  .grinsa-landing-solution-body {
+    padding: 24px;
+  }
+
+
+  .grinsa-landing-solutions-heading {
+    margin-top: 75px;
+  }
+
+
+  .grinsa-landing-solution-body h3 {
+    font-size: 24px;
+  }
+
+}
+
+
+/* =========================================
+   CELULARES PEQUEÑOS
+   ========================================= */
+
+@media screen and (max-width: 480px) {
+
+  .grinsa-landing-hero {
+    min-height: 565px;
+  }
+
+
+  .grinsa-landing-hero-content {
+    padding-top: 38px;
+
+    padding-bottom: 38px;
+  }
+
+
+  .grinsa-landing-hero-brand {
+    margin-left: 13px;
+
+    padding:
+      6px
+      9px;
+  }
+
+
+  .grinsa-landing-hero-copy-row {
+    gap: 12px;
+  }
+
+
+  .grinsa-landing-hero h1 {
+    font-size: 20px;
+
+    line-height: 1.38;
+  }
+
+
+  .grinsa-landing-hero-description {
+    font-size: 14px;
+
+    line-height: 1.6;
+  }
+
+
+  .grinsa-landing-section-heading h2,
+  .grinsa-landing-solutions-heading h2 {
+    font-size: 32px;
+  }
+
+
+  .grinsa-landing-service-card {
+    padding: 21px;
+  }
+
+
+  .grinsa-landing-service-card h3 {
+    font-size: 21px;
+  }
+
+}
+
+
+/* =========================================
+   MOVIMIENTO REDUCIDO
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+
+  .grinsa-landing-button,
+  .grinsa-landing-service-card,
+  .grinsa-landing-solution-card,
+  .grinsa-landing-solution-image,
+  .grinsa-landing-card-cta {
+    transition: none;
+  }
+
+}

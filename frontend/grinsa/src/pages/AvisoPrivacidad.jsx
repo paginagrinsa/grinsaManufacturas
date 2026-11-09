@@ -1,9 +1,25 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom";
 
 import "./AvisoPrivacidad.css";
 
 function AvisoPrivacidad() {
+  const location = useLocation();
+
+  const searchParams = new URLSearchParams(
+    location.search
+  );
+
+  const vieneDeLanding =
+    searchParams.get("origen") === "landing";
+
+  const rutaRegreso = vieneDeLanding
+    ? "/landingpage#inicio"
+    : "/";
+
   useEffect(() => {
     document.title =
       "Grinsa Manufacturas | Aviso de Privacidad";
@@ -1166,7 +1182,7 @@ function AvisoPrivacidad() {
                 REGRESAR
                 ===================================== */}
             <div className="privacidad-back">
-              <Link to="/">
+              <Link to={rutaRegreso}>
                 ← Regresar al inicio
               </Link>
             </div>

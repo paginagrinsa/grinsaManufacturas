@@ -110,12 +110,16 @@ const principios = [
 ];
 
 
-function Nosotros() {
+function Nosotros({ embedded = false }) {
 
   // ==========================================
   // SEO
   // ==========================================
   useEffect(() => {
+    if (embedded) {
+      return undefined;
+    }
+
     configurarSEO({
       titulo:
         "Nosotros | Grinsa Manufacturas",
@@ -126,11 +130,15 @@ function Nosotros() {
       rutaCanonical:
         "/nosotros",
     });
-  }, []);
+  }, [embedded]);
+
+
+  const PageWrapper = embedded ? "div" : "main";
+  const HeadingTag = embedded ? "h2" : "h1";
 
 
   return (
-    <main className="nosotros-page">
+    <PageWrapper className="nosotros-page">
       {/* =====================================
           IMAGEN PRINCIPAL
           ===================================== */}
@@ -155,12 +163,12 @@ function Nosotros() {
         />
 
         <div className="nosotros-hero-content">
-          <h1
+          <HeadingTag
             id="nosotros-hero-title"
             className="nosotros-hero-title"
           >
             Sobre nosotros
-          </h1>
+          </HeadingTag>
 
           <div className="nosotros-hero-line" />
 
@@ -312,7 +320,7 @@ function Nosotros() {
           </div>
         </div>
       </section>
-    </main>
+    </PageWrapper>
   );
 }
 

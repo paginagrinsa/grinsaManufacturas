@@ -35,7 +35,7 @@ const estadoInicial = {
 };
 
 
-function Contacto() {
+function Contacto({ embedded = false, landingMode = false }) {
   const [
     formulario,
     setFormulario,
@@ -65,6 +65,10 @@ function Contacto() {
   // SEO + LOCAL BUSINESS
   // ==========================================
   useEffect(() => {
+    if (embedded) {
+      return undefined;
+    }
+
     const datosEstructurados = {
       "@context":
         "https://schema.org",
@@ -118,7 +122,7 @@ function Contacto() {
 
       datosEstructurados,
     });
-  }, []);
+  }, [embedded]);
 
 
   const limpiarEstadoEnvio =
@@ -281,8 +285,12 @@ function Contacto() {
     };
 
 
+  const PageWrapper = embedded ? "div" : "main";
+  const HeadingTag = embedded ? "h2" : "h1";
+
+
   return (
-    <main className="contacto-page">
+    <PageWrapper className="contacto-page">
       {/* =====================================
           ENCABEZADO
           ===================================== */}
@@ -292,9 +300,9 @@ function Contacto() {
             Estamos para ayudarte
           </p>
 
-          <h1 className="contacto-titulo">
+          <HeadingTag className="contacto-titulo">
             Contacto
-          </h1>
+          </HeadingTag>
 
           <p className="contacto-descripcion">
             Envíanos tus datos y
@@ -560,7 +568,11 @@ function Contacto() {
                             conforme al{" "}
 
                             <Link
-                              to="/aviso-de-privacidad"
+                              to={
+                                landingMode
+                                  ? "/aviso-de-privacidad?origen=landing"
+                                  : "/aviso-de-privacidad"
+                              }
                               className="contacto-privacy-link"
                             >
                               Aviso de
@@ -716,7 +728,7 @@ function Contacto() {
           </div>
         </div>
       </section>
-    </main>
+    </PageWrapper>
   );
 }
 
